@@ -17,7 +17,6 @@ Time.zone = "Rome"
 
 page "/", :layout => :html5
 
-page "/test.html", :layout => :html5
 
 
 ### 
