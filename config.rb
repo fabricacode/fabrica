@@ -12,7 +12,6 @@ activate :deploy do |deploy|
   deploy.remote = "build"
 end
 
-Time.zone = "Rome"
 
 
 page "/", :layout => :html5
