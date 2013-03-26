@@ -75,7 +75,7 @@ set :images_dir, 'images'
 
 set :fonts_dir, 'fonts'
 
-use Rack::GoogleAnalytics, :tracker => 'UA-22904820-18'
+use Rack::GoogleAnalytics, :tracker => 'UA-6201025-1'
 
 # Build-specific configuration
 configure :build do
