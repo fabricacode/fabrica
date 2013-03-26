@@ -1,3 +1,13 @@
 .page
 	= lorem.paragraphs 10
 	%img{ :src => lorem.image('320x400')}
+	
+
+	.addthis_toolbox.addthis_default_style.addthis_32x32_style
+			%a.addthis_button_facebook
+			%a.addthis_button_twitter
+			%a.addthis_button_google_plusone_badge
+			%a.addthis_counter.addthis_bubble_style
+	:javascript
+		var addthis_config = {"data_track_addressbar":true};
+	%script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51515e430e09dbc0", :type => "text/javascript"}
