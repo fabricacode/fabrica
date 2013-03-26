@@ -1,3 +1,12 @@
 +at-breakpoint(16)
 	.page
 		+susy-grid-background
+		.columns
+			+span-columns(16,16)
+			p
+				+column-count(4)
+				$gap: gutter(16)
+				+column-gap($gap)
+				$col: columns(4,16)
+				+column-width($col)
+				+column-rule(1px, solid, #c00)
