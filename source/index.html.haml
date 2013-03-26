@@ -1,8 +1,32 @@
 .page
 	.columns
+		%h1
+			Hello world
 		%p 
-			= lorem.paragraphs 10
-	%img{ :src => lorem.image('320x400')}
+			= lorem.paragraphs 4
+		%img{ :src => lorem.image('320x400')}
+		%img{ :src => lorem.image('700x400')}
+		%p 
+			= lorem.paragraphs 3
+		%img{ :src => lorem.image('320x400')}
+		%p 
+			= lorem.paragraphs 3
+		%img{ :src => lorem.image('500x400')}
+	
+	%img.wide{ :src => lorem.image('700x400')}
+	.columns
+		%h1
+			Hello world
+		%p 
+			= lorem.paragraphs 4
+		%img{ :src => lorem.image('320x400')}
+		%img{ :src => lorem.image('700x400')}
+		%p 
+			= lorem.paragraphs 3
+		%img{ :src => lorem.image('320x400')}
+		%p 
+			= lorem.paragraphs 3
+		%img{ :src => lorem.image('500x400')}
 	
 
 	.addthis_toolbox.addthis_default_style.addthis_32x32_style

@@ -1,12 +1,18 @@
 .page
-	+container($total-columns, $break)
+	+container($total-columns, $break-1, $break-2)
 	+susy-grid-background
-	.columns
-		+span-columns(7,7)
-		p
-			+column-count(1)
-			$gap: gutter(7)
-			+column-gap($gap)
-			$col: columns(7,7)
-			+column-width($col)
-			+column-rule(1px, solid, #c00)
+.columns
+	+span-columns(7,7)
+	
+	+column-count(1)
+	$gap: gutter(7)
+	+column-gap($gap)
+	$col: columns(7,7)
+	+column-width($col)
+	+column-rule(1px, solid, #c00)
+	+hyphens
+	img
+		max-width: 100%
+		
+.wide
+	+span-columns(7,7)
