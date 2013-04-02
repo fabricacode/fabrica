@@ -1,7 +1,76 @@
 .page
 	+container($total-columns, $break-1, $break-2)
 	+susy-grid-background
+#header
+	background-color: black
+	+span-columns(7,7)
+	height: 21px
+	border-top: 2px white solid
+	border-bottom: 2px white solid
+	
+	
+	span
+		color: white
+#body
+	+span-columns(7,7)
+	background-color: black
+	#menu
+		+border-box-sizing
+		ul
+			+horizontal-list-container
+			+span-columns(7,7)
+			li
+				+horizontal-list-item()
+				font-weight: bold
+				background-color: black
+				text-align: center
+				padding: 0
+				a
+					display: block
+					text-decoration: none
+				&.one
+					width: space(2,7)
+					border-right: 1px white solid
+					a
+						color: $c1
+
+						&:hover
+							color: black
+							background-color: $c1
+
+				&.two
+					width: space(2,7)
+					border-left: 1px white solid
+					border-right: 1px white solid
+					a
+						color: $c2
+
+						&:hover
+							color: black
+							background-color: $c2
+				&.three
+					width: space(2,7)
+					border-left: 1px white solid
+					border-right: 1px white solid
+					a
+						color: $c3
+
+						&:hover
+							color: black
+							background-color: $c3
+				&.more
+					width: columns(1)
+					border-left: 1px white solid
+					a
+						color: white
+						&:hover
+							color: black
+							background-color: white
+
+
+					
 .columns
+	background-color: white
 	+span-columns(7,7)
 	
 	+column-count(1)
@@ -10,6 +79,7 @@
 	$col: columns(7,7)
 	+column-width($col)
 	+column-rule(1px, solid, #c00)
+	min-height: 200px
 	+hyphens
 	img
 		max-width: 100%
