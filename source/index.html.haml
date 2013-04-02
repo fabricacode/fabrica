@@ -3,25 +3,27 @@
 		%span
 			FABRICA
 	#body
-		#menu
-			%ul
-				%li.one
-					%a{:href=>"#"}
-						About
-				%li.two
-					%a{:href=>"#"}
-						Apply
-				%li.three
-					%a{:href=>"#"}
-						Latest
-				%li.more
-					%a{:href=>"#"}
-						%i{:class=>"icon-reorder"}
-		.columns
-			%h1
-				Hello world
-			%p 
-				= lorem.paragraphs 1
+		%img{:src => lorem.image('320x400')}
+		#sliding
+			#menu
+				%ul
+					%li.one
+						%a{:href=>"#"}
+							About
+					%li.two
+						%a{:href=>"#"}
+							Apply
+					%li.three
+						%a{:href=>"#"}
+							Latest
+					%li.more
+						%a{:href=>"#"}
+							%i{:class=>"icon-reorder"}
+			.columns
+				%h1
+					Hello world
+				%p 
+					= lorem.paragraphs 1
 	
 
 	.addthis_toolbox.addthis_default_style.addthis_32x32_style

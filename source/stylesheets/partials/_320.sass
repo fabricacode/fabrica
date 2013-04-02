@@ -1,6 +1,8 @@
 .page
 	+container($total-columns, $break-1, $break-2)
 	+susy-grid-background
+	padding-right: 0
+	padding-left: 0
 #header
 	background-color: black
 	+span-columns(7,7)
@@ -14,6 +16,9 @@
 #body
 	+span-columns(7,7)
 	background-color: black
+	#sliding
+		position: fixed
+
 	#menu
 		+border-box-sizing
 		ul
