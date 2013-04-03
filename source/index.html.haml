@@ -6,25 +6,29 @@
 	#body
 		#sliding
 			#menu
-				%ul
+				%ul{:class=>"nav nav-tabs"}
 					%li.one
-						%a{:href=>"#"}
+						%a{:href=>"#about", :"data-toggle"=>"tab"}
 							About
 					%li.two
-						%a{:href=>"#"}
+						%a{:href=>"#apply", :"data-toggle"=>"tab"}
 							Apply
 					%li.three
-						%a{:href=>"#"}
+						%a{:href=>"#latest", :"data-toggle"=>"tab"}
 							Latest
 					%li.more
-						%a{:href=>"#"}
+						%a{:href=>"#more", :"data-toggle"=>"tab"}
 							%i{:class=>"icon-reorder"}
-			.columns
-				%h1
-					Hello world
-				%p 
-					= lorem.paragraphs 1
-	
+							
+			.tab-content
+				.tab-pane.active#home
+					About
+				.tab-pane#profile
+					Aplly
+				.tab-pane#messages
+					Latest
+				.tab-pane#settings
+					More
 
 	.addthis_toolbox.addthis_default_style.addthis_32x32_style
 		%a.addthis_button_facebook

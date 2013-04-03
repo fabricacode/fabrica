@@ -39,4 +39,6 @@ $(function() {
 function selectMenu(){
 	var $target = $(event.target);
 	$target.toggleClass("active");
+	$target.preventDefault();
+  	$(this).tab('show');
 }
