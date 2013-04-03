@@ -10,5 +10,5 @@ gem "redcarpet"
 gem 'compass-h5bp'
 gem 'rack-google-analytics'
 gem 'oily_png'
-gem 'coffee-filter' # Coffeescript filter for HAML
+#gem 'coffee-filter' # Coffeescript filter for HAML
 gem 'mini_magick'
