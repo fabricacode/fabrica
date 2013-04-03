@@ -9,10 +9,14 @@
 	height: 21px
 	border-top: 2px white solid
 	border-bottom: 2px white solid
-	
-	
+	position: fixed
+	top: 0
 	span
-		color: white
+		a
+			+assign-sprite-background($assets)
+			+replace-with-sprite($assets,"logo_mobile")
+			display: block
+			margin: 6px 0 6px 30px
 #body
 	+span-columns(7,7)
 	background-color: black
@@ -26,51 +30,55 @@
 		ul
 			+horizontal-list-container
 			+span-columns(7,7)
+			border-top: 2px white solid
 			li
 				+horizontal-list-item()
 				font-weight: bold
 				background-color: black
 				text-align: center
 				padding: 0
+
 				a
 					display: block
 					text-decoration: none
+					height: 24px
+					line-height: 24px
 				&.one
 					width: space(2,7)
 					border-right: 1px white solid
 					a
-						color: $c1
+						color: $c2
 
-						&:hover
+						&:hover, &.active
 							color: black
-							background-color: $c1
+							background-color: $c2
 
 				&.two
 					width: space(2,7)
 					border-left: 1px white solid
 					border-right: 1px white solid
 					a
-						color: $c2
+						color: $c4
 
-						&:hover
+						&:hover, &.active
 							color: black
-							background-color: $c2
+							background-color: $c4
 				&.three
 					width: space(2,7)
 					border-left: 1px white solid
 					border-right: 1px white solid
 					a
-						color: $c3
+						color: $c5
 
-						&:hover
+						&:hover, &.active
 							color: black
-							background-color: $c3
+							background-color: $c5
 				&.more
 					width: columns(1)
 					border-left: 1px white solid
 					a
 						color: white
-						&:hover
+						&:hover, &.active
 							color: black
 							background-color: white
 
