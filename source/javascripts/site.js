@@ -29,7 +29,7 @@ $(function() {
     var BV = new $.BigVideo();
 	BV.init();
 	if (Modernizr.touch) {
-	    BV.show('cover.png');
+	    BV.show('images/cover.png');
 	} else {
 	    BV.show('videos/100pasos.mp4',{ambient:true});
 	}
