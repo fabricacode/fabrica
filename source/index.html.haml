@@ -3,32 +3,38 @@
 		%span
 			%a{:href => "#"}
 				FABRICA
-	#body
-		#sliding
-			#menu
-				%ul{:class=>"nav nav-tabs"}
-					%li.one
-						%a{:href=>"#about", :"data-toggle"=>"tab"}
-							About
-					%li.two
-						%a{:href=>"#apply", :"data-toggle"=>"tab"}
-							Apply
-					%li.three
-						%a{:href=>"#latest", :"data-toggle"=>"tab"}
-							Latest
-					%li.more
-						%a{:href=>"#more", :"data-toggle"=>"tab"}
-							%i{:class=>"icon-reorder"}
-							
-			.tab-content
-				.tab-pane.active#home
+	#sliding
+		%div
+			%h2 About
+			%p 
+				=lorem.paragraph
+		%div
+			%h2 Aplly
+			%p
+				=lorem.paragraph
+		%div
+			%h2 Latest
+			%p
+				=lorem.paragraph
+		%div
+			%h2 More
+			%p
+				=lorem.paragraph
+	#menu
+		%ul{:class=>"nav nav-tabs"}
+			%li.one
+				%a{:href=>"#about", :"data-toggle"=>"tab"}
 					About
-				.tab-pane#profile
-					Aplly
-				.tab-pane#messages
+			%li.two
+				%a{:href=>"#apply", :"data-toggle"=>"tab"}
+					Apply
+			%li.three
+				%a{:href=>"#latest", :"data-toggle"=>"tab"}
 					Latest
-				.tab-pane#settings
-					More
+			%li.more
+				%a{:href=>"#more", :"data-toggle"=>"tab"}
+					%i{:class=>"icon-reorder"}			
+		
 
 	.addthis_toolbox.addthis_default_style.addthis_32x32_style
 		%a.addthis_button_facebook
