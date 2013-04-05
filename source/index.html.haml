@@ -3,44 +3,48 @@
 		%span
 			%a{:href => "#"}
 				FABRICA
-	#sliding
-		%div
-			%h2 About
-			%p 
-				=lorem.paragraph
-		%div
-			%h2 Aplly
-			%p
-				=lorem.paragraph
-		%div
-			%h2 Latest
-			%p
-				=lorem.paragraph
-		%div
-			%h2 More
-			%p
-				=lorem.paragraph
-	#menu
-		%ul{:class=>"nav nav-tabs"}
-			%li.one
-				%a{:href=>"#about", :"data-toggle"=>"tab"}
-					About
-			%li.two
-				%a{:href=>"#apply", :"data-toggle"=>"tab"}
-					Apply
-			%li.three
-				%a{:href=>"#latest", :"data-toggle"=>"tab"}
-					Latest
-			%li.more
-				%a{:href=>"#more", :"data-toggle"=>"tab"}
-					%i{:class=>"icon-reorder"}			
+			
+#menu
+	%ul{:class=>"nav"}
+		%li.one
+			%a{:href=>"#about"}
+				About
+		%li.two
+			%a{:href=>"#apply"}
+				Apply
+		%li.three
+			%a{:href=>"#latest"}
+				Latest
+		%li.more
+			%a{:href=>"#more"}
+				%i{:class=>"icon-reorder"}	
+#sliding{ :"data-target"=>"#menu"}
+	#landing
+
+	#about.bkgr
+		%h2 About
+		%p 
+			=lorem.paragraphs 5
+	#apply.bkgr
+		%h2 Aplly
+		%p
+			=lorem.paragraphs 2
+	#latest.bkgr
+		%h2 Latest
+		%p
+			=lorem.paragraphs 1
+	#more.bkgr
+		%h2 More
+		%p
+			=lorem.paragraphs 3
+		
 		
 
-	.addthis_toolbox.addthis_default_style.addthis_32x32_style
-		%a.addthis_button_facebook
-		%a.addthis_button_twitter
-		%a.addthis_button_google_plusone_badge
-		%a.addthis_counter.addthis_bubble_style
+	/ .addthis_toolbox.addthis_default_style.addthis_32x32_style
+	/ 	%a.addthis_button_facebook
+	/ 	%a.addthis_button_twitter
+	/ 	%a.addthis_button_google_plusone_badge
+	/ 	%a.addthis_counter.addthis_bubble_style
 	:javascript
 		var addthis_config = {"data_track_addressbar":true};
 	%script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-51515e430e09dbc0", :type => "text/javascript"}

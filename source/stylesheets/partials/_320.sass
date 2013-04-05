@@ -10,6 +10,7 @@
 	border-top: 2px white solid
 	border-bottom: 2px white solid
 	position: fixed
+	z-index: 100
 	top: 0
 	span
 		a
@@ -22,10 +23,15 @@
 	position: relative
 
 	+span-columns(7,7)
-	background-color: white
-	
+
+	padding-bottom: 30px
+	.bkgr
+		background-color: white
+		padding-top: 30px
+
 #menu
 	+border-box-sizing
+	z-index: 100
 	position: fixed
 	+span-columns(7,7)
 	bottom: 0
@@ -52,10 +58,14 @@
 			&.one
 				width: space(2,7)
 				border-right: 1px white solid
+				&.active
+					a
+						color: $c2
+						color: black
+						background-color: $c2
 				a
 					color: $c2
-
-					&:hover, &.active
+					&:hover
 						color: black
 						background-color: $c2
 
@@ -63,28 +73,46 @@
 				width: space(2,7)
 				border-left: 1px white solid
 				border-right: 1px white solid
+				&.active
+					a
+						color: $c4
+						color: black
+						background-color: $c4
 				a
 					color: $c4
+					&.active
+						color: black
+						background-color: $c4
 
-					&:hover, &.active
+					&:hover
 						color: black
 						background-color: $c4
 			&.three
 				width: space(2,7)
 				border-left: 1px white solid
 				border-right: 1px white solid
+				&.active
+					a
+						color: $c5
+						color: black
+						background-color: $c5
 				a
 					color: $c5
-
-					&:hover, &.active
+					&:hover
 						color: black
 						background-color: $c5
 			&.more
 				width: columns(1)
 				border-left: 1px white solid
+				&.active
+					a
+						color: white
+						&:hover
+							color: black
+							background-color: white
 				a
 					color: white
-					&:hover, &.active
+					&:hover
 						color: black
 						background-color: white
 
