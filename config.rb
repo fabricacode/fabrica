@@ -15,6 +15,7 @@ end
 
 
 page "/", :layout => :html5
+page "/about.html", :layout => :html5
 
 
 
