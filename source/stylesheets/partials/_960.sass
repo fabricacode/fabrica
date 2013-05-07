@@ -1,8 +1,8 @@
 +at-breakpoint($break-2)
 	.page
+		margin-left: 0 !important
 		+susy-grid-background
-		margin: 0 !important
-
+	
 	.columns
 		+span-columns(16,16)
 		
@@ -12,5 +12,35 @@
 		$col: columns(4,16)
 		+column-width($col)
 		+column-rule(1px, solid, #c00)
-	.wide
-		+span-columns(10,16)
+	a#logo
+		+pre(2)
+	#headline
+		+pre(2)
+	#lifestream
+		+pre(2)
+		+span-columns(15,16)
+	ul#nav
+		+post(2)
+
+	.primary
+		+pre(2)
+		+post(2)
+
+	.columns
+		+span-columns(16,16)
+		
+		+column-count(2)
+		$gap: gutter(10)
+		+column-gap($gap)
+		$col: columns(2,10)
+		+column-width($col)
+		+column-rule(1px, solid, #c00)
+	ul.lifestream
+		
+		li
+			+span-columns(10,16)
+			.icon
+				+span-columns(1,10)
+			.content
+				+span-columns(10,10)
+
