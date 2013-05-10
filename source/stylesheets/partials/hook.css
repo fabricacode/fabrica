@@ -12,12 +12,14 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 0 auto;
+	
+
 }
 
 .hook {
 	display: none;
 	/* customizable */ height: 85px;
-
+	z-index: 10;
 	clear: both;
 	position: relative;
 	width: 100%;

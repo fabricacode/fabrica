@@ -42,7 +42,10 @@
 		= stylesheet_link_tag "site"
 		
 		%body{:"data-spy"=>"scroll", :"data-offset"=> "50"}
-
+			#hook.hook
+				#loader
+					.spinner
+				%span.hook-text Reloading...
 			#fb-root
 			%script
 				(function(d, s, id) {
