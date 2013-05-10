@@ -27,7 +27,7 @@ var list = [
 	        }
 	      }
 	    ];
-$("#headline").fitText();
+$("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
 $('#hook').hook({
 	swipeDistance: 100,
 	reloadPage: false,

@@ -81,10 +81,10 @@ use Rack::GoogleAnalytics, :tracker => 'UA-6201025-1'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-   # activate :minify_css
+  activate :minify_css
   
   # Minify Javascript on build
-   activate :minify_javascript
+  activate :minify_javascript
   
   # Create favicon/touch icon set from source/favicon_base.png
    activate :favicon_maker
