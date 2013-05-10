@@ -1,7 +1,18 @@
 +at-breakpoint($break-1)
 	.page
 		margin-left: 0 !important
+		ul.lifestream
 		
+			li
+				+span-columns(7,10)
+				.icon
+					+span-columns(1,7)
+				.content
+					+span-columns(5,7)
+					float: left !important
+					p
+						font-size: px-to-em(20px,16px)
+						line-height: px-to-em(16px,16px)
 	a#logo
 		+pre(1)
 	#headline
@@ -10,8 +21,9 @@
 		+pre(1)
 		+span-columns(10,10)
 	ul#nav
+		
+		+span-columns(5 omega,10)
 		+post(1)
-
 	.primary
 		+pre(1)
 		+post(1)
@@ -25,12 +37,4 @@
 		$col: columns(2,10)
 		+column-width($col)
 		+column-rule(1px, solid, #c00)
-	ul.lifestream
-		
-		li
-			+span-columns(7,10)
-			.icon
-				+span-columns(1,7)
-			.content
-				+span-columns(5,7)
-				float: left !important
+	

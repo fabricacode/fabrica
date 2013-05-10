@@ -29,7 +29,7 @@ var list = [
 	    ];
 $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
 $('#hook').hook({
-	swipeDistance: 100,
+	swipeDistance: 50,
 	reloadPage: false,
 	reloadEl: function(){
 		 $('#lifestream ul').fadeOut(400,setupLifeStream);
@@ -89,7 +89,7 @@ function setupLifeStream(){
 	$("#lifestream").lifestream({
 		classname: "lifestream",
   		feedloaded: feedcallback,
-		limit: 100,
+		limit: 50,
 	    list: list
 	  });
 }

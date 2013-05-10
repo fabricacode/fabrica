@@ -17,23 +17,23 @@ ul#nav.about-black
 	+span-columns(7,7)
 	height: 55px
 	z-index: 10
+	position: relative
 	
 #header-white
 	+background-image(linear-gradient( rgb(255,255,255) 30%, rgba(255,255,255,0.8)))
 	
 ul#nav
 	position: relative
-	+float-right
+	+span-columns(5 omega,7)
 	top: 15px
 	+no-bullets
 	padding: 0
 	margin-top: 0
 	li
-		position: relative
-		+float-left
+		position: inline-block
+		+float-right
 		margin-left: 20px
-		&:last-child
-			+float-right
+
 	a
 		text-transform: uppercase
 		font-weight: 600
@@ -60,11 +60,16 @@ a#logo
 .black-icon
 	+assign-sprite-background($assets)
 	+sprite($assets, "logo_icon_black", true)
+
+.head
+	position: relative
+	+span-columns(7,7)
+	margin-top: 20px
 .page
 	+clearfix
 	+container($total-columns, $break-1, $break-2)
 	.bkgr
-		+opacity(.7)
+		+opacity(.3)
 		+stretch(0,0,0,0)
 		position: fixed
 		background-color: black
@@ -82,7 +87,7 @@ a#logo
 		font-weight: 600
 		font-size: px-to-em(40px,16px)
 		line-height: px-to-em(37px,40px)
-		
+		margin-top: 10px
 		position: relative
 		margin-bottom: 0.3em
 		
@@ -148,6 +153,7 @@ a#logo
 			p
 				margin: 0
 				margin-bottom: 10px
+				font-size: px-to-em(16px,16px)
 			a
 				
 				word-wrap: break-word
@@ -167,6 +173,6 @@ a#logo
 
 #lifestream
 	position: relative
-		
+	+span-columns(7,7)
 		
 		
