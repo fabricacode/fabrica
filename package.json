@@ -11,7 +11,8 @@
       "jquery-timeago": "github:rmm5t/jquery-timeago/v1.1.0",
       "FitText": "github:davatron5000/FitText.js/master",
       "stroll": "github:hakimel/stroll.js/v1.0",
-      "Hook": "github:jordansinger/Hook.js/master"
+      "Hook": "github:jordansinger/Hook.js/master",
+      "mobileGmap": "github:joggink/mobileGmap/master"
     }
   }
 }

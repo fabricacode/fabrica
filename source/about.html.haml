@@ -1,13 +1,48 @@
+#header-white
+	.center
+		%a#logo.black-icon{href: '/'}
+		%ul#nav.about-black
+			%li
+				%a{href: '/about.html'} About
+			%li
+				%a{href: '#'} Apply
 .page
-	#header-white
-	%a#logo.black-icon{href: '/'}
-	%ul#nav.about-black
-		%li
-			%a{href: '/about.html'} About
-		%li
-			%a{href: '#'} Apply
-	%h1.headline
+	
+	%h1#headline
 		We are based in Italy and work globally.
 	%hr.primary
-	%p.about
-		Our organisation is built for the 21st century, and designed to address 21st century problems and opportunities. Our advantage is our diversity – of people, perspectives, formats, technologies – as well as our deep connection to the cultural mainstream, while our networked approach enables agility and openness. We are a form of school as well as studio, and so we are constantly learning, producing questions as well as answers.
+
+	%p.about.columns
+		Fabrica is a communications research centre, studio and school. We are based in Italy, work globally, and are an integral part of the Benetton Group. Our organisation is built for the 21st century, and designed to address 21st century problems and opportunities. Our advantage is our diversity – of people, perspectives, formats and technologies. We work with partners on real world projects – we not only research the way we communicate but we actively produce it. We learn through doing. We actively seek out the new, the unknown, the emerging - as designers, as makers, as journalists and researchers. 
+ 
+		We are rebuilding our website to reveal our projects and people - please bear with us.
+		 
+		You can apply for a scholarship to become a researcher at Fabrica. Equally, do get in touch if you are interested in collaborating with us.
+
+	%p.about 
+		<b>Contact Us</b>
+		%br/
+		Fabrica
+		%br/
+		Villa Pastega, via Ferrarezza
+		%br/
+		Catena di Villorba
+		%br/
+		31020, Treviso, Italy
+		%br/
+		%br/
+		fabrica@fabrica.it
+		%br/
+		Phone +39 0422 516111
+	#map.gmap{"data-center" => "Villa Pastega, via Ferrarezza,Catena di Villorba,31020, Treviso, Italy", "data-zoom" => "15"}
+
+= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
+:javascript
+	window.jQuery || document.write('<script src="javascripts/vendor/jquery.js"><\/script>')
+%script{:src => "http://maps.googleapis.com/maps/api/js?key=AIzaSyCKTYhE_M2R4xDkbw52flmdIfni7KlvWmk&sensor=false", :type => "text/javascript"}
+
+
+= javascript_include_tag "vendor/mobileGmap/jquery.mobilegmap.js"
+= javascript_include_tag "vendor/FitText/jquery.fittext"
+= javascript_include_tag "vendor/sticky/jquery.sticky"
+= javascript_include_tag "other"

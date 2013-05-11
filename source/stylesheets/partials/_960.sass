@@ -1,14 +1,19 @@
 +at-breakpoint($break-2)
+	#header-white
+		.center
+			+pre(2)
+			+post(2)
 	.page
-		margin-left: 0 !important
+		+pre(2)
+		+post(2)
 		ul.lifestream
 			
 			li
-				+span-columns(11,16)
+				+span-columns(16,16)
 				.icon
-					+span-columns(1,11)
+					+span-columns(1,16)
 				.content
-					+span-columns(9,11)
+					+span-columns(10,16)
 					float: left !important
 					p
 						font-size: px-to-em(22px,16px)
@@ -16,39 +21,24 @@
 		
 	
 	.columns
-		+span-columns(16,16)
+		+span-columns(12,16)
 		
-		+column-count(4)
+		+column-count(3)
 		$gap: gutter(16)
 		+column-gap($gap)
-		$col: columns(4,16)
+		$col: columns(3,12)
 		+column-width($col)
-		+column-rule(1px, solid, #c00)
-	a#logo
-		+pre(2)
-	#headline
-		+pre(2)
-		+post(2)
+		
 	#lifestream
-		+pre(2)
 		+span-columns(15,16)
 	ul#nav
 		
-		+span-columns(6 omega,16)
-		+post(2)
-	.primary
-		+pre(2)
-		+post(2)
-
-	.columns
+		+span-columns(15 omega,16)
+	a#logo
+		+span-columns(1,16)
+	
+	.gmap
 		+span-columns(16,16)
-		
-		+column-count(2)
-		$gap: gutter(10)
-		+column-gap($gap)
-		$col: columns(2,10)
-		+column-width($col)
-		+column-rule(1px, solid, #c00)
 
 
 
