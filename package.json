@@ -12,7 +12,8 @@
       "FitText": "github:davatron5000/FitText.js/master",
       "stroll": "github:hakimel/stroll.js/v1.0",
       "Hook": "github:jordansinger/Hook.js/master",
-      "mobileGmap": "github:joggink/mobileGmap/master"
+      "mobileGmap": "github:joggink/mobileGmap/master",
+      "video": "github:videojs/video.js/3.2.3"
     }
   }
 }

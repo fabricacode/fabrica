@@ -1,4 +1,18 @@
 
+//= require  "vendor/jquery"
+//= require  "vendor/bootstrap.min"
+//= require  "vendor/BigVideo/js/jquery-ui-1.8.22.custom.min"
+//= require  "vendor/video/video"
+//= require  "vendor/BigVideo/js/jquery.imagesloaded.min"
+//= require  "vendor/BigVideo/js/bigvideo"
+//= require  "vendor/jquery-lifestream/jquery.lifestream"
+//= require  "vendor/stroll/js/stroll"
+//= require  "vendor/FitText/jquery.fittext"
+//= require  "vendor/Hook.js-master/mousewheel"
+//= require  "vendor/Hook.js-master/hook"
+//= require  "vendor/jquery-timeago/jquery.timeago"
+
+
 var landing;
 var isTouch = Modernizr.touch;
 var BV;
