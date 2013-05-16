@@ -89,6 +89,7 @@
                item.config.service + '">').data( "name", item.config.service )
                                            .data( "url", item.url || "#" )
                                            .data( "time", item.date )
+                                           .data( "url_complete", item.url_complete )
                                            .append( item.html )
                                            .appendTo( ul );
           }
@@ -2217,6 +2218,7 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
         status = input[i];
         output.push({
           date: new Date(status.created_at),
+          url_complete: 'http://twitter.com/' + config.user + "/status/" + status.id_str,
           config: config,
           html: $.tmpl( template.posted, {
             tweet: linkify(status.text),

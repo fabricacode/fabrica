@@ -1,6 +1,5 @@
 
 //= require  "vendor/jquery"
-//= require  "vendor/bootstrap.min"
 //= require  "vendor/BigVideo/js/jquery-ui-1.8.22.custom.min"
 //= require  "vendor/video/video"
 //= require  "vendor/BigVideo/js/jquery.imagesloaded.min"
@@ -22,22 +21,22 @@ var list = [
 	        service: "facebook_page",
 	        user: "48283858451",
 	        template: {
-			    wall_post: '<div class="icon white-facebook"></div><div class="content"><p class="info">post on wall <a href="${link}">${title}</a></p><hr class="secondary" /></div>'
+			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info">post on wall <a href="${link}">${title}</a></p><hr class="secondary" /></div>'
 			  }
 	      },
 	      {
 	        service: "twitter",
 	        user: "fabrica",
 	        template: {
-			    posted: '<div class="icon white-twitter"></div><div class="content"><p class="info">{{html tweet}}</p><hr class="secondary" /></div>'
+			    posted: '<div class="content"><p class="info">{{html tweet}}</p><hr class="secondary" /></div>'
 			  }
 	      },
 	      {
 	        service: "vimeo",
 	        user: "fabrica",
 	        template: {
-	        	posted: '<div class="icon white-vimeo"></div><div class="content"><p class="info">posted <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>',
-	        	liked: '<div class="icon white-vimeo"></div><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>'
+	        	posted: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">posted <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>',
+	        	liked: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>'
 	        }
 	      }
 	    ];
@@ -61,7 +60,11 @@ $(document).ready(function() {
       	
 	});
 
-	 
+	// $("#lifestream").perfectScrollbar({
+	//   wheelSpeed: 1,
+	//   wheelPropagation: true
+	// })
+
 
   	$(window).resize(function() {
   		resizeSocialList();
@@ -74,6 +77,8 @@ $(document).ready(function() {
 	
  	
 });
+
+
 
 Date.prototype.toISO8601 = function(date) {
           var pad = function (amount, width) {
@@ -126,9 +131,13 @@ function feedcallback(){
       // Check if all the feeds have been loaded
       if( count === list.length ){
         $("#lifestream li").each(function(){
-       
+       		
           var element = $(this),
               date = new Date(element.data("time"));
+              
+          if(element.children("a").length == 0){
+         	element.prepend('<a class="twitter" target="_blank" href="'+element.data("url_complete")+'"><div class="icon white-twitter"></div></a>');
+        	}
           element.find("p").append(' <span class="timeago" title="' + date.toISO8601(date) + '">' + date + "</span>");
            
         })
@@ -152,5 +161,24 @@ $(function() {
 	    BV.show('videos/fabrica_teaser_web_720.mp4',{ambient:true});
 	}
 });
+
+
+window.addEventListener('orientationchange', handleOrientation, false);
+function handleOrientation() {
+if (orientation == 0) {
+	resizeSocialList();
+}
+else if (orientation == 90) {
+	resizeSocialList();
+}
+else if (orientation == -90) {
+	resizeSocialList();
+}
+else if (orientation == 180) {
+	resizeSocialList();
+}
+else {
+}
+}
 
 
