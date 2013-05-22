@@ -5,7 +5,7 @@
 			%li
 				%a{href: '/about.html'} About
 			%li
-				%a{href: '#'} Apply
+				%a{href: '/apply.html'} Apply
 .page
 	
 	%h1#headline
@@ -31,11 +31,11 @@
 		31020, Treviso, Italy
 		%br/
 		%br/
-		fabrica@fabrica.it
+		%span{:class => "redirect"} ti.acirbaf@acirbaf
 		%br/
 		Phone +39 0422 516111
-	#map.gmap{"data-center" => "Villa Pastega, via Ferrarezza,Catena di Villorba,31020, Treviso, Italy", "data-zoom" => "15"}
+	#map.gmap{"data-center" => "via Postioma 54/F Catena di Villorba 31020, Treviso, Italy", "data-zoom" => "15"}
 
 %script{:src => "http://maps.googleapis.com/maps/api/js?key=AIzaSyCKTYhE_M2R4xDkbw52flmdIfni7KlvWmk&sensor=false", :type => "text/javascript"}
 
-= javascript_include_tag "other"
+= javascript_include_tag "map"

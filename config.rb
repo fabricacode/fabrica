@@ -15,6 +15,9 @@ end
 
 page "/", :layout => :html5
 page "/about.html", :layout => :html5
+page "/apply.html", :layout => :html5
+page "/success.html", :layout => :html5
+page "/404.html", :layout => :html5
 
 
 require 'susy'
@@ -53,7 +56,7 @@ configure :build do
   # Use relative URLs
   # activate :relative_assets
 
-   activate :smusher
+  activate :smusher
 
    
 activate :google_analytics do |ga|

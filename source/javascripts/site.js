@@ -12,6 +12,7 @@
 //= require  "vendor/jquery-timeago/jquery.timeago"
 
 
+
 var landing;
 var isTouch = Modernizr.touch;
 var BV;

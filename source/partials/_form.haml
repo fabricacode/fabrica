@@ -1,0 +1,127 @@
+%form#form2.wufoo.topLabel.page{:action => "https://thedoers.wufoo.com/forms/m7x3z9/#public", :autocomplete => "off", :enctype => "multipart/form-data", :method => "post", :name => "form2", :novalidate => ""}
+  %header#header.info
+    %h2 FABRICA APPLICATION
+    %div
+  %ul
+    %li#foli1.notranslate
+      %label#title1.desc{:for => "Field1"}
+        NAME
+        %span#req_1.req *
+      %span
+        %input#Field1.field.text.fn{:name => "Field1", :required => "", :size => "8", :tabindex => "1", :type => "text", :value => ""}/
+        %label{:for => "Field1"} First
+      %span
+        %input#Field2.field.text.ln{:name => "Field2", :required => "", :size => "14", :tabindex => "2", :type => "text", :value => ""}/
+        %label{:for => "Field2"} Last
+    %li#foli12.notranslate
+      %label#title12.desc{:for => "Field12"}
+        EMAIL
+        %span#req_12.req *
+      %div
+        %input#Field12.field.text.medium{:maxlength => "255", :name => "Field12", :required => "", :spellcheck => "false", :tabindex => "3", :type => "email", :value => ""}/
+    %li#foli3.date.eurodate.notranslate
+      %label#title3.desc{:for => "Field3"}
+        DATE OF BIRTH
+        %span#req_3.req *
+      %span
+        %input#Field3-1.field.text{:maxlength => "2", :name => "Field3-1", :required => "", :size => "2", :tabindex => "4", :type => "text", :value => ""}/
+        %label{:for => "Field3-1"} DD
+      %span.symbol /
+      %span
+        %input#Field3-2.field.text{:maxlength => "2", :name => "Field3-2", :required => "", :size => "2", :tabindex => "5", :type => "text", :value => ""}/
+        %label{:for => "Field3-2"} MM
+      %span.symbol /
+      %span
+        %input#Field3.field.text{:maxlength => "4", :name => "Field3", :required => "", :size => "4", :tabindex => "6", :type => "text", :value => ""}/
+        %label{:for => "Field3"} YYYY
+      %span#cal3
+        %img#pick3.datepicker{:alt => "Pick a date.", :src => "images/calendar.png"}/
+    %li#foli4.notranslate
+      %label#title4.desc{:for => "Field4"}
+        NATIONALITY
+        %span#req_4.req *
+      %div
+        %input#Field4.field.text.medium{:maxlength => "255", :name => "Field4", :onkeyup => "", :required => "", :tabindex => "7", :type => "text", :value => ""}/
+    %li#foli6.notranslate.twoColumns
+      %fieldset
+        <![if !IE | (gte IE 8)]>
+        %legend#title6.desc
+          DEPARTMENT
+          %span#req_6.req *
+        <![endif]>
+        /[if lt IE 8]
+          <label id="title6" class="desc">
+          DEPARTMENT
+          <span id="req_6" class="req">*</span>
+          </label>
+        %div
+          %input#radioDefault_6{:name => "Field6", :type => "hidden", :value => ""}/
+          %span
+            %input#Field6_0.field.radio{:checked => "checked", :name => "Field6", :required => "", :tabindex => "8", :type => "radio", :value => "Design"}/
+            %label.choice{:for => "Field6_0"}
+              Design
+          %span
+            %input#Field6_1.field.radio{:name => "Field6", :required => "", :tabindex => "9", :type => "radio", :value => "Photography"}/
+            %label.choice{:for => "Field6_1"}
+              Photography
+          %span
+            %input#Field6_2.field.radio{:name => "Field6", :required => "", :tabindex => "10", :type => "radio", :value => "Interactive"}/
+            %label.choice{:for => "Field6_2"}
+              Interactive
+          %span
+            %input#Field6_3.field.radio{:name => "Field6", :required => "", :tabindex => "11", :type => "radio", :value => "Music"}/
+            %label.choice{:for => "Field6_3"}
+              Music
+          %span
+            %input#Field6_4.field.radio{:name => "Field6", :required => "", :tabindex => "12", :type => "radio", :value => "Colors Magazine"}/
+            %label.choice{:for => "Field6_4"}
+              Colors Magazine
+          %span
+            %input#Field6_5.field.radio{:name => "Field6", :required => "", :tabindex => "13", :type => "radio", :value => "Video"}/
+            %label.choice{:for => "Field6_5"}
+              Video
+          %span
+            %input#Field6_6.field.radio{:name => "Field6", :required => "", :tabindex => "14", :type => "radio", :value => "Visual Communication"}/
+            %label.choice{:for => "Field6_6"}
+              Visual Communication
+    %li#foli7.notranslate
+      %label#title7.desc{:for => "Field7"}
+        LETTER OF APPLICATION
+        %span#req_7.req *
+      %div
+        %textarea#Field7.field.textarea.medium{:cols => "50", :name => "Field7", :onkeyup => "", :required => "", :rows => "10", :spellcheck => "true", :tabindex => "15"}
+    %li#foli14.notranslate
+      %label#title14.desc{:for => "Field14"}
+        PORTFOLIO
+        %span#req_14.req *
+      %div
+        %input#Field14.field.file{:name => "Field14", :required => "", :size => "12", :tabindex => "16", :type => "file"}/
+    %li#foli15.notranslate
+      %label#title15.desc{:for => "Field15"}
+        CURRICULUM VITAE
+        %span#req_15.req *
+      %div
+        %input#Field15.field.file{:name => "Field15", :required => "", :size => "12", :tabindex => "17", :type => "file"}/
+    %li#foli8.notranslate
+      %label#title8.desc{:for => "Field8"}
+        Link #1
+      %div
+        %input#Field8.field.text.medium{:maxlength => "255", :name => "Field8", :tabindex => "18", :type => "url", :value => ""}/
+    %li#foli9.notranslate
+      %label#title9.desc{:for => "Field9"}
+        Link #2
+      %div
+        %input#Field9.field.text.medium{:maxlength => "255", :name => "Field9", :tabindex => "19", :type => "url", :value => ""}/
+    %li#foli10.notranslate
+      %label#title10.desc{:for => "Field10"}
+        How did you hear about us?
+        %span#req_10.req *
+      %div
+        %input#Field10.field.text.medium{:maxlength => "255", :name => "Field10", :onkeyup => "", :required => "", :tabindex => "20", :type => "text", :value => ""}/
+    %li.buttons
+      %div
+        %input#saveForm.btTxt.submit{:name => "saveForm", :type => "submit", :value => "Submit"}/
+    %li.hide
+      %label{:for => "comment"} Do Not Fill This Out
+      %textarea#comment{:cols => "1", :name => "comment", :rows => "1"}
+      %input#idstamp{:name => "idstamp", :type => "hidden", :value => "9BNY3Zi2rX6GpXv61rkC25wvTViatMD/f9w1rjpdtaI="}/
