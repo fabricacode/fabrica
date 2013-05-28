@@ -3,7 +3,7 @@
 		%a#logo.black-icon{href: '/'}
 		%ul#nav.about-black
 			%li
-				%a{href: '/about.html'} About
+				%a.current{href: '/about.html'} About
 			%li
 				%a{href: '/apply.html'} Apply
 .page
@@ -31,7 +31,8 @@
 		31020, Treviso, Italy
 		%br/
 		%br/
-		%span{:class => "redirect"} ti.acirbaf@acirbaf
+		%a{ :href=>"mailto:fabrica@fabrica.it"}
+			%span{:class => "redirect"} ti.acirbaf@acirbaf
 		%br/
 		Phone +39 0422 516111
 	#map.gmap{"data-center" => "via Postioma 54/F Catena di Villorba 31020, Treviso, Italy", "data-zoom" => "15"}

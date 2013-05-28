@@ -1,3 +1,6 @@
+body
+	-webkit-overflow-scrolling: touch
+	
 .black
 	background: black
 	h1, p, a
@@ -9,9 +12,9 @@ ul#nav.about-black
 	a
 		color: black
 		border-bottom: 2px solid black
-		&:hover
+		&:hover,&.current
 			border-bottom: 4px solid black
-		&:active
+		&:active,&.current
 			border-bottom: 4px solid black
 #header-black
 	+span-columns(7,7)
@@ -49,9 +52,9 @@ ul#nav
 		padding-bottom: 2px
 		color: white
 		font-family: "fago"
-		&:hover
+		&:hover,&.current
 			border-bottom: 4px solid white
-		&:active
+		&:active,&.current
 			border-bottom: 4px solid white
 a#logo
 	
@@ -115,17 +118,24 @@ a#logo
 	p.about
 		margin-top: 20px
 		clear: left
+		a
+			text-decoration: none
+			color: black
 		
 	#lifestream
-		
-		min-height: 400px
+		overflow: hidden
+		// min-height: 400px
 		margin-top: 15px
 		position: relative
+
 	ul.lifestream
 		display: none
-		overflow-x: hidden
-		overflow-y: scroll
+		overflow: auto
 		position: relative
+		&::-webkit-scrollbar
+			display: none
+		
+		
 
 		+no-bullets
 		padding: 0

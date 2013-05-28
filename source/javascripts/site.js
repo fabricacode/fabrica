@@ -61,10 +61,6 @@ $(document).ready(function() {
       	
 	});
 
-	// $("#lifestream").perfectScrollbar({
-	//   wheelSpeed: 1,
-	//   wheelPropagation: true
-	// })
 
 
   	$(window).resize(function() {
@@ -116,10 +112,10 @@ function setupLifeStream(){
 
  function resizeSocialList(){
  		stroll.unbind( '#lifestream ul');
- 		var head = $(".head").height();
- 		
+ 		var head = $(".head").outerHeight();
+ 		var header = $("#header-black").outerHeight();
 		var verticalHeight = $(window).height();
-		var listHeight = verticalHeight-head;
+		var listHeight = verticalHeight - (head + header+35);
 		$("#lifestream").css("height", listHeight);
   		$("#lifestream ul").css("height", listHeight);
   		stroll.bind( '#lifestream ul', { live: true } );
