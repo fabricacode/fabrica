@@ -179,3 +179,9 @@ else {
 }
 
 
+if ( Modernizr.touch ) {
+   // click
+} else {
+	$("#lifestream").addClass("fade");
+}
+
