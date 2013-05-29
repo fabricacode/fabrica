@@ -178,10 +178,9 @@ else {
 }
 }
 
+if (Modernizr.mq('only all and (max-width: 480px)')) { 
 
-if ( Modernizr.touch ) {
-   // click
-} else {
+}else{
 	$("#lifestream").addClass("fade");
 }
 
