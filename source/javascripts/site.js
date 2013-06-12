@@ -25,19 +25,13 @@ var list = [
 			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info">post on wall <a href="${link}">${title}</a></p><hr class="secondary" /></div>'
 			  }
 	      },
-	      {
-	        service: "twitter",
-	        user: "fabrica",
-	        template: {
-			    posted: '<div class="content"><p class="info">{{html tweet}}</p><hr class="secondary" /></div>'
-			  }
-	      },
+	      
 	      {
 	        service: "vimeo",
 	        user: "fabrica",
 	        template: {
 	        	posted: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">posted <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>',
-	        	liked: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>'
+	        	liked: '<a class="liked" href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>'
 	        }
 	      }
 	    ];
@@ -131,7 +125,9 @@ function feedcallback(){
        		
           var element = $(this),
               date = new Date(element.data("time"));
-              
+          if(element.children(".liked").length != 0){
+          	element.remove();
+          }
           if(element.children("a").length == 0){
          	element.prepend('<a class="twitter" target="_blank" href="'+element.data("url_complete")+'"><div class="icon white-twitter"></div></a>');
         	}
