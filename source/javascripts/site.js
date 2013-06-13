@@ -30,7 +30,7 @@ var list = [
 	        service: "vimeo",
 	        user: "fabrica",
 	        template: {
-	        	posted: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">posted <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>',
+	        	posted: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info"><a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>',
 	        	liked: '<a class="liked" href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>'
 	        }
 	      }
