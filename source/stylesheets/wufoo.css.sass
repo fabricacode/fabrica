@@ -37,15 +37,20 @@ input[type="submit"]
 	padding: 5px 10px !important
 	border: none !important
 
-input[type="submit"],input[type="text"],input[type="email"],input[type="url"],textarea
+input[type="submit"],input[type="text"],input[type="email"],input[type="url"],textarea, select
 	border-bottom-left-radius: 0
 	border-bottom-right-radius: 0
-	border-top-left-radius: 5px
-	border-top-right-radius: 5px
+	border-top-left-radius: 0
+	border-top-right-radius: 0
 	-webkit-border-radius: 0
 	border-radius: 0
 	-webkit-appearance: none
+	border-color: #000000
+	border-width: 2px
+	min-height: 20px
 
+#Field126
+	padding: 4px
 
 input[type="text"]:disabled
 	background: grey !important
@@ -57,3 +62,8 @@ input[type="text"]:disabled
 
 p.error
 	padding: 7px 0 !important
+
+
+
+li.over25
+	display: none
