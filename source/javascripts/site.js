@@ -22,7 +22,7 @@ var list = [
 	        service: "facebook_page",
 	        user: "48283858451",
 	        template: {
-			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info">post on wall <a href="${link}">${title}</a></p><hr class="secondary" /></div>'
+			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info"><a href="${link}">${title}</a></p><hr class="secondary" /></div>'
 			  }
 	      },
 	      
