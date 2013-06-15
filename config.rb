@@ -31,6 +31,7 @@ set :images_dir, 'images'
 
 set :fonts_dir, 'fonts'
 
+
 configure :development do
   activate :google_analytics do |ga|
     ga.tracking_id = false
