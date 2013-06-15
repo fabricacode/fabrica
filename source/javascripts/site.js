@@ -33,7 +33,15 @@ var list = [
 	        	posted: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info"><a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>',
 	        	liked: '<a class="liked" href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>'
 	        }
+	      },
+	      {
+	        service: "twitter",
+	        user: "fabrica",
+	        template: {
+			    posted: '<div class="content"><p class="info">{{html tweet}}</p><hr class="secondary" /></div>'
+			  }
 	      }
+	      
 	    ];
 $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
 $('#hook').hook({
