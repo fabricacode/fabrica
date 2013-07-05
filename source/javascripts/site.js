@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 	landing.click(function(e){
 		e.preventDefault();
-      	BV.show('videos/fabrica_teaser_web_720.mp4',{ambient:true});
+      	BV.show('videos/background_07052013.mp4',{ambient:true});
       	
 	});
 
@@ -159,7 +159,7 @@ $(function() {
 	if (Modernizr.touch) {
 	    BV.show('images/cover.png');
 	} else {
-	    BV.show('videos/fabrica_teaser_web_720.mp4',{ambient:true});
+	    BV.show('videos/background_07052013.mp4',{ambient:true});
 	}
 });
 
