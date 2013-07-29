@@ -32,11 +32,7 @@ set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
 
-configure :development do
-  activate :google_analytics do |ga|
-    ga.tracking_id = false
-  end
-end
+
 
 # Build-specific configuration
 configure :build do
@@ -58,11 +54,6 @@ configure :build do
   # activate :relative_assets
 
   activate :smusher
-
-   
-activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-6201025-1'
-end
   
   # Or use a different image path
   # set :http_path, "/Content/images/"

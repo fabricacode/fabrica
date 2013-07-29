@@ -18,7 +18,8 @@
 			// on a touchscreen unless the play event is attached to a user click
 			forceAutoplay:false,
 			controls:true,
-			doLoop:false
+			doLoop:false,
+			container:$('body')
         };
 
         var BigVideo = this,
@@ -40,15 +41,7 @@
 
         var settings = $.extend({}, defaults, options);
 
-        // If only using mp4s and on firefox, use flash fallback
-        var ua = navigator.userAgent.toLowerCase();
-        var isFirefox = ua.indexOf('firefox') != -1;
-        if (settings.useFlashForFirefox && (isFirefox)) {
-			VideoJS.options.techOrder = ['flash'];
-		}
-
-
-		function updateSize() {
+        function updateSize() {
 			var windowW = $(window).width();
 			var windowH = $(window).height();
 			var windowAspect = windowW/windowH;
@@ -69,10 +62,12 @@
 				} else {
 					// is image
 					$('#big-video-image')
-						.width(windowH*mediaAspect)
-						.height(windowH)
-						.css('top',0)
-						.css('left',-(windowH*mediaAspect-windowW)/2);
+						.css({
+							width: 'auto',
+							height: windowH,
+							top:0,
+							left:-(windowH*mediaAspect-windowW)/2
+						});
 				}
 			} else {
 				// wider
@@ -91,10 +86,12 @@
 				} else {
 					// is image
 					$('#big-video-image')
-						.width(windowW)
-						.height(windowW/mediaAspect)
-						.css('top',-(windowW/mediaAspect-windowH)/2)
-						.css('left',0);
+						.css({
+							width: windowW,
+							height: 'auto',
+							top:-(windowW/mediaAspect-windowH)/2,
+							left:0
+						});
 				}
 			}
 		}
@@ -115,7 +112,7 @@
 			markup += '<div id="big-video-control-timer"></div>';
 			markup += '</div>';
 			markup += '</div>';
-			$('body').append(markup);
+			settings.container.append(markup);
 
 			// hide until playVideo
 			$('#big-video-control-container').css('display','none');
@@ -141,7 +138,7 @@
 				e.preventDefault();
 				playControl('toggle');
 			});
-			player.addEvent('timeupdate', function() {
+			player.on('timeupdate', function() {
 				if (!isSeeking && (player.currentTime()/player.duration())) {
 					var currTime = player.currentTime();
 					var minutes = Math.floor(currTime/60);
@@ -172,7 +169,7 @@
 
 		function setUpAutoPlay() {
 			player.play();
-			$('body').off('click',setUpAutoPlay);
+			settings.container.off('click',setUpAutoPlay);
         }
 
 		function nextMedia() {
@@ -182,6 +179,7 @@
         }
 
         function playVideo(source) {
+
 			// clear image
 			$(vidEl).css('display','block');
 			currMediaType = 'video';
@@ -189,11 +187,15 @@
 			isPlaying = true;
 			if (isAmbient) {
 				$('#big-video-control-container').css('display','none');
-				player.volume(0);
+				player.ready(function(){
+					player.volume(0);
+				});
 				doLoop = true;
 			} else {
 				$('#big-video-control-container').css('display','block');
-				player.volume(defaultVolume);
+				player.ready(function(){
+					player.volume(defaultVolume);
+				});
 				doLoop = false;
 			}
 			$('#big-video-image').css('display','none');
@@ -223,16 +225,29 @@
 		BigVideo.init = function() {
 			if (!isInitialized) {
 				// create player
-				$('body').prepend(wrap);
+				settings.container.prepend(wrap);
 				var autoPlayString = settings.forceAutoplay ? 'autoplay' : '';
 				player = $('<video id="'+vidEl.substr(1)+'" class="video-js vjs-default-skin" preload="auto" data-setup="{}" '+autoPlayString+' webkit-playsinline></video>');
 				player.css('position','absolute');
 				wrap.append(player);
-				player = _V_(vidEl.substr(1), { 'controls': false, 'autoplay': true, 'preload': 'auto' });
-				
+
+				var videoTechOrder = ['html5','flash'];
+				// If only using mp4s and on firefox, use flash fallback
+				var ua = navigator.userAgent.toLowerCase();
+				var isFirefox = ua.indexOf('firefox') != -1;
+				if (settings.useFlashForFirefox && (isFirefox)) {
+					videoTechOrder = ['flash', 'html5'];
+				}
+				player = videojs(vidEl.substr(1), { 
+					controls:false, 
+					autoplay:true, 
+					preload:'auto', 
+					techOrder:videoTechOrder
+				});
+
 				// add controls
 				if (settings.controls) initPlayControl();
-				
+
 				// set initial state
 				updateSize();
 				isInitialized = true;
@@ -246,13 +261,13 @@
 					.attr('scale','noborder')
 					.attr('width','100%')
 					.attr('height','100%');
-				
+
 				// set events
 				$(window).resize(function() {
 					updateSize();
 				});
 
-				player.addEvent('loadedmetadata', function(data) {
+				player.on('loadedmetadata', function(data) {
 					if (document.getElementById('big-video-vid_flash_api')) {
 						// use flash callback to get mediaAspect ratio
 						mediaAspect = document.getElementById('big-video-vid_flash_api').vjs_getProperty('videoWidth')/document.getElementById('big-video-vid_flash_api').vjs_getProperty('videoHeight');
@@ -267,8 +282,8 @@
 					if (durSeconds < 10) durSeconds='0'+durSeconds;
 					vidDur = durMinutes+':'+durSeconds;
 				});
-				
-				player.addEvent('ended', function() {
+
+				player.on('ended', function() {
 					if (settings.doLoop) {
 						player.currentTime(0);
 						player.play();
@@ -281,7 +296,7 @@
         };
 
         BigVideo.show = function(source,options) {
-        	if (options === undefined) options = {};
+			if (options === undefined) options = {};
 			isAmbient = options.ambient === true;
 			if (isAmbient || options.doLoop) settings.doLoop = true;
 			if (typeof(source) === 'string') {
@@ -306,6 +321,11 @@
         // Expose Video.js player
         BigVideo.getPlayer = function() {
 			return player;
+        };
+
+        // Expose BigVideoJS player actions (like 'play', 'pause' and so on)
+        BigVideo.triggerPlayer = function(action){
+			playControl(action);
         };
     };
 

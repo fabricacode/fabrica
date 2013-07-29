@@ -1,18 +1,16 @@
-
 //= require  "vendor/jquery"
 //= require  "vendor/BigVideo/js/jquery-ui-1.8.22.custom.min"
 //= require  "vendor/video/video"
 //= require  "vendor/BigVideo/js/jquery.imagesloaded.min"
 //= require  "vendor/BigVideo/js/bigvideo"
 //= require  "vendor/jquery-lifestream/jquery.lifestream"
-//= require  "vendor/stroll/js/stroll"
+
 //= require  "vendor/FitText/jquery.fittext"
-//= require  "vendor/Hook.js-master/mousewheel"
-//= require  "vendor/Hook.js-master/hook"
+//= require  "vendor/sticky/jquery.sticky"
 //= require  "vendor/jquery-timeago/jquery.timeago"
 
 
-
+$("#header-black").sticky({topSpacing:0});
 var landing;
 var isTouch = Modernizr.touch;
 var BV;
@@ -22,7 +20,7 @@ var list = [
 	        service: "facebook_page",
 	        user: "48283858451",
 	        template: {
-			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info"><a href="${link}">${title}</a></p><hr class="secondary" /></div>'
+			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info">${description}</p><hr class="secondary" /></div>'
 			  }
 	      },
 	      
@@ -44,15 +42,7 @@ var list = [
 	      
 	    ];
 $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
-$('#hook').hook({
-	swipeDistance: 50,
-	reloadPage: false,
-	reloadEl: function(){
-		 $('#lifestream ul').fadeOut(400,setupLifeStream);
-		
 
-	}
-});
 $(document).ready(function() {
 
 	landing =  $("#landing");
@@ -65,12 +55,7 @@ $(document).ready(function() {
 
 
 
-  	$(window).resize(function() {
-  		resizeSocialList();
 
-	 });
-	
-	resizeSocialList();
   	setupLifeStream();
 
 	
@@ -112,16 +97,6 @@ function setupLifeStream(){
 	  });
 }
 
- function resizeSocialList(){
- 		stroll.unbind( '#lifestream ul');
- 		var head = $(".head").outerHeight();
- 		var header = $("#header-black").outerHeight();
-		var verticalHeight = $(window).height();
-		var listHeight = verticalHeight - (head + header+35);
-		$("#lifestream").css("height", listHeight);
-  		$("#lifestream ul").css("height", listHeight);
-  		stroll.bind( '#lifestream ul', { live: true } );
-	}
 
 
 
@@ -133,21 +108,23 @@ function feedcallback(){
        		
           var element = $(this),
               date = new Date(element.data("time"));
+             
           if(element.children(".liked").length != 0){
           	element.remove();
           }
           if(element.children("a").length == 0){
-         	element.prepend('<a class="twitter" target="_blank" href="'+element.data("url_complete")+'"><div class="icon white-twitter"></div></a>');
+
+         	element.prepend('<a class="twitter" target="_blank" href="'+element.data("url")+'"><div class="icon white-twitter"></div></a>');
         	}
           element.find("p").append(' <span class="timeago" title="' + date.toISO8601(date) + '">' + date + "</span>");
            
         })
         $("#lifestream .timeago").timeago();
-        $("#lifestream ul").delay(400).fadeIn(800,resizeSocialList);
+        $("#lifestream ul").delay(400).fadeIn(800);
         
         count=0;
       }
-	stroll.bind( '#lifestream ul', { live: true } );
+
 	
 	
 
@@ -164,27 +141,4 @@ $(function() {
 });
 
 
-window.addEventListener('orientationchange', handleOrientation, false);
-function handleOrientation() {
-if (orientation == 0) {
-	resizeSocialList();
-}
-else if (orientation == 90) {
-	resizeSocialList();
-}
-else if (orientation == -90) {
-	resizeSocialList();
-}
-else if (orientation == 180) {
-	resizeSocialList();
-}
-else {
-}
-}
-
-if (Modernizr.mq('only all and (max-width: 480px)')) { 
-
-}else{
-	$("#lifestream").addClass("fade");
-}
 

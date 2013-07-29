@@ -89,6 +89,7 @@
                item.config.service + '">').data( "name", item.config.service )
                                           .data( "url", item.url || "#" )
                                           .data( "time", item.date )
+
                                           .append( item.html )
                                           .appendTo( ul );
           }
@@ -654,9 +655,11 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
 
     if(input.query && input.query.count && input.query.count >0) {
 	  list = input.query.results.rss.channel.item;
+
       j = list.length;
       for( ; i<j; i++) {
         var item = list[i];
+       
         if( $.trim( item.title ) ){
           output.push({
             date: new Date(item["pubDate"]),
@@ -666,6 +669,7 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
         }
       }
     }
+    
     return output;
   };
 
