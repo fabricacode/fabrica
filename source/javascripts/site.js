@@ -36,7 +36,7 @@ var list = [
 	        service: "twitter",
 	        user: "fabrica",
 	        template: {
-			    posted: '<div class="content"><p class="info">{{html tweet}}</p><hr class="secondary" /></div>'
+			    posted: '<div class="content"><p class="info">{{html tweet}}</p></div>'
 			  }
 	      }
 	      
