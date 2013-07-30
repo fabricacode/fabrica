@@ -1,6 +1,9 @@
 body
 	-webkit-overflow-scrolling: touch
 	
+
+#big-video-wrap
+	background-color: black
 	
 .black
 	background: black
@@ -18,7 +21,7 @@ ul#nav.about-black
 		&:active,&.current
 			border-bottom: 4px solid black
 #header-black
-	+background-image(linear-gradient( rgba(0,0,0, 0.8), rgba(0,0,0,0.3)))
+	+background-image(linear-gradient( rgba(0,0,0, 0.8), rgba(0,0,0,0)))
 	width: 100%
 	height: 55px
 	z-index: 10
@@ -27,7 +30,7 @@ ul#nav.about-black
 		+container($total-columns, $break-1, $break-2)
 	
 #header-white
-	+background-image(linear-gradient( rgb(255,255,255) 30%, rgba(255,255,255,0.8)))
+	+background-image(linear-gradient( rgb(255,255,255) 30%, rgba(255,255,255,0)))
 	width: 100%
 	height: 55px
 	z-index: 10
@@ -55,7 +58,7 @@ ul#nav
 		border-bottom: 2px solid white
 		padding-bottom: 2px
 		color: white
-		font-family: "FagoNoBold", helvetica, arial, sans-serif
+		font-family: "Fago", helvetica, arial, sans-serif
 		&:hover,&.current
 			border-bottom: 4px solid white
 		&:active,&.current
@@ -83,15 +86,15 @@ a#logo
 	+container($total-columns, $break-1, $break-2)
 	.bkgr
 		+opacity(.3)
-		+stretch(55px,0,0,0)
+		+stretch(0,0,0,0)
 		position: fixed
 		background-color: black
 	
 	h1
-		font-family: "FagoNoBold", helvetica, arial, sans-serif
+		font-family: "Fago", helvetica, arial, sans-serif
 		margin-top: 0
 	p, a
-		font-family: "FagoNoRegular", helvetica, arial, sans-serif
+		font-family: "Fago", helvetica, arial, sans-serif
 		margin-top: 0
 	p
 		font-weight: 400

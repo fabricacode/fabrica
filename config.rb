@@ -48,12 +48,12 @@ configure :build do
   # Enable cache buster
   activate :cache_buster
 
-  activate :minify_html
+  #activate :minify_html
   
   # Use relative URLs
   # activate :relative_assets
 
-  activate :smusher
+  #activate :smusher
   
   # Or use a different image path
   # set :http_path, "/Content/images/"

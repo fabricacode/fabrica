@@ -20,7 +20,7 @@ var list = [
 	        service: "facebook_page",
 	        user: "48283858451",
 	        template: {
-			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info">${description}</p><hr class="secondary" /></div>'
+			    wall_post: '<a href="${link}" target="_blank"><div class="icon white-facebook"></div></a><div class="content"><p class="info">${title}</p></div>'
 			  }
 	      },
 	      
@@ -28,8 +28,8 @@ var list = [
 	        service: "vimeo",
 	        user: "fabrica",
 	        template: {
-	        	posted: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info"><a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>',
-	        	liked: '<a class="liked" href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p><hr class="secondary" /></div>'
+	        	posted: '<a href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info"><a href="${url}" title="${description}">${title}</a></p></div>',
+	        	liked: '<a class="liked" href="${url}" target="_blank"><div class="icon white-vimeo"></div></a><div class="content"><p class="info">liked <a href="${url}" title="${description}">${title}</a></p></div>'
 	        }
 	      },
 	      {
