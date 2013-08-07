@@ -2182,11 +2182,12 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
    * @return {String} A linkified tweet
    */
   linkify = function( tweet ) {
-
+    // console.log("tweet",tweet);
     var link = function( t ) {
       return t.replace(
         /[a-z]+:\/\/[a-z0-9\-_]+\.[a-z0-9\-_:~%&\?\/.=]+[^:\.,\)\s*$]/ig,
         function( m ) {
+          // console.log("link",m);
           return '<a href="' + m + '">' +
             ( ( m.length > 25 ) ? m.substr( 0, 24 ) + '...' : m ) +
             '</a>';
@@ -2197,6 +2198,7 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       return t.replace(
         /(^|[^\w]+)\@([a-zA-Z0-9_]{1,15})/g,
         function( m, m1, m2 ) {
+           // console.log("at",m, m1, m2);
           return m1 + '<a href="http://twitter.com/' + m2 + '">@' +
             m2 + '</a>';
         }
@@ -2206,12 +2208,13 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       return t.replace(
         /(^|[^\w'"]+)\#([a-zA-Z0-9ÅåÄäÖöØøÆæÉéÈèÜüÊêÛûÎî_]+)/g,
         function( m, m1, m2 ) {
+          // console.log("at",m, m1, m2);
           return m1 + '<a href="http://search.twitter.com/search?q=%23' +
           m2 + '">#' + m2 + '</a>';
         }
       );
     };
-
+    // console.log("complete",hash(at(link(tweet))));
     return hash(at(link(tweet)));
 
   },
@@ -2219,18 +2222,21 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
    * Parse the input from twitter
    */
   parseTwitter = function( input ) {
+    // console.log(input);
     var output = [],
       $xml = $(input);
 
     $xml.find('.js-stream-tweet').each(function(){
       var $tweet = $(this),
-        text = $tweet.find('.js-tweet-text')
+      
+        text = $($tweet.find('.js-tweet-text')
           .find('.tco-ellipsis').remove().end()
-          .text(),
+          .html().replace("</a><a","</a> <a")).text(),
+
         $time = $tweet.find('.tweet-timestamp'),
         created_at = new Date($time.attr('title')),
         url = $time.attr('href');
-
+        
         output.push({
           date: created_at,
           config: config,
@@ -2251,6 +2257,7 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
       encodeURIComponent(yql),
     dataType: 'text',
     success: function( xml ) {
+
       callback(parseTwitter(
           // revert yql beautification
           xml.replace(/(\r\n|\n|\r)/gm, '').replace(/>\s+</gm, '><')
