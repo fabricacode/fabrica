@@ -1,0 +1,44 @@
+#header-white
+	.center
+		%a#logo.black-icon{href: '/'}
+		%ul#nav.about-black
+			%li
+				%a{href: 'http://store.fabrica.it'} Store
+			%li
+				%a{href: '/about.html'} About
+			%li
+				%a.current{href: '/apply.html'} Apply
+.page
+	
+	%h1#headline
+		Fabrica's Voice
+	%hr.primary
+
+	%p.about
+		As you might have heard we are designing a completely new socially integrated platform for Fabrica's website. Inside the new platform you'll be the primary actors, that's why we need your participation to shape this new solution.
+	%p.about
+		Here's a short survey that will help us understand what technological tools and social channels you mostly use.
+	%p.about
+		Don't worry! All the data collected is for internal use only and won't be released outside, you just need to fill up the survey and let us hear your voice!
+	%hr.primary
+	.form 
+		#wufoo-x7p9k5
+
+:javascript
+	var x7p9k5;(function(d, t) {
+	var s = d.createElement(t), options = {
+	'userName':'thankyouforyoursubmission', 
+	'formHash':'x7p9k5', 
+	'autoResize':true,
+	'height':'928',
+	'async':true,
+	'header':'hide', 
+	'ssl':false};
+	s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+	s.onload = s.onreadystatechange = function() {
+	var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+	try { x7p9k5 = new WufooForm();x7p9k5.initialize(options);x7p9k5.display(); } catch (e) {}};
+	var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+	})(document, 'script');
+
+= javascript_include_tag "other"

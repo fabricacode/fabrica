@@ -218,4 +218,16 @@ a#logo
 
 span.redirect
 	unicode-bidi: bidi-override
-	direction: rtl	
+	direction: rtl
+
+#footer	
+	position: relative
+	+span-columns(7,7)
+	ul
+		padding: 10px 0 !important
+		+horizontal-list-container
+		li
+
+			+horizontal-list-item
+			color: white
+			font-family: "Fago", helvetica, arial, sans-serif

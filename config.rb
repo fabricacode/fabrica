@@ -17,6 +17,7 @@ page "/", :layout => :html5
 page "/about.html", :layout => :html5
 page "/apply.html", :layout => :html5
 page "/success.html", :layout => :html5
+page "/socialssurvey.html", :layout => :html5
 page "/404.html", :layout => :html5
 
 
