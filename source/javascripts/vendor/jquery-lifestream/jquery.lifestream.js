@@ -651,6 +651,7 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
    * Parse the input from facebook
    */
   parseFBPage = function( input ) {
+    
     var output = [], list, i = 0, j;
 
     if(input.query && input.query.count && input.query.count >0) {
@@ -669,7 +670,7 @@ $.fn.lifestream.feeds.facebook_page = function( config, callback ) {
         }
       }
     }
-    
+    console.log(input.query.results);
     return output;
   };
 
