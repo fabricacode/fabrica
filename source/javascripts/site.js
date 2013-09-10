@@ -85,6 +85,7 @@ Date.prototype.toISO8601 = function(date) {
       };
 
 function setupLifeStream(){
+	//console.log("setuplifestream");
 	if($('#lifestream ul').length > 0){
 		$('#lifestream ul').remove();
 	}
@@ -95,6 +96,7 @@ function setupLifeStream(){
 		limit: 50,
 	    list: list
 	  });
+	//console.log("lifestream");
 }
 
 
@@ -102,13 +104,16 @@ function setupLifeStream(){
 
 function feedcallback(){
       count++;
+      //console.log("feedbackcall");
       // Check if all the feeds have been loaded
+
       if( count === list.length ){
+      	//console.log(count);
+      	//console.log($("#lifestream li"));
         $("#lifestream li").each(function(){
-       		
           var element = $(this),
               date = new Date(element.data("time"));
-             
+          //console.log(element); 
           if(element.children(".liked").length != 0){
           	element.remove();
           }

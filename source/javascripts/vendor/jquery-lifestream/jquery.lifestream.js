@@ -2222,21 +2222,29 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
    * Parse the input from twitter
    */
   parseTwitter = function( input ) {
-    // console.log(input);
+    //console.log(input);
     var output = [],
       $xml = $(input);
+    
+    //console.log($xml.find('.js-stream-tweet'));
+    var cont=0;
+    var tweets = $xml.find('.js-stream-tweet');
+    
 
-    $xml.find('.js-stream-tweet').each(function(){
-      var $tweet = $(this),
+    tweets.each(function(){
       
-        text = $($tweet.find('.js-tweet-text')
-          .find('.tco-ellipsis').remove().end()
-          .html().replace("</a><a","</a> <a")).text(),
-
-        $time = $tweet.find('.tweet-timestamp'),
-        created_at = new Date($time.attr('title')),
-        url = $time.attr('href');
-        
+      //console.log(cont);
+      
+      var $tweet = $(this);
+      
+      var str = $tweet.find('.js-tweet-text').find('.tco-ellipsis').remove().end().html().replace("</a><a","</a> <a");
+      var strtext = "<p>"+str+"</p>";
+      var text = $(strtext).text();
+ 
+      var $time = $tweet.find('.tweet-timestamp');
+      var created_at = new Date($time.attr('title'));
+      var url = $time.attr('href');
+       
         output.push({
           date: created_at,
           config: config,
@@ -2246,8 +2254,12 @@ $.fn.lifestream.feeds.twitter = function( config, callback ) {
           } ),
           url: 'http://twitter.com/#!/' + config.user
         });
+      
+        //console.log(created_at,config,url);
+        cont++;
     });
-
+    
+    //console.log(output);
     return output;
   };
 
