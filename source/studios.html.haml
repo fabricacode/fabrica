@@ -1,15 +1,14 @@
 #header-white
 	.center
+		#menubg
+			.center#options
+				%a{href: "javascript:goto('/apply.html');"} Apply<br/>
+				%a{href: "javascript:goto('/about.html');"} About<br/>
+				%a.current{href: "javascript:goto('/studios.html');"} Studios<br/>
+				%a{href: "javascript:goto('http://store.fabrica.it');"} Store<br/>
 		%a#logo.black-icon{href: '/'}
-		%ul#nav.about-black
-			%li
-				%a{href: 'http://store.fabrica.it'} Store
-			%li
-				%a.current{href: '/studios.html'} Studios
-			%li
-				%a{href: '/about.html'} About
-			%li
-				%a{href: '/apply.html'} Apply
+		%ul#nav
+			%a#menuopen.menuopen-black-icon{href: 'javascript:toggleMenu();'}
 
 .page
 	
@@ -33,7 +32,7 @@
 			We produce self-directed research projects, in collaboration with partners, that range from experimental aesthetic reflections - design fictions, media, exhibitions, installations - through to service design- and experience design-led engagements with clients, such as health services, clinics, schools and so on. We also produce our own media (books, essays, films, apps) as well as run focused lecture series and symposia. We use Fabrica as a test-bed and experimental environment, as well as creating site-specific installations and exhibitions. Follow our activities on <a href="http://beinganddying.tumblr.com">tumblr</a> and <a href="https://twitter.com/beinganddying">twitter</a>.<br/><br/>
 		.studioright
 			<b>We are looking for:</b><br/>
-			yada yada yada.<br/><br/>
+			Graphic designers, sociologists and anthropologists.<br/><br/>
 
 	.studio
 		%p.studiotitle
@@ -142,4 +141,6 @@
 		.studioright
 			<b>We are looking for:</b><br/>
 			Creative coders, media artists, architects, web developers, electrical engineers, hardware hackers, mobile developers, graphic designers, urban planners and computer scientists.<br/><br/>
+
 = javascript_include_tag "other"
+= javascript_include_tag "menu"
