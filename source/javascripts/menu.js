@@ -10,17 +10,17 @@ function toggleMenu(){
 
 function showMenu(){
 	// fade in bg
-	$('#menubg').fadeIn(500);
+	$('#menubg').fadeIn(300);
 	visible = true;
 }
 
 function hideMenu(){
 	// fade out bg
-	$('#menubg').fadeOut(500);
+	$('#menubg').fadeOut(300);
 	visible = false;
 }
 
 function goto(link){
 	toggleMenu();
-	setTimeout(function(){window.location = link}, 500);
+	setTimeout(function(){window.location = link}, 300);
 }
