@@ -1,11 +1,19 @@
 var visible = false;
 
 $(document).ready(function(){
+
+	$('body').fadeIn(300);
+
+	$("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
+	$("#header-white").sticky({topSpacing:0});
+
 	$('.menulink').click(function(event){
 		event.preventDefault();
 		var link = this.href;
-		$('#menubg').fadeOut(300, function(){window.location = link});
+		//$('#menubg').fadeOut(300, function(){window.location = link});
+		$('body').fadeOut(300, function(){window.location = link});
 	});
+
 });
 
 function toggleMenu(){

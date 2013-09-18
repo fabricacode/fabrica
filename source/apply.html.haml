@@ -1,13 +1,18 @@
 #header-white
 	.center
+		#menubg
+			.center#options
+				%a#menuclose.menuclose-black-icon{href: 'javascript:toggleMenu();'}
+				<br/>
+				%a.menulink.current{href: "/apply.html"} Apply<br/>
+				%a.menulink{href: "/about.html"} About<br/>
+				%a.menulink{href: "/studios.html"} Studios<br/>
+				%a.menulink{href: "http://store.fabrica.it"} Store<br/>
 		%a#logo.black-icon{href: '/'}
-		%ul#nav.about-black
-			%li
-				%a{href: 'http://store.fabrica.it'} Store
-			%li
-				%a{href: '/about.html'} About
-			%li
-				%a.current{href: '/apply.html'} Apply
+		#menu
+			#breadcrumb
+				&gt; Apply
+			%a#menuopen.menuopen-black-icon{href: 'javascript:toggleMenu();'}
 .page
 	
 	%h1#headline
@@ -37,3 +42,4 @@
 	})(document, 'script');
 
 = javascript_include_tag "other"
+= javascript_include_tag "menu"
