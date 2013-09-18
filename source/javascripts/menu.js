@@ -14,6 +14,12 @@ $(document).ready(function(){
 		$('body').fadeOut(300, function(){window.location = link});
 	});
 
+	$('.homelink').click(function(event){
+		event.preventDefault();
+		var link = this.href;
+		$('body').fadeOut(300, function(){window.location = link});
+	});
+
 });
 
 function toggleMenu(){
