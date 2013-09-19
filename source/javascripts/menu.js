@@ -1,5 +1,9 @@
 var visible = false;
 
+
+
+
+
 window.onload = function(event){
 	// look for all menu links and switch their HREF
 	$('.menulink').each(function(i){
