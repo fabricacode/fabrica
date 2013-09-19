@@ -11,8 +11,7 @@ activate :deploy do |deploy|
   deploy.branch = "master"
   deploy.remote = "build"
 end
-
-
+-#TODO-danny fix this
 page "/", :layout => :html5
 page "/about.html", :layout => :html5
 page "/apply.html", :layout => :html5
