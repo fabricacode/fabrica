@@ -1,13 +1,18 @@
 #header-white
 	.center
-		%a#logo.black-icon{href: '/'}
-		%ul#nav.about-black
-			%li
-				%a{href: 'http://store.fabrica.it'} Store
-			%li
-				%a.current{href: '/about.html'} About
-			%li
-				%a{href: '/apply.html'} Apply
+		#menubg.whitemenubg
+			.center#options
+				%a#menuclose.menuclose-black-icon{href: 'javascript:toggleMenu();'}
+				<br/>
+				%a.menulink{href: "/apply.html"} Apply<br/>
+				%a.menulink.current{href: "/about.html"} About<br/>
+				%a.menulink{href: "/studios.html"} Studios<br/>
+				%a.menulink{href: "http://store.fabrica.it"} Store<br/>
+		%a#logo.homelink.black-icon{href: '/'}
+		#menu
+			#breadcrumb
+				&gt; About
+			%a#menuopen.menuopen-black-icon{href: 'javascript:toggleMenu();'}
 
 .page
 	
@@ -39,3 +44,4 @@
 %script{:src => "http://maps.googleapis.com/maps/api/js?key=AIzaSyCKTYhE_M2R4xDkbw52flmdIfni7KlvWmk&sensor=false", :type => "text/javascript"}
 
 = javascript_include_tag "map"
+= javascript_include_tag "menu"

@@ -1,16 +1,19 @@
 #header-black
 	.center
-		%a#logo.white-icon{href: '/'}
-		%ul#nav
-			%li
-				%a{href: 'http://store.fabrica.it'} Store
-			%li
-				%a{href: '/about.html'} About
-			%li
-				%a{href: '/apply.html'} Apply
+		#menubg.blackmenubg
+			.center#optionswhite
+				%a#menuclose.menuclose-white-icon{href: 'javascript:toggleMenu();'}
+				<br/>
+				%a.menulink{href: "/apply.html"} Apply<br/>
+				%a.menulink{href: "/about.html"} About<br/>
+				%a.menulink{href: "/studios.html"} Studios<br/>
+				%a.menulink{href: "http://store.fabrica.it"} Store<br/>
+		%a#logo.homelink.white-icon{href: '/'}
+		#menu
+			%a#menuopen.menuopen-white-icon{href: 'javascript:toggleMenu();'}
 	
 .page.black
-	.bkgr
+	/.bkgr
 	.head
 		%h1#headline
 			Fabrica is a communications research centre.
@@ -37,3 +40,4 @@
 			%li
 				Privacy
 = javascript_include_tag "site"
+= javascript_include_tag "menu"
