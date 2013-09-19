@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" afterPath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/partials/_menu.haml" afterPath="$PROJECT_DIR$/source/partials/_menu.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/apply.html.haml" afterPath="$PROJECT_DIR$/source/apply.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/menu.js" afterPath="$PROJECT_DIR$/source/javascripts/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/socialssurvey.html.haml" afterPath="$PROJECT_DIR$/source/socialssurvey.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fabrica.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379580494111" ignored="false" />
+    <file path="/Dummy.txt" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379598663505" ignored="false" />
     <file path="/a.rxml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993948242" ignored="false" />
     <file path="/a.coffee" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993951424" ignored="false" />
     <file path="/a.feature" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993953120" ignored="false" />
     <file path="/a.html" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993956412" ignored="false" />
     <file path="/a.js" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993960264" ignored="false" />
     <file path="/a.less" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993962972" ignored="false" />
-    <file path="/_320.sass" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379594930171" ignored="false" />
+    <file path="/_320.sass" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379604182263" ignored="false" />
     <file path="$USER_HOME$/Desktop/thedoers_e67a3b7ee10e/source/project_page_alphabot.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379410646682" ignored="false" />
     <file path="$USER_HOME$/Desktop/thedoers_e67a3b7ee10e/source/project_page_amolamusica.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379409936941" ignored="false" />
     <file path="$USER_HOME$/Desktop/thedoers_e67a3b7ee10e/source/project_page_gnammo.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379409970368" ignored="false" />
@@ -26,9 +31,16 @@
     <file path="/studios.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379580116890" ignored="false" />
     <file path="/index.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379581561116" ignored="false" />
     <file path="/success.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379581662112" ignored="false" />
-    <file path="/_menu.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379582907845" ignored="false" />
-    <file path="/*.regexp" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379595143370" ignored="false" />
+    <file path="/_menu.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379601030342" ignored="false" />
+    <file path="/*.regexp" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379603421176" ignored="false" />
     <file path="/_960.sass" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379585592960" ignored="false" />
+    <file path="$PROJECT_DIR$/../alphabotsdev/frontend/Views/Home/Index.cshtml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379598667634" ignored="false" />
+    <file path="$PROJECT_DIR$/../alphabotsdev/frontend/Views/Alphabots/AlphabotsFluoMetal.cshtml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379600992871" ignored="false" />
+    <file path="$PROJECT_DIR$/../alphabotsdev/frontend/Views/Play/Metal.cshtml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379600992871" ignored="false" />
+    <file path="$PROJECT_DIR$/../alphabotsdev/frontend/Views/Home/Download.cshtml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379600194520" ignored="false" />
+    <file path="$PROJECT_DIR$/../alphabotsdev/frontend/Views/Home/Unlock.cshtml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379600992871" ignored="false" />
+    <file path="/apply.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379602618376" ignored="false" />
+    <file path="/menu.js" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379603377578" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,32 +74,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/index.html.haml">
+      <file leaf-file-name="success.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/success.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="2.8333333">
+            <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="other.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/javascripts/other.js">
+      <file leaf-file-name="menu.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="19" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="42" column="25" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_menu.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
+      <file leaf-file-name="site.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="24" selection-start="420" selection-end="428" vertical-scroll-proportion="-8.125">
+            <state line="49" column="79" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1379594531000" expanded="true" signature="10:320" placeholder="#menubg" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,43 +106,34 @@
       <file leaf-file-name="_320.sass" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="13" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.37724552">
+            <state line="52" column="11" selection-start="1198" selection-end="1198" vertical-scroll-proportion="-0.37656903">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_640.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_640.sass">
+      <file leaf-file-name="_menu.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="10" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+            <state line="5" column="15" selection-start="112" selection-end="120" vertical-scroll-proportion="-3.125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_960.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_960.sass">
+      <file leaf-file-name="socialssurvey.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/socialssurvey.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="25" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
+            <state line="11" column="13" selection-start="368" selection-end="368" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_custom_mixin.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_custom_mixin.sass">
+      <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_font-awesome.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_font-awesome.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -140,6 +141,15 @@
       </file>
       <file leaf-file-name="about.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/about.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apply.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
               <folding />
@@ -165,11 +175,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/source/layouts/html5.haml" />
-        <option value="$PROJECT_DIR$/source/apply.html.haml" />
-        <option value="$PROJECT_DIR$/source/socialssurvey.html.haml" />
-        <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
         <option value="$PROJECT_DIR$/source/javascripts/other.js" />
         <option value="$PROJECT_DIR$/source/studios.html.haml" />
         <option value="$PROJECT_DIR$/source/404.html.haml" />
@@ -179,7 +185,11 @@
         <option value="$PROJECT_DIR$/source/javascripts/site.js" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_640.sass" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_960.sass" />
+        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/source/partials/_menu.haml" />
+        <option value="$PROJECT_DIR$/source/socialssurvey.html.haml" />
+        <option value="$PROJECT_DIR$/source/apply.html.haml" />
+        <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
       </list>
     </option>
@@ -623,18 +633,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32896462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32848486" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.6710354" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26040173" sideWeight="0.69575757" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682927" sideWeight="0.6977025" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682927" sideWeight="0.67151517" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30229747" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30229747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32848486" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3030303" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -705,80 +715,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/humans.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/404.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/success.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="79" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/about.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="2.8333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/other.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/studios.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_640.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="10" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
@@ -800,25 +736,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.91793895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="44" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_960.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="25" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/success.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/studios.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/socialssurvey.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="368" selection-end="368" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/about.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="79" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="25" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="420" selection-end="428" vertical-scroll-proportion="-8.125">
-          <folding>
-            <marker date="1379594531000" expanded="true" signature="10:320" placeholder="#menubg" />
-          </folding>
+        <state line="5" column="15" selection-start="112" selection-end="120" vertical-scroll-proportion="-3.125">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="13" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.37724552">
+        <state line="52" column="11" selection-start="1198" selection-end="1198" vertical-scroll-proportion="-0.37656903">
           <folding />
         </state>
       </provider>

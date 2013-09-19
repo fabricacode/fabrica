@@ -26,8 +26,8 @@ ul#nav.about-black
 
   &.black
     +background-image(linear-gradient( rgba(0,0,0, 0.8), rgba(0,0,0,0)))
-    #menubg
 
+    #menubg
       background: rgba(0, 0, 0, 0.9)
     #breadcrumb
       color: white
@@ -43,10 +43,14 @@ ul#nav.about-black
     #options
       a
         color: white
+        border-bottom: 4px solid white
+        &:hover
+          border-bottom: 8px solid white
+        &:active
+          border-bottom: 8px solid white
   &.white
     +background-image(linear-gradient( rgb(255,255,255) 30%, rgba(255,255,255,0)))
     #menubg
-
       background: rgba(255, 255, 255, 0.95)
     #breadcrumb
       color: black
@@ -61,8 +65,13 @@ ul#nav.about-black
       +assign-sprite-background($assets)
       +sprite($assets, "x_icon_black", true)
     #options
-      a
+      a.menulink
         color: black
+        border-bottom: 4px solid black
+        &:hover
+          border-bottom: 8px solid black
+        &:active
+          border-bottom: 8px solid black
 
 
 #menubg
@@ -85,23 +94,24 @@ ul#nav.about-black
     float: left
 
 #options
+  display: none
+  z-index: 10
   position: absolute
-  top: 0
+  top: 15px
+  right: 0.625em
   text-align: right
   line-height: px-to-em(68px,16px)
+
   a
 
     text-transform: uppercase
     font-weight: 700
     font-size: px-to-em(72px,16px)
     text-decoration: none
-    border-bottom: 4px solid black
+
     padding-bottom: 0px
     font-family: "Fago", helvetica, arial, sans-serif
-    &:hover
-      border-bottom: 8px solid black
-    &:active
-      border-bottom: 8px solid black
+
 
 
 

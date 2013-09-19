@@ -33,11 +33,13 @@ function toggleMenu(){
 function showMenu(){
     // fade in bg
     $('#menubg').fadeIn(300);
+    $('#options').fadeIn(400);
     visible = true;
 }
 
 function hideMenu(){
     // fade out bg
-    $('#menubg').fadeOut(300);
+    $('#menubg').fadeOut(400);
+    $('#options').fadeOut(300);
     visible = false;
 }

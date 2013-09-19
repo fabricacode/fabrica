@@ -158,3 +158,4 @@ DEPENDENCIES
   mini_magick
   oily_png
   susy
+  wdm (~> 0.1.0)
