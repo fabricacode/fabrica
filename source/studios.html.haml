@@ -1,159 +1,145 @@
-#header-white
-	.center
-		#menubg.whitemenubg
-			.center#options
-				%a#menuclose.menuclose-black-icon{href: 'javascript:toggleMenu();'}
-				<br/>
-				%a.menulink{href: "/apply.html"} Apply<br/>
-				%a.menulink{href: "/about.html"} About<br/>
-				%a.menulink.current{href: "/studios.html"} Studios<br/>
-				%a.menulink{href: "http://store.fabrica.it"} Store<br/>
-		%a#logo.homelink.black-icon{href: '/'}
-		#menu
-			#breadcrumb
-				&gt; Studios
-			%a#menuopen.menuopen-black-icon{href: 'javascript:toggleMenu();'}
+#header.white
+  = partial "partials/menu"
 
 .page
-	
-	%h1#headline
-		We work thematically and collaborate transdisciplinarily.
-	%hr.primary
-	%div
-		%p.about.columns
-			Our work is created in studio areas which individually investigate projects along themes. Studio areas are dynamic and take advantage of quick bursts of project development. Each studio investigates a topic for a limited amount of time and then moves on. Since themes are continually changing our researchers continually change as well to accommodate the new skills required for project investigation. Teams shift fluidly and grow and shrink according to the current initiatives. Each studio is run by a studio lead who acts as the principal investigator of that subject matter.
+  %h1#headline
+    We work thematically and collaborate transdisciplinarily.
+  %hr.primary
+  %div
+    %p.about.columns
+      Our work is created in studio areas which individually investigate projects along themes. Studio areas are dynamic and take advantage of quick bursts of project development. Each studio investigates a topic for a limited amount of time and then moves on. Since themes are continually changing our researchers continually change as well to accommodate the new skills required for project investigation. Teams shift fluidly and grow and shrink according to the current initiatives. Each studio is run by a studio lead who acts as the principal investigator of that subject matter.
 
-	.studio
-		%p.studiotitle
-			<b>Being and Dying</b>
-		%p
-			<b>Ivor Williams</b>
+  .studio
+    %p.studiotitle
+      <b>Being and Dying</b>
+    %p
+      <b>Ivor Williams</b>
 
-	.studioinfo
-		.studioleft
-			Researching and investigating current approaches to dying, through experimental design focusing on end-of-life care, assisted dying and suicide. Including broader issues around health and the environment, preventative and holistic healthcare, to challenge the notion of death in stark opposition to life. Utilising a wide range of approaches and perspectives, projects will develop new dialogues and models to engage with some of the most deep-rooted taboos in contemporary society.<br/> 
-			<br/>
-			Using Fabrica as a test-bed and experimental environment. Producing books, essays, films, apps, self-directed research projects – in collaboration with partners – that range from experimental aesthetic reflections – design fictions, media, exhibitions, installations – through to service design- and experience design-led engagements with clients, such as health services, clinics, schools. Follow our activities on <a href="http://beinganddying.tumblr.com">tumblr</a> and <a href="https://twitter.com/beinganddying">twitter</a>.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Interaction designers, writers, coders, film makers and graphic designers.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      Researching and investigating current approaches to dying, through experimental design focusing on end-of-life care, assisted dying and suicide. Including broader issues around health and the environment, preventative and holistic healthcare, to challenge the notion of death in stark opposition to life. Utilising a wide range of approaches and perspectives, projects will develop new dialogues and models to engage with some of the most deep-rooted taboos in contemporary society.<br/>
+      <br/>
+      Using Fabrica as a test-bed and experimental environment. Producing books, essays, films, apps, self-directed research projects – in collaboration with partners – that range from experimental aesthetic reflections – design fictions, media, exhibitions, installations – through to service design- and experience design-led engagements with clients, such as health services, clinics, schools. Follow our activities on <a href="http://beinganddying.tumblr.com">tumblr</a> and <a href="https://twitter.com/beinganddying">twitter</a>.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Interaction designers, writers, coders, film makers and graphic designers.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>Campaign</b>
-		%p
-			<b>Erik Ravelo</b>
+  .studio
+    %p.studiotitle
+      <b>Campaign</b>
+    %p
+      <b>Erik Ravelo</b>
 
-	.studioinfo
-		.studioleft
-			Exploring the emerging DNA of 21st century social movements, enterprises and cultures, especially working with United Colors of Benetton. Addressing social and cultural issues; wars, censorship, diversity, politics, we explore how to use arresting imagery to capture attention, and then lead people towards tools, which build genuine capacity and resilience.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Graphic designers, photographers, film makers, writers, coders and advertising creatives.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      Exploring the emerging DNA of 21st century social movements, enterprises and cultures, especially working with United Colors of Benetton. Addressing social and cultural issues; wars, censorship, diversity, politics, we explore how to use arresting imagery to capture attention, and then lead people towards tools, which build genuine capacity and resilience.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Graphic designers, photographers, film makers, writers, coders and advertising creatives.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>COLORS</b>
-		%p
-			<b>Patrick Waterhouse</b>
+  .studio
+    %p.studiotitle
+      <b>COLORS</b>
+    %p
+      <b>Patrick Waterhouse</b>
 
-	.studioinfo
-		.studioleft
-			COLORS magazine looks at social issues by following them around the world and treating everything with the same naivety to give a glimpse of what's going on through first-person interviews and photography.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Graphic designers, illustrators, photographers, writers and web developers.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      COLORS magazine looks at social issues by following them around the world and treating everything with the same naivety to give a glimpse of what's going on through first-person interviews and photography.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Graphic designers, illustrators, photographers, writers and web developers.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>Document</b>
-		%p
-			<b>Ries Straver</b>
+  .studio
+    %p.studiotitle
+      <b>Document</b>
+    %p
+      <b>Ries Straver</b>
 
-	.studioinfo
-		.studioleft
-			The Document Studio focuses on documentary and documentation as an integral part of the creative process. We employ the languages and techniques of audio-visual documentation and digital storytelling to reflect on current social and cultural issues. We investigate the blurry line between fiction and non-fiction. We document with the aim to understand, but we use documentary to pose questions rather than give simplistic answers.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Film makers, writers, interaction designers, graphic designers, motion graphics artists, coders and industrial designers.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      The Document Studio focuses on documentary and documentation as an integral part of the creative process. We employ the languages and techniques of audio-visual documentation and digital storytelling to reflect on current social and cultural issues. We investigate the blurry line between fiction and non-fiction. We document with the aim to understand, but we use documentary to pose questions rather than give simplistic answers.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Film makers, writers, interaction designers, graphic designers, motion graphics artists, coders and industrial designers.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>Making and Designing</b>
-		%p
-			<b>Sam Baron</b>
+  .studio
+    %p.studiotitle
+      <b>Making and Designing</b>
+    %p
+      <b>Sam Baron</b>
 
-	.studioinfo
-		.studioleft
-			Our Making and Designing studio uses design to research, articulate and convey and evoke stories about people and places. The cultures and practices of making are also explored through this studio, yet the focus is on producing artifacts and events in order to understand and connect. Often using object-making and image-making, the studio’s output includes exhibitions, objects, books, events.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Product designers, graphic designers, illustrators, photographers, coders, hardware hackers, interaction designers and film makers.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      Our Making and Designing studio uses design to research, articulate and convey and evoke stories about people and places. The cultures and practices of making are also explored through this studio, yet the focus is on producing artifacts and events in order to understand and connect. Often using object-making and image-making, the studio’s output includes exhibitions, objects, books, events.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Product designers, graphic designers, illustrators, photographers, coders, hardware hackers, interaction designers and film makers.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>Networked Politics</b>
-		%p
-			<b>Marco Ferrari and Joseph Grima</b>
+  .studio
+    %p.studiotitle
+      <b>Networked Politics</b>
+    %p
+      <b>Marco Ferrari and Joseph Grima</b>
 
-	.studioinfo
-		.studioleft
-			Our Networked Politics studio explores how our various cultures of decision-making, from formal politics to informal protest, are radically changed in the age of the network. We are looking at the changing nature of protest - Occupy, Arab Spring, Istanbul, Wikileaks and beyond -  including the relationship between physical spaces, cities and contemporary digital tools. We're interested in the shifting modes and possibilities of contemporary decision-making (currencies such as Bitcoin; cultures such as open source and radical transparencies; governance models like liquid democracy, crowd-funding and crowdsourcing; forms of organisation such as communes and autonomous states).<br/>
-			<br/>
-			NetPol creates exhibitions, media, apps and artifacts in order to articulate research about how our various cultures of decision-making, from formal politics to informal protest, are being transformed as a result of The Network. We work on design and communications projects with clients from governments to galleries, in order to effect real change, as well as producing our own media, documentaries, platforms and objects, software, scenarios and events.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Interaction designers, coders, writers, producers, film makers, architects, urbanists and photographers.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      Our Networked Politics studio explores how our various cultures of decision-making, from formal politics to informal protest, are radically changed in the age of the network. We are looking at the changing nature of protest - Occupy, Arab Spring, Istanbul, Wikileaks and beyond -  including the relationship between physical spaces, cities and contemporary digital tools. We're interested in the shifting modes and possibilities of contemporary decision-making (currencies such as Bitcoin; cultures such as open source and radical transparencies; governance models like liquid democracy, crowd-funding and crowdsourcing; forms of organisation such as communes and autonomous states).<br/>
+      <br/>
+      NetPol creates exhibitions, media, apps and artifacts in order to articulate research about how our various cultures of decision-making, from formal politics to informal protest, are being transformed as a result of The Network. We work on design and communications projects with clients from governments to galleries, in order to effect real change, as well as producing our own media, documentaries, platforms and objects, software, scenarios and events.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Interaction designers, coders, writers, producers, film makers, architects, urbanists and photographers.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>New Journalism</b>
-		%p
-			<b>Enrico Bossan</b>
+  .studio
+    %p.studiotitle
+      <b>New Journalism</b>
+    %p
+      <b>Enrico Bossan</b>
 
-	.studioinfo
-		.studioleft
-			Journalism continues to radically transform, its dynamics — at the mainstream and the edges — reinvented every year throughout the first decades of the 21st century. Yet some patterns also persist. This studio explores the practice, culture and meaning of journalism in our time, through projects. Our particular take on journalism is in being, as the original strapline of Colors had it, “about the rest of the world”, and we understand that “otherness” through culture, geography, time and perspective.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Photographers, graphic designers and writers.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      Journalism continues to radically transform, its dynamics — at the mainstream and the edges — reinvented every year throughout the first decades of the 21st century. Yet some patterns also persist. This studio explores the practice, culture and meaning of journalism in our time, through projects. Our particular take on journalism is in being, as the original strapline of Colors had it, “about the rest of the world”, and we understand that “otherness” through culture, geography, time and perspective.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Photographers, graphic designers and writers.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>Sound Interaction</b>
-		%p
-			<b>Francesco Novara</b>
+  .studio
+    %p.studiotitle
+      <b>Sound Interaction</b>
+    %p
+      <b>Francesco Novara</b>
 
-	.studioinfo
-		.studioleft
-			We explore the relationship between sound and objects, spaces, people and interactions. We use sound as a starting point, but the outcome might be objects, media, events and artefacts. Sound is one of the least understood yet most powerful senses (you can easily close your eyes but not easily close your ears) and we develop projects that articulate the relationship between sound and communication.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Musicians, sound artists, coders, interaction designers and film makers.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      We explore the relationship between sound and objects, spaces, people and interactions. We use sound as a starting point, but the outcome might be objects, media, events and artefacts. Sound is one of the least understood yet most powerful senses (you can easily close your eyes but not easily close your ears) and we develop projects that articulate the relationship between sound and communication.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Musicians, sound artists, coders, interaction designers and film makers.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
-	.studio
-		%p.studiotitle
-			<b>Urban Codes</b>
-		%p
-			<b>Aaron Siegel</b>
+  .studio
+    %p.studiotitle
+      <b>Urban Codes</b>
+    %p
+      <b>Aaron Siegel</b>
 
-	.studioinfo
-		.studioleft
-			Investigating the dense spaces where people collect and live out their lives. A focus on how people interact with each other and their environment, the norms and standards of living in an urban setting, navigation and communication in urban environments, and the types of artifacts people leave behind both physically and virtually.<br/>
-			<br/>
-			Subjects of research include sensing environmental characteristics, visualizing data collected and produced by people and things in urban areas, transportation and communication networks, graffiti and street art culture, activating public space for social engagement and play, and homelessness and nomadic living.<br/><br/>
-		.studioright
-			<b>We are looking for:</b><br/>
-			Creative coders, media artists, architects, web developers, electrical engineers, hardware hackers, mobile developers, graphic designers, urbanists and computer scientists.<br/><br/>
-			<a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
+  .studioinfo
+    .studioleft
+      Investigating the dense spaces where people collect and live out their lives. A focus on how people interact with each other and their environment, the norms and standards of living in an urban setting, navigation and communication in urban environments, and the types of artifacts people leave behind both physically and virtually.<br/>
+      <br/>
+      Subjects of research include sensing environmental characteristics, visualizing data collected and produced by people and things in urban areas, transportation and communication networks, graffiti and street art culture, activating public space for social engagement and play, and homelessness and nomadic living.<br/><br/>
+    .studioright
+      <b>We are looking for:</b><br/>
+      Creative coders, media artists, architects, web developers, electrical engineers, hardware hackers, mobile developers, graphic designers, urbanists and computer scientists.<br/><br/>
+      <a href="/apply.html">Apply Now</a> &rarr;<br/><br/>
 
 = javascript_include_tag "other"
 = javascript_include_tag "menu"

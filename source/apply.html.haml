@@ -1,45 +1,32 @@
 #header-white
-	.center
-		#menubg.whitemenubg
-			.center#options
-				%a#menuclose.menuclose-black-icon{href: 'javascript:toggleMenu();'}
-				<br/>
-				%a.menulink.current{href: "/apply.html"} Apply<br/>
-				%a.menulink{href: "/about.html"} About<br/>
-				%a.menulink{href: "/studios.html"} Studios<br/>
-				%a.menulink{href: "http://store.fabrica.it"} Store<br/>
-		%a#logo.homelink.black-icon{href: '/'}
-		#menu
-			#breadcrumb
-				&gt; Apply
-			%a#menuopen.menuopen-black-icon{href: 'javascript:toggleMenu();'}
+  = partial "partials/menu"
 .page
-	
-	%h1#headline
-		Applications are accepted throughout the year.
-	%hr.primary
 
-	%p.about
-		We are looking for interesting and interested people to become researchers at Fabrica. You might be a coder, graphic designer, musician, industrial designer, filmmaker, motion graphics artist, writer, illustrator, interaction designer, animator, some combination of these or even something else. You must be 25 years old or younger. Please see the Facebook pages for <a href="http://www.facebook.com/pages/Fabrica/48283858451">Fabrica</a> and <a href="http://www.facebook.com/colorsmagazine">Colors</a> for more information about the projects we are currently working on.
-	%hr.primary
-	.form 
-		#wufoo-m7x3z9
+  %h1#headline
+    Applications are accepted throughout the year.
+  %hr.primary
+
+  %p.about
+    We are looking for interesting and interested people to become researchers at Fabrica. You might be a coder, graphic designer, musician, industrial designer, filmmaker, motion graphics artist, writer, illustrator, interaction designer, animator, some combination of these or even something else. You must be 25 years old or younger. Please see the Facebook pages for <a href="http://www.facebook.com/pages/Fabrica/48283858451">Fabrica</a> and <a href="http://www.facebook.com/colorsmagazine">Colors</a> for more information about the projects we are currently working on.
+  %hr.primary
+  .form
+    #wufoo-m7x3z9
 :javascript
-	var m7x3z9;(function(d, t) {
-	var s = d.createElement(t), options = {
-	'userName':'thankyouforyoursubmission', 
-	'formHash':'m7x3z9', 
-	'autoResize':true,
-	'height':'928',
-	'async':true,
-	'header':'hide', 
-	'ssl':false};
-	s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-	s.onload = s.onreadystatechange = function() {
-	var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-	try { m7x3z9 = new WufooForm();m7x3z9.initialize(options);m7x3z9.display(); } catch (e) {}};
-	var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-	})(document, 'script');
+  var m7x3z9;(function(d, t) {
+  var s = d.createElement(t), options = {
+  'userName':'thankyouforyoursubmission',
+  'formHash':'m7x3z9',
+  'autoResize':true,
+  'height':'928',
+  'async':true,
+  'header':'hide',
+  'ssl':false};
+  s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+  s.onload = s.onreadystatechange = function() {
+  var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+  try { m7x3z9 = new WufooForm();m7x3z9.initialize(options);m7x3z9.display(); } catch (e) {}};
+  var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+  })(document, 'script');
 
 = javascript_include_tag "other"
 = javascript_include_tag "menu"

@@ -9,8 +9,10 @@
 //= require  "vendor/sticky/jquery.sticky"
 //= require  "vendor/jquery-timeago/jquery.timeago"
 
+//= require  "menu"
 
-$("#header-black").sticky({topSpacing:0});
+
+
 var landing;
 var isTouch = Modernizr.touch;
 var BV;
@@ -41,10 +43,11 @@ var list = [
 	      }
 	      
 	    ];
-$("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
+
 
 $(document).ready(function() {
-
+    $("#header").sticky({topSpacing:0});
+    $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
 	landing =  $("#landing");
 
 	landing.click(function(e){

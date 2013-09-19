@@ -1,21 +1,14 @@
-#header-white
-	.center
-		%a#logo.black-icon{href: '/'}
-		%ul#nav.about-black
-			%li
-				%a{href: '/about.html'} About
-			%li
-				%a{href: '/apply.html'} Apply
+#header.white
+  = partial "partials/menu"
 .page
-	
-	%h1#headline
-		Thank you!
-	%hr.primary
-	%p.about 
-		You might have received a confirmation email on your inbox.
-		We will get in contact with you as soon as your submission get processed. This may take few weeks: hold on, and keep cultivating your talent!
-	%hr.primary
+
+  %h1#headline
+    Thank you!
+  %hr.primary
+  %p.about
+    You might have received a confirmation email on your inbox.
+    We will get in contact with you as soon as your submission get processed. This may take few weeks: hold on, and keep cultivating your talent!
+  %hr.primary
 
 = javascript_include_tag "other"
 
-	

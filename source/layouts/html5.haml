@@ -3,49 +3,49 @@
 /[if IE 7] <html class="no-js lt-ie9 lt-ie8">
 /[if IE 8] <html class="no-js lt-ie9">
 %html.no-js
-	%head
-		%meta{:charset => "utf-8"}
-		%meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
-		-# To set titles and descriptions globally and for each individual page, see /DOCS.md
-		%title Fabrica
-		%meta{:content => page_description, :name => "description"}
-		%meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
-		%meta{:content => "yes", :name =>"apple-mobile-web-app-capable"}
-		%meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}
-		
-		%meta{:property=>"og:title", :content=>"Fabrica"}
-		%meta{:property=>"og:type", :content=>"website"}
-		%meta{:property=>"og:url", :content=>"http://fabrica.it"}
-		%meta{:property=>"og:image", :content=>"http://fabrica.it/images/fabrica_fb.png"}
-		%meta{:property=>"og:site_name", :content=>"Fabrica"}
-		%meta{:property=>"og:description", :content=>"Applied Arts Center"}
-		%meta{:property=>"fb:app_id", :content=>"351002218351232"}
-		
-		<!-- Favicons and touch icons -->
-		<!-- For retina-display iPads -->
-		%link{ :href=>"apple-touch-icon-144x144-precomposed.png", :rel=>"apple-touch-icon-precomposed", :sizes=>"144x144", :type=>"image/png" }
-		<!-- For retina-display iPhones -->
-		%link{ :href=>"apple-touch-icon-144x144-precomposed.png", :rel=>"apple-touch-icon-precomposed", :sizes=>"114x114", :type=>"image/png" }
-		<!-- For iPad 1 -->
-		%link{ :href=>"apple-touch-icon-72x72-precomposed.png", :rel=>"apple-touch-icon-precomposed", :sizes=>"72x72", :type=>"image/png" }
-		<!-- For iPhone 3G, iPod Touch and Android -->
-		%link{ :href=>"apple-touch-icon-57x57-precomposed.png", :rel=>"apple-touch-icon-precomposed", :type=>"image/png" }
-		<!-- For Nokia -->
-		%link{ :href=>"apple-touch-icon-original.png", :rel=>"shortcut icon" }
-		<!-- For everything else -->
-		%link{ :href=>"favicon.png", :rel=>"shortcut icon", :type=>"image/png" }
-		%link{ :href=>"favicon.ico", :rel=>"shortcut icon", :type=>"image/x-icon" }
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    -# To set titles and descriptions globally and for each individual page, see /DOCS.md
+    %title Fabrica
+    %meta{:content => page_description, :name => "description"}
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
+    %meta{:content => "yes", :name =>"apple-mobile-web-app-capable"}
+    %meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}
 
-		<!-- For Google+ bidirectional linking -->
-		%link{ :href=>"https://plus.google.com/103695675753742819996", :rel=>"publisher" }
-		
-		= javascript_include_tag "vendor/modernizr"
+    %meta{:property=>"og:title", :content=>"Fabrica"}
+    %meta{:property=>"og:type", :content=>"website"}
+    %meta{:property=>"og:url", :content=>"http://fabrica.it"}
+    %meta{:property=>"og:image", :content=>"http://fabrica.it/images/fabrica_fb.png"}
+    %meta{:property=>"og:site_name", :content=>"Fabrica"}
+    %meta{:property=>"og:description", :content=>"Applied Arts Center"}
+    %meta{:property=>"fb:app_id", :content=>"351002218351232"}
 
-		= stylesheet_link_tag "site"
-		:javascript
-			var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
-			analytics.load("x954jcj75w");
-		
-	%body
-		= yield
-		
+    <!-- Favicons and touch icons -->
+    <!-- For retina-display iPads -->
+    %link{ :href=>"apple-touch-icon-144x144-precomposed.png", :rel=>"apple-touch-icon-precomposed", :sizes=>"144x144", :type=>"image/png" }
+    <!-- For retina-display iPhones -->
+    %link{ :href=>"apple-touch-icon-144x144-precomposed.png", :rel=>"apple-touch-icon-precomposed", :sizes=>"114x114", :type=>"image/png" }
+    <!-- For iPad 1 -->
+    %link{ :href=>"apple-touch-icon-72x72-precomposed.png", :rel=>"apple-touch-icon-precomposed", :sizes=>"72x72", :type=>"image/png" }
+    <!-- For iPhone 3G, iPod Touch and Android -->
+    %link{ :href=>"apple-touch-icon-57x57-precomposed.png", :rel=>"apple-touch-icon-precomposed", :type=>"image/png" }
+    <!-- For Nokia -->
+    %link{ :href=>"apple-touch-icon-original.png", :rel=>"shortcut icon" }
+    <!-- For everything else -->
+    %link{ :href=>"favicon.png", :rel=>"shortcut icon", :type=>"image/png" }
+    %link{ :href=>"favicon.ico", :rel=>"shortcut icon", :type=>"image/x-icon" }
+
+    <!-- For Google+ bidirectional linking -->
+    %link{ :href=>"https://plus.google.com/103695675753742819996", :rel=>"publisher" }
+
+    = javascript_include_tag "vendor/modernizr"
+
+    = stylesheet_link_tag "site"
+    :javascript
+      var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
+      analytics.load("x954jcj75w");
+
+  %body
+    = yield
+

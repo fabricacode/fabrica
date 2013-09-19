@@ -1,16 +1,5 @@
-#header-black
-	.center
-		#menubg.blackmenubg
-			.center#optionswhite
-				%a#menuclose.menuclose-white-icon{href: 'javascript:toggleMenu();'}
-				<br/>
-				%a.menulink{href: "/apply.html"} Apply<br/>
-				%a.menulink{href: "/about.html"} About<br/>
-				%a.menulink{href: "/studios.html"} Studios<br/>
-				%a.menulink{href: "http://store.fabrica.it"} Store<br/>
-		%a#logo.homelink.white-icon{href: '/'}
-		#menu
-			%a#menuopen.menuopen-white-icon{href: 'javascript:toggleMenu();'}
+#header.black
+	= partial "partials/menu"
 	
 .page.black
 	/.bkgr
