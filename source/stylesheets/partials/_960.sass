@@ -1,49 +1,54 @@
 +at-breakpoint($break-2)
-	#header.white, #header.black
-		.center
-			+pre(2)
-			+post(2)
-	.page
-		+pre(2)
-		+post(2)
-		ul.lifestream
-			+span-columns(16,16)
-			li
-				+span-columns(16,16)
-				.content
-					+span-columns(10,16)
-					float: left !important
-					p
-						font-size: px-to-em(22px,16px)
-						line-height: px-to-em(17px,16px)
-		
-	
-	.columns
-		+span-columns(16,16)
-		
-		+column-count(2)
-		$gap: gutter(16)
-		+column-gap($gap)
-		$col: columns(6,12)
-		+column-width($col)
-		
+  #header.white, #header.black
+    .center
+      +pre(2)
+      +post(2)
+  .page
+    +pre(2)
+    +post(2)
+    ul.lifestream
+      +span-columns(16,16)
+      li
+        +span-columns(16,16)
+        .content
+          +span-columns(10,16)
+          float: left !important
+          p
+            font-size: px-to-em(22px,16px)
+            line-height: px-to-em(17px,16px)
 
-	ul#nav
-		+span-columns(15 omega,16)
-	#menu
-		+span-columns(15 omega,16)
-	a#logo
-		+span-columns(1,16)
-	
-	.gmap
-		+span-columns(16,16)
 
-	.studioinfo
-		+span-columns(16,16)
+  .columns
+    +span-columns(16,16)
 
-	.studioleft
-		+span-columns(8,16)
+    +column-count(2)
+    $gap: gutter(16)
+    +column-gap($gap)
+    $col: columns(6,12)
+    +column-width($col)
 
-	.studioright
-		+span-columns(8,16)
+  #options
+    li
+      height: 100px
+    a
+      font-size: px-to-em(72px,16px)
+
+  ul#nav
+    +span-columns(15 omega,16)
+  #menu
+    +span-columns(15 omega,16)
+  a#logo
+    +span-columns(1,16)
+
+  .gmap
+    +span-columns(16,16)
+
+  .studioinfo
+    +span-columns(16,16)
+
+  .studioleft
+    +span-columns(8,16)
+
+  .studioright
+    +span-columns(8,16)
 

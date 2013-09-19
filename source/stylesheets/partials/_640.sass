@@ -1,50 +1,56 @@
 +at-breakpoint($break-1)
-	#header.white
-		.center
-			+pre(1)
-			+post(1)
-	.page
-		+pre(1)
-		+post(1)
-		ul.lifestream
-		
-			li
-				+span-columns(10,10)
-				.content
-					+span-columns(9 omega,10)
-					float: left !important
-					p
-						font-size: px-to-em(20px,16px)
-						line-height: px-to-em(16px,16px)
-	.columns
-		+span-columns(10,10)
-		
-		+column-count(2)
-		$gap: gutter(10)
-		+column-gap($gap)
-		$col: columns(5,10)
-		+column-width($col)
-		+hyphenation
-		
-		
-	#lifestream
-		+span-columns(10,10)
-	ul#nav
-		+span-columns(9 omega,10)
-	#menu
-		+span-columns(9 omega,10)
-	a#logo
-		+span-columns(1,10)
-	
-	
-	.gmap
-		+span-columns(8,10)
+  #header.white
+    .center
+      +pre(1)
+      +post(1)
+  .page
+    +pre(1)
+    +post(1)
+    ul.lifestream
 
-	.studioinfo
-		+span-columns(10,10)
+      li
+        +span-columns(10,10)
+        .content
+          +span-columns(9 omega,10)
+          float: left !important
+          p
+            font-size: px-to-em(20px,16px)
+            line-height: px-to-em(16px,16px)
+  .columns
+    +span-columns(10,10)
 
-	.studioleft
-		+span-columns(5,10)
+    +column-count(2)
+    $gap: gutter(10)
+    +column-gap($gap)
+    $col: columns(5,10)
+    +column-width($col)
+    +hyphenation
 
-	.studioright
-		+span-columns(5,10)
+  #options
+    li
+      height: 64px
+    a
+      font-size: px-to-em(48px,16px)
+
+
+  #lifestream
+    +span-columns(10,10)
+  ul#nav
+    +span-columns(9 omega,10)
+  #menu
+    +span-columns(9 omega,10)
+  a#logo
+    +span-columns(1,10)
+
+
+  .gmap
+    +span-columns(8,10)
+
+  .studioinfo
+    +span-columns(10,10)
+
+  .studioleft
+    +span-columns(5,10)
+
+  .studioright
+    +span-columns(5,10)
