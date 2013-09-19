@@ -16,6 +16,15 @@
           p
             font-size: px-to-em(20px,16px)
             line-height: px-to-em(16px,16px)
+    .apply
+      +span-columns(10,10)
+
+    .handbookimg
+      +span-columns(5,10)
+
+    .handbook
+      +span-columns(5 omega ,10)
+
   .columns
     +span-columns(10,10)
 
@@ -25,6 +34,8 @@
     $col: columns(5,10)
     +column-width($col)
     +hyphenation
+
+
 
   #options
     li
@@ -54,3 +65,5 @@
 
   .studioright
     +span-columns(5,10)
+
+
