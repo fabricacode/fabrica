@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('body').fadeIn(300);
 
     $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
-    $("#header-white").sticky({topSpacing:0});
+    $("#header").sticky({topSpacing:0});
 
     $('.menulink').click(function(event){
         event.preventDefault();
