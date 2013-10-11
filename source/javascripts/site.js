@@ -131,6 +131,16 @@ function feedcallback(){
         $("#lifestream ul").delay(400).fadeIn(800);
         
         count=0;
+
+
+          BV = new $.BigVideo({forceAutoplay:isTouch});
+          BV.init();
+          if (Modernizr.touch) {
+              BV.show('images/cover.png');
+          } else {
+              BV.show('videos/background_07052013.mp4',{ambient:true});
+          }
+
       }
 
 	
@@ -138,15 +148,6 @@ function feedcallback(){
 
 }
 
-$(function() {
-    BV = new $.BigVideo({forceAutoplay:isTouch});
-	BV.init();
-	if (Modernizr.touch) {
-	    BV.show('images/cover.png');
-	} else {
-	    BV.show('videos/background_07052013.mp4',{ambient:true});
-	}
-});
 
 
 

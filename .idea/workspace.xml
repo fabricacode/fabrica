@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/vendor/jquery-lifestream/jquery.lifestream.js" afterPath="$PROJECT_DIR$/source/javascripts/vendor/jquery-lifestream/jquery.lifestream.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/vendor/jquery-lifestream/jquery.lifestream.min.js" afterPath="$PROJECT_DIR$/source/javascripts/vendor/jquery-lifestream/jquery.lifestream.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/site.js" afterPath="$PROJECT_DIR$/source/javascripts/site.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/vendor/video/video.js" afterPath="$PROJECT_DIR$/source/javascripts/vendor/video/video.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fabrica.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379665135956" ignored="false" />
+    <file path="/Dummy.txt" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1381506762065" ignored="false" />
     <file path="/a.rxml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993948242" ignored="false" />
     <file path="/a.coffee" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993951424" ignored="false" />
     <file path="/a.feature" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993953120" ignored="false" />
@@ -44,6 +48,7 @@
     <file path="$PROJECT_DIR$/../flr/source/newsletters/temporaryshowroom2013_2.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379629640273" ignored="false" />
     <file path="/temporaryshowroom2013_2.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379629612891" ignored="false" />
     <file path="$PROJECT_DIR$/../thedoers/source/team.html.haml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1379662418238" ignored="false" />
+    <file path="/site.js" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1381505154369" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +76,7 @@
       <file leaf-file-name="studios.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/studios.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="0" selection-start="9276" selection-end="9276" vertical-scroll-proportion="0.0">
+            <state line="156" column="0" selection-start="11367" selection-end="11367" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
@@ -80,34 +85,27 @@
       <file leaf-file-name="apply.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="60" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
+            <state line="40" column="20" selection-start="1922" selection-end="1922" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_640.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_640.sass">
+      <file leaf-file-name="site.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="38" selection-start="362" selection-end="487" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="141" column="16" selection-start="3985" selection-end="4230" vertical-scroll-proportion="0.9459459">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.css.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/site.css.sass">
+      <file leaf-file-name="jquery1.8.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/javascripts/vendor/jquery1.8.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_960.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_960.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="21" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,16 +123,16 @@
       <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
+            <state line="10" column="14" selection-start="159" selection-end="169" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="html5.haml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="html5.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.4127199">
+            <state line="25" column="29" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,7 +141,7 @@
       <file leaf-file-name="_320.sass" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="245" column="22" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0">
+            <state line="303" column="6" selection-start="5673" selection-end="5673" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -180,7 +178,6 @@
         <option value="$PROJECT_DIR$/source/javascripts/other.js" />
         <option value="$PROJECT_DIR$/source/404.html.haml" />
         <option value="$PROJECT_DIR$/source/about.html.haml" />
-        <option value="$PROJECT_DIR$/source/javascripts/site.js" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/source/socialssurvey.html.haml" />
         <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
@@ -190,9 +187,10 @@
         <option value="$PROJECT_DIR$/config.rb" />
         <option value="$PROJECT_DIR$/source/partials/_menu.haml" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_640.sass" />
-        <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_960.sass" />
         <option value="$PROJECT_DIR$/source/apply.html.haml" />
+        <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
+        <option value="$PROJECT_DIR$/source/javascripts/site.js" />
       </list>
     </option>
   </component>
@@ -242,7 +240,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -383,6 +380,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fabrica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fabrica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="video" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fabrica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fabrica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -469,6 +514,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -481,6 +527,11 @@
     <property name="FullScreen" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/javascripts/vendor/video" />
+    </key>
   </component>
   <component name="RunManager" selected="Gem Command.Middleman">
     <configuration default="true" type="CommandRunConfigurationType" factoryName="Gem Command">
@@ -637,18 +688,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2521212" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25151148" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.6710354" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26040173" sideWeight="0.69575757" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28120518" sideWeight="0.6969697" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2898135" sideWeight="0.7484885" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30235294" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30229747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -720,28 +772,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="44" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="79" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="25" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/about.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="1" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" />
@@ -754,49 +784,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/site.css.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_640.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="38" selection-start="362" selection-end="487" vertical-scroll-proportion="0.0">
+        <state line="33" column="38" selection-start="362" selection-end="487" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_960.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="21" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="60" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="245" column="22" selection-start="4669" selection-end="4669" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/success.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
+        <state line="28" column="21" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/studios.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="0" selection-start="9276" selection-end="9276" vertical-scroll-proportion="0.0">
+        <state line="156" column="0" selection-start="11367" selection-end="11367" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
@@ -810,15 +817,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
+        <state line="10" column="14" selection-start="159" selection-end="169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="20" selection-start="1922" selection-end="1922" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/vendor/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/vendor/jquery1.8.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="303" column="6" selection-start="5673" selection-end="5673" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.4127199">
+        <state line="25" column="29" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/success.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="8" selection-end="8" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="16" selection-start="3985" selection-end="4230" vertical-scroll-proportion="0.9459459">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
