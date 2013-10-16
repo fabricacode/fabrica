@@ -26,7 +26,8 @@ ul#nav.about-black
     +container($total-columns, $break-1, $break-2)
     position: relative
   &.black
-    +background-image(linear-gradient( rgba(0,0,0, 0.8), rgba(0,0,0,0)))
+    //+background-image(linear-gradient( rgba(0,0,0, 0.8), rgba(0,0,0,0)))
+    background: rgba(0, 0, 0, 0.9)
 
     #menubg
       background: rgba(0, 0, 0, 0.9)
@@ -34,13 +35,13 @@ ul#nav.about-black
       color: white
     .menuopen-icon
       +assign-sprite-background($assets)
-      +sprite($assets, "plus_icon_white", true)
+      +sprite($assets, "plus_icon_black", true)
     .logo-icon
       +assign-sprite-background($assets)
-      +sprite($assets, "logo_icon_white", true)
+      +sprite($assets, "logo_white", true)
     .menuclose-icon
       +assign-sprite-background($assets)
-      +sprite($assets, "x_icon_white", true)
+      +sprite($assets, "x_icon_black", true)
       margin-bottom: 20px
     #options
       a.menulink
@@ -50,22 +51,33 @@ ul#nav.about-black
           border-bottom: 4px solid white
         &:active
           border-bottom: 4px solid white
+    hr
+      border: none
+      background: white
+      margin-top: 0
+      margin-bottom: 0
+      top: 31px
+      z-index: 12
+      height: 2px
+      position: relative
+      clear: both
   &.white
-    +background-image(linear-gradient( rgb(255,255,255) 30%, rgba(255,255,255,0)))
+    //+background-image(linear-gradient( rgb(255,255,255) 30%, rgba(255,255,255,0)))
+    background: rgba(255,255,255,0.9)
     #menubg
       background: rgba(255, 255, 255, 0.95)
     #breadcrumb
       color: black
     .logo-icon
       +assign-sprite-background($assets)
-      +sprite($assets, "logo_icon_black", true)
+      +sprite($assets, "logo_black", true)
     .menuopen-icon
       +assign-sprite-background($assets)
-      +sprite($assets, "plus_icon_black", true)
+      +sprite($assets, "plus_icon_white", true)
 
     .menuclose-icon
       +assign-sprite-background($assets)
-      +sprite($assets, "x_icon_black", true)
+      +sprite($assets, "x_icon_white", true)
       margin-bottom: 20px
     #options
       a.menulink
@@ -75,6 +87,16 @@ ul#nav.about-black
           border-bottom: 4px solid black
         &:active
           border-bottom: 4px solid black
+    hr
+      border: none
+      background: black
+      margin-top: 0
+      margin-bottom: 0
+      top: 31px
+      z-index: 12
+      height: 2px
+      position: relative
+      clear: both
 
 
 #menubg
@@ -88,9 +110,9 @@ ul#nav.about-black
 
 #menu
   position: relative
-  +span-columns(6 omega,7)
+  //+span-columns(6 omega,7)
   top: 15px
-  font-family: "Fago", helvetica, arial, sans-serif
+  font-family: "Circular", helvetica, arial, sans-serif
   font-weight: 400
   font-size: px-to-em(16px,16px)
   #breadcrumb
@@ -100,7 +122,7 @@ ul#nav.about-black
   display: none
   z-index: 10
   position: absolute
-  top: 15px
+  top: 5px
   right: 0.625em
   text-align: right
   ul
@@ -110,7 +132,7 @@ ul#nav.about-black
   li
     height: 40px
   a
-    text-transform: uppercase
+    //text-transform: uppercase
     font-weight: 700
     //font-size: px-to-em(26px,16px)
     font-size: px-to-em(28px,16px)
@@ -119,7 +141,7 @@ ul#nav.about-black
     text-decoration: none
 
     padding-bottom: 0px
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
 
 
 
@@ -137,14 +159,14 @@ ul#nav
     margin-left: 20px
 
   a
-    text-transform: uppercase
+    //text-transform: uppercase
     font-weight: 700
     font-size: px-to-em(24px,16px)
     text-decoration: none
     //border-bottom: 2px solid white
     //padding-bottom: 2px
     color: white
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     &:hover,&.current
       border-bottom: 4px solid white
     &:active,&.current
@@ -153,8 +175,9 @@ ul#nav
 a#logo
   z-index: 11
   position: relative
-  +span-columns(1,7)
-  top: 15px
+  float: left
+  //+span-columns(3,7)
+  top: 18px
   &:hover
     opacity: 0.8
 
@@ -168,10 +191,11 @@ a#menuopen
 
 a#menuclose
   float: right
-  border-bottom: 0px
+  margin-bottom: 20px
+  //border-bottom: 0px
   &:hover
     opacity: 0.8
-    border-bottom: 0px
+    //border-bottom: 0px
 
 
 .head
@@ -196,21 +220,21 @@ a#menuclose
     background-color: black
 
   h1
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     margin-top: 0
   p, a
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     margin-top: 0
   p
     font-weight: 400
     font-size: px-to-em(16px,16px)
-    line-height: 19px
+    line-height: 20px
 
 
   h1#headline
     font-weight: 700
     font-size: px-to-em(40px,16px)
-    line-height: px-to-em(37px,40px)
+    line-height: px-to-em(40px,40px)
     margin-top: 10px
     position: relative
     margin-bottom: 0.3em
@@ -274,7 +298,7 @@ a#menuclose
     //float: left
 
   .studioleft
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     font-weight: 400
     font-size: px-to-em(16px,16px)
     line-height: 19px
@@ -282,7 +306,7 @@ a#menuclose
       color: black
 
   .studioright
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     font-weight: 400
     font-size: px-to-em(16px,16px)
     line-height: 19px
@@ -302,7 +326,7 @@ a#menuclose
     text-decoration: none
 
   ul.studio
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     margin: 0px
     padding-left: 18px
 
@@ -383,10 +407,24 @@ a#menuclose
   min-height: 480px
   background: white
   margin-bottom: 30px
+  -webkit-filter: grayscale(100%)
+  -moz-filter: grayscale(100%)
+  -ms-filter: grayscale(100%)
+  -o-filter: grayscale(100%)
+  filter: grayscale(100%)
+  filter: url(grayscale.svg)
+  filter: gray
 
 .gmap img
   vertical-align: top
   max-width: 100%
+  -webkit-filter: grayscale(100%)
+  -moz-filter: grayscale(100%)
+  -ms-filter: grayscale(100%)
+  -o-filter: grayscale(100%)
+  filter: grayscale(100%)
+  filter: url(grayscale.svg)
+  filter: gray
 
 #header.info
   display: none
@@ -405,4 +443,4 @@ span.redirect
 
       +horizontal-list-item
       color: white
-      font-family: "Fago", helvetica, arial, sans-serif
+      font-family: "Circular", helvetica, arial, sans-serif

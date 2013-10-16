@@ -21,3 +21,17 @@
   font-style:   normal;
   font-weight:  700;
 }
+
+@font-face {
+  font-family: 'Circular';
+  src: url('/fonts/circular/CircularStd-Book.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url('/fonts/circular/CircularStd-Bold.otf');
+  font-style: normal;
+  font-weight: 700;
+}
