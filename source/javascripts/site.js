@@ -96,7 +96,7 @@ function setupLifeStream(){
 	$("#lifestream").lifestream({
 		classname: "lifestream",
   		feedloaded: feedcallback,
-		limit: 50,
+		limit: 30,
 	    list: list
 	  });
 	//console.log("lifestream");
@@ -129,25 +129,60 @@ function feedcallback(){
         })
         $("#lifestream .timeago").timeago();
         $("#lifestream ul").delay(400).fadeIn(800);
-        
+        trackLinks();
         count=0;
 
-
-          BV = new $.BigVideo({forceAutoplay:isTouch});
-          BV.init();
-          if (Modernizr.touch) {
-              BV.show('images/cover.png');
-          } else {
-              BV.show('videos/background_07052013.mp4',{ambient:true});
-          }
-
+          setTimeout(showVideo, 4000);
       }
-
-	
-	
-
 }
 
 
 
 
+function showVideo(){
+    BV = new $.BigVideo({forceAutoplay:isTouch});
+    BV.init();
+    if (Modernizr.touch) {
+        BV.show('images/cover.png');
+    } else {
+        BV.show('videos/background_07052013.mp4',{ambient:true});
+    }
+    $("#big-video-wrap").fadeIn(400)
+}
+
+
+function trackLinks(){
+    var feeds_li = $('#lifestream ul li');
+
+    feeds_li.each(function( i ) {
+        //console.log("li "+i);
+        var feed = $(this);
+        var feed_links = $(this).find("a");
+        var feed_content = $(this).find("p.info");
+        feed_links.each(function (k){
+           var link_source = feed.attr("class");
+           var feed_link = $(this);
+           //console.log("a "+k);
+           switch(link_source){
+               case "lifestream-facebook_page":
+                   analytics.trackLink(feed_link, 'Facebook Link', {
+                       category: "Social Link",
+                       label: feed_content.text()
+                   });
+               break;
+               case "lifestream-vimeo":
+                   analytics.trackLink(feed_link, 'Vimeo Link', {
+                       category: "Social Link",
+                       label: feed_content.text()
+                   });
+               break;
+               case "lifestream-twitter":
+                   analytics.trackLink(feed_link, 'Twitter Link', {
+                       category: "Social Link",
+                       label: feed_content.text()
+                   });
+               break;
+           };
+        });
+    });
+}

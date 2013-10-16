@@ -1,34 +1,35 @@
-#header.white
-  = partial "partials/menu"
+%body
+  #header.white
+    = partial "partials/menu"
 
-.page
+  .page
 
-  %h1#headline
-    We are based in Italy and work globally.
-  %hr.primary
+    %h1#headline
+      We are based in Italy and work globally.
+    %hr.primary
 
-  %p.about.columns
-    Fabrica is a communications research centre, studio and school. We are based in Italy, work globally, and are an integral part of the <a href="http://www.benettongroup.com/group/profile/fabrica">Benetton Group</a>. Our organisation is built for the 21st century, and designed to address 21st century problems and opportunities. Our advantage is our diversity – of people, perspectives, formats and technologies. We work with partners on real world projects – we not only research the way we communicate but we actively produce it. We learn through doing. We actively seek out the new, the unknown, the emerging - as designers, as makers, as journalists and researchers. We are rebuilding our website to reveal our projects and people - please bear with us. You can <a href="/apply.html">apply</a> for a scholarship to become a researcher at Fabrica. Equally, do get in touch if you are interested in collaborating with us.
+    %p.about.columns
+      Fabrica is a communications research centre, studio and school. We are based in Italy, work globally, and are an integral part of the <a href="http://www.benettongroup.com/group/profile/fabrica">Benetton Group</a>. Our organisation is built for the 21st century, and designed to address 21st century problems and opportunities. Our advantage is our diversity – of people, perspectives, formats and technologies. We work with partners on real world projects – we not only research the way we communicate but we actively produce it. We learn through doing. We actively seek out the new, the unknown, the emerging - as designers, as makers, as journalists and researchers. We are rebuilding our website to reveal our projects and people - please bear with us. You can <a href="/apply.html">apply</a> for a scholarship to become a researcher at Fabrica. Equally, do get in touch if you are interested in collaborating with us.
 
-  %p.about
-    <b>Contact Us</b>
-    %br/
-    Fabrica
-    %br/
-    Villa Pastega, via Postioma 54/F
-    %br/
-    Catena di Villorba
-    %br/
-    31020, Treviso, Italy
-    %br/
-    %br/
-    %a{ :href=>"mailto:fabrica@fabrica.it"}
-      %span{:class => "redirect"} ti.acirbaf@acirbaf
-    %br/
-    Phone +39 0422 516111
-  #map.gmap{"data-center" => "via Postioma 54/F Catena di Villorba 31020, Treviso, Italy", "data-zoom" => "15"}
+    %p.about
+      <b>Contact Us</b>
+      %br/
+      Fabrica
+      %br/
+      Villa Pastega, via Postioma 54/F
+      %br/
+      Catena di Villorba
+      %br/
+      31020, Treviso, Italy
+      %br/
+      %br/
+      %a{ :href=>"mailto:fabrica@fabrica.it"}
+        %span{:class => "redirect"} ti.acirbaf@acirbaf
+      %br/
+      Phone +39 0422 516111
+    #map.gmap{"data-center" => "via Postioma 54/F Catena di Villorba 31020, Treviso, Italy", "data-zoom" => "15"}
 
-%script{:src => "http://maps.googleapis.com/maps/api/js?key=AIzaSyCKTYhE_M2R4xDkbw52flmdIfni7KlvWmk&sensor=false", :type => "text/javascript"}
+  %script{:src => "http://maps.googleapis.com/maps/api/js?key=AIzaSyCKTYhE_M2R4xDkbw52flmdIfni7KlvWmk&sensor=false", :type => "text/javascript"}
 
-= javascript_include_tag "map"
-= javascript_include_tag "menu"
+  = javascript_include_tag "map"
+  = javascript_include_tag "menu"

@@ -1,32 +1,33 @@
-#header.black
-  = partial "partials/menu"
+%body.black
+  #header.black
+    = partial "partials/menu"
 
-.page.black
-  /.bkgr
-  .head
-    %h1#headline
-      Fabrica is a communications research centre.
-    %hr.primary
+  .page.black
+    /.bkgr
+    .head
+      %h1#headline
+        Fabrica is a communications research centre.
+      %hr.primary
 
-  #hook.hook
-    #loader
-      .spinner
-    %span.hook-text Reloading...
-  #lifestream
+    #hook.hook
+      #loader
+        .spinner
+      %span.hook-text Reloading...
+    #lifestream
 
 
-  #footer
-    %hr.primary
-    %ul
-      %li
-        Copyright © 2009-2013 Fabrica S.p.A all rights reserved
-      %li
-        |
-      %li
-        VAT n.01926330265
-      %li
-        |
-      %li
-        Privacy
-= javascript_include_tag "site"
+    #footer
+      %hr.primary
+      %ul
+        %li
+          Copyright © 2009-2013 Fabrica S.p.A all rights reserved
+        %li
+          |
+        %li
+          VAT n.01926330265
+        %li
+          |
+        %li
+          Privacy
+  = javascript_include_tag "site"
 
