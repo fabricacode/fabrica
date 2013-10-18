@@ -6,7 +6,6 @@
 //= require  "vendor/jquery-lifestream/jquery.lifestream"
 
 //= require  "vendor/FitText/jquery.fittext"
-//= require  "vendor/sticky/jquery.sticky"
 //= require  "vendor/jquery-timeago/jquery.timeago"
 
 //= require  "menu"
@@ -46,7 +45,7 @@ var list = [
 
 
 $(document).ready(function() {
-    $("#header").sticky({topSpacing:0});
+
     $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
 	landing =  $("#landing");
 

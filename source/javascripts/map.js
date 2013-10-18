@@ -6,7 +6,7 @@
 $(document).ready(function() {
 	$('.gmap').mobileGmap();
 	$("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
-	$("#header").sticky({topSpacing:0});
+
 	
  	
 });

@@ -1,3 +1,4 @@
+//= require  "vendor/sticky/jquery.sticky"
 var visible = false;
 
 $(document).ready(function(){

@@ -26,9 +26,7 @@ ul#nav.about-black
   width: 100%
   height: 55px
   z-index: 10
-  .center
-    +container($total-columns, $break-1, $break-2)
-    position: relative
+
   &.black
     //+background-image(linear-gradient( rgba(0,0,0, 0.8), rgba(0,0,0,0)))
     background: rgba(0, 0, 0, 0.9)
@@ -101,6 +99,9 @@ ul#nav.about-black
       height: 2px
       position: relative
       clear: both
+  .center
+    +container($total-columns, $break-1, $break-2)
+    position: relative
 
 
 #menubg
