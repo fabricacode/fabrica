@@ -41,25 +41,41 @@ ul#nav.about-black
     #breadcrumb
       color: white
     #menuopen
-      background: image-url("open_icon_white_anim_15.gif") no-repeat top left
-      width: image-width("open_icon_white_anim_15.gif")
-      height: image-height("open_icon_white_anim_15.gif")
-      &.retina
-        background: image-url("open_icon_white_anim.gif") no-repeat top left
+      &.static
+        +assign-sprite-background($assets)
+        +sprite($assets, "open_icon_white_15", true)
+        &.retina
+          +assign-sprite-background($assets)
+          +sprite($assets, "open_icon_white", true)
+      &.animate
+        background: image-url("open_icon_white_anim_15.gif") no-repeat top left
         width: image-width("open_icon_white_anim_15.gif")
         height: image-height("open_icon_white_anim_15.gif")
+        &.retina
+          background: image-url("open_icon_white_anim.gif") no-repeat top left
+          width: image-width("open_icon_white_anim_15.gif")
+          height: image-height("open_icon_white_anim_15.gif")
     #menuclose
-      background: image-url("open_icon_white_anim_15.gif") no-repeat top left
-      width: image-width("open_icon_white_anim_15.gif")
-      height: image-height("open_icon_white_anim_15.gif")
-      margin-top: 10px
-      &.retina
-        background: image-url("open_icon_white_anim.gif") no-repeat top left
+      &.static
+        +assign-sprite-background($assets)
+        +sprite($assets, "open_icon_white_15", true)
+        margin-top: 10px
+        &.retina
+          +assign-sprite-background($assets)
+          +sprite($assets, "open_icon_white", true)
+      &.animate
+        background: image-url("open_icon_white_anim_15.gif") no-repeat top left
         width: image-width("open_icon_white_anim_15.gif")
         height: image-height("open_icon_white_anim_15.gif")
+        margin-top: 10px
+        &.retina
+          background: image-url("open_icon_white_anim.gif") no-repeat top left
+          width: image-width("open_icon_white_anim_15.gif")
+          height: image-height("open_icon_white_anim_15.gif")
     .logo-icon
-      +assign-sprite-background($assets)
-      +sprite($assets, "logo_white_small", true)
+      &.normal
+        +assign-sprite-background($assets)
+        +sprite($assets, "logo_white_small", true)
 
       &.retina
         +sprite($assets, "logo_white")
@@ -96,22 +112,37 @@ ul#nav.about-black
         +sprite($assets, "logo_white")
         background-size: image-width("assets/logo_white_small.png") image-height("assets/logo_white_small.png")
     #menuopen
-      background: image-url("open_icon_black_anim_15.gif") no-repeat top left
-      width: image-width("open_icon_black_anim_15.gif")
-      height: image-height("open_icon_black_anim_15.gif")
-      &.retina
-        background: image-url("open_icon_black_anim.gif") no-repeat top left
+      &.static
+        +assign-sprite-background($assets)
+        +sprite($assets, "open_icon_black_15", true)
+        &.retina
+          +assign-sprite-background($assets)
+          +sprite($assets, "open_icon_black", true)
+      &.animate
+        background: image-url("open_icon_black_anim_15.gif") no-repeat top left
         width: image-width("open_icon_black_anim_15.gif")
         height: image-height("open_icon_black_anim_15.gif")
+        &.retina
+          background: image-url("open_icon_black_anim.gif") no-repeat top left
+          width: image-width("open_icon_black_anim_15.gif")
+          height: image-height("open_icon_black_anim_15.gif")
     #menuclose
-      background: image-url("open_icon_black_anim_15.gif") no-repeat top left
-      width: image-width("open_icon_black_anim_15.gif")
-      height: image-height("open_icon_black_anim_15.gif")
-      margin-top: 10px
-      &.retina
-        background: image-url("open_icon_black_anim.gif") no-repeat top left
+      &.static
+        margin-top: 10px
+        +assign-sprite-background($assets)
+        +sprite($assets, "open_icon_black_15", true)
+        &.retina
+          +assign-sprite-background($assets)
+          +sprite($assets, "open_icon_black", true)
+      &.animate
+        background: image-url("open_icon_black_anim_15.gif") no-repeat top left
         width: image-width("open_icon_black_anim_15.gif")
         height: image-height("open_icon_black_anim_15.gif")
+        margin-top: 10px
+        &.retina
+          background: image-url("open_icon_black_anim.gif") no-repeat top left
+          width: image-width("open_icon_black_anim_15.gif")
+          height: image-height("open_icon_black_anim_15.gif")
 
     #options
       a.menulink

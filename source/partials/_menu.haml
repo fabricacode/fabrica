@@ -1,7 +1,7 @@
 .center
   #menubg
   #options
-    %a#menuclose{href: 'javascript:toggleMenu();'}
+    %a#menuclose.static{href: 'javascript:toggleMenu();'}
 
     %ul
 
@@ -13,11 +13,11 @@
         %a.menulink{href: "/studios.html"} Studios
       %li
         %a.menulink{href: "http://store.fabrica.it"} Store
-  %a#logo.homelink.logo-icon{href: '/'}
+  %a#logo.homelink.logo-icon.normal{href: '/'}
   #menu
     /
       #breadcrumb
         &gt; Studios
     //%a#menuopen.menuopen-icon{href: 'javascript:toggleMenu();'}
-    %a#menuopen{href: 'javascript:toggleMenu();'}
+    %a#menuopen.static{href: 'javascript:toggleMenu();'}
   %hr

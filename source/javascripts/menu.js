@@ -4,7 +4,7 @@ var visible = false;
 $(document).ready(function(){
 
     $('body').fadeIn(300);
-
+    menuHover();
     $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
     $("#header").sticky({topSpacing:0});
 
@@ -23,7 +23,25 @@ $(document).ready(function(){
 
 });
 
+
+function menuHover(){
+    var menuopen = $("#menuopen");
+    var menuclose = $("#menuclose");
+
+    menuopen.hover(
+        function() {
+            menuopen.toggleClass("animate","static");
+        }
+    )
+    menuclose.hover(
+        function() {
+            menuclose.toggleClass("animate","static");
+        }
+    )
+}
+
 function toggleMenu(){
+
     if(visible){
         hideMenu();
     } else {

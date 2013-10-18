@@ -16,7 +16,7 @@
 var landing;
 var isTouch = Modernizr.touch;
 var isRetina = Modernizr.highresdisplay;
-console.log(isRetina, isTouch);
+
 var BV;
 var count = 0;
 var list = [
