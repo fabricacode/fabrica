@@ -31,7 +31,7 @@ function retinize(){
     var menuopen = $("#menuopen");
     var menuclose = $("#menuclose");
 
-    if (!isRetina){
+    if (isRetina){
 
         logo.addClass("retina");
         logo.removeClass("normal");

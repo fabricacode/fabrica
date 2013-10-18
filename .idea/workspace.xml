@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" afterPath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/about.html.haml" afterPath="$PROJECT_DIR$/source/about.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/layouts/html5.haml" afterPath="$PROJECT_DIR$/source/layouts/html5.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/menu.js" afterPath="$PROJECT_DIR$/source/javascripts/menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/site.js" afterPath="$PROJECT_DIR$/source/javascripts/site.js" />
     </list>
     <ignored path="fabrica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,16 +106,16 @@
       <file leaf-file-name="site.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="-9.6">
+            <state line="17" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="51.24">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="menu.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="40" selection-start="148" selection-end="148" vertical-scroll-proportion="-2.4">
+            <state line="33" column="8" selection-start="915" selection-end="915" vertical-scroll-proportion="0.44820717">
               <folding />
             </state>
           </provider>
@@ -161,10 +157,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_320.sass" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_320.sass" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.6587473">
+            <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="22.019608">
               <folding />
             </state>
           </provider>
@@ -203,8 +199,8 @@
         <option value="$PROJECT_DIR$/source/about.html.haml" />
         <option value="$PROJECT_DIR$/source/layouts/html5.haml" />
         <option value="$PROJECT_DIR$/source/javascripts/site.js" />
-        <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
+        <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
       </list>
     </option>
   </component>
@@ -905,23 +901,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
+    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="40" selection-start="148" selection-end="148" vertical-scroll-proportion="-2.4">
+        <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="22.019608">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="-9.6">
+        <state line="17" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="51.24">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
+    <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.6587473">
+        <state line="33" column="8" selection-start="915" selection-end="915" vertical-scroll-proportion="0.44820717">
           <folding />
         </state>
       </provider>
