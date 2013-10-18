@@ -26,18 +26,13 @@ $(document).ready(function(){
 
 function menuHover(){
     var menuopen = $("#menuopen");
-    var menuclose = $("#menuclose");
 
     menuopen.hover(
         function() {
             menuopen.toggleClass("animate","static");
         }
     )
-    menuclose.hover(
-        function() {
-            menuclose.toggleClass("animate","static");
-        }
-    )
+
 }
 
 function toggleMenu(){

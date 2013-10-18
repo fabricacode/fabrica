@@ -72,9 +72,9 @@ ul#nav.about-black
           background: image-url("open_icon_white_anim.gif") no-repeat top left
           width: image-width("open_icon_white_anim_15.gif")
           height: image-height("open_icon_white_anim_15.gif")
-    .logo-icon
+    #logo
+      +assign-sprite-background($assets)
       &.normal
-        +assign-sprite-background($assets)
         +sprite($assets, "logo_white_small", true)
 
       &.retina
@@ -105,9 +105,10 @@ ul#nav.about-black
       background: rgba(255, 255, 255, 0.95)
     #breadcrumb
       color: black
-    .logo-icon
+    #logo
       +assign-sprite-background($assets)
-      +sprite($assets, "logo_black_small", true)
+      &.normal
+        +sprite($assets, "logo_black_small", true)
       &.retina
         +sprite($assets, "logo_white")
         background-size: image-width("assets/logo_white_small.png") image-height("assets/logo_white_small.png")

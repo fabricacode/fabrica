@@ -143,9 +143,9 @@ function retinize(){
     var menuopen = $("#menuopen");
     var menuclose = $("#menuclose");
     if (isRetina){
-        logo.addClass("retina");
-        menuopen.addClass("retina");
-        menuclose.addClass("retina");
+        logo.toggleClass("normal","retina");
+        menuopen.toggleClass("normal","retina");
+        menuclose.toggleClass("normal","retina");
     }
 }
 
