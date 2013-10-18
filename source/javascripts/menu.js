@@ -1,8 +1,9 @@
 //= require  "vendor/sticky/jquery.sticky"
+//= require  "vendor/hidpi_modernizr_test"
+
 var visible = false;
 
 $(document).ready(function(){
-
     $('body').fadeIn(300);
 
     $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
@@ -21,9 +22,25 @@ $(document).ready(function(){
         $('body').fadeOut(300, function(){window.location = link});
     });
 
+    retinize();
+
 });
 
+function retinize(){
+    var logo = $("#logo");
+    var menuopen = $("#menuopen");
+    var menuclose = $("#menuclose");
 
+    if (!isRetina){
+
+        logo.addClass("retina");
+        logo.removeClass("normal");
+        menuopen.addClass("retina");
+        menuopen.removeClass("normal");
+        menuclose.addClass("retina");
+        menuclose.removeClass("normal");
+    }
+}
 
 function toggleMenu(){
 

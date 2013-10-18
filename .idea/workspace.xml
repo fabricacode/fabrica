@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/images/assets-s5c13fe39de.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/images/assets/logo_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/images/assets/logo_white.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" afterPath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/partials/_menu.haml" afterPath="$PROJECT_DIR$/source/partials/_menu.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/about.html.haml" afterPath="$PROJECT_DIR$/source/about.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/menu.js" afterPath="$PROJECT_DIR$/source/javascripts/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/site.js" afterPath="$PROJECT_DIR$/source/javascripts/site.js" />
     </list>
     <ignored path="fabrica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,19 +77,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="studios.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/studios.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="0" selection-start="71" selection-end="12358" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="apply.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0">
+            <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="-16.041666">
               <folding>
                 <marker date="1382027299000" expanded="true" signature="0:1516" placeholder="%body.white" />
                 <marker date="1382027299000" expanded="true" signature="60:65" placeholder=".page" />
@@ -96,10 +91,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="about.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/about.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="176" column="0" selection-start="61" selection-end="7616" vertical-scroll-proportion="-110.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html5.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="46" selection-start="2427" selection-end="2443" vertical-scroll-proportion="-11.666667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="site.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="36" selection-start="4173" selection-end="4173" vertical-scroll-proportion="-9.52">
+            <state line="11" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="-6.6">
               <folding />
             </state>
           </provider>
@@ -108,7 +121,7 @@
       <file leaf-file-name="menu.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="3" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0996016">
+            <state line="31" column="20" selection-start="849" selection-end="849" vertical-scroll-proportion="0.47808766">
               <folding />
             </state>
           </provider>
@@ -153,7 +166,7 @@
       <file leaf-file-name="_320.sass" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="6" selection-start="2942" selection-end="2942" vertical-scroll-proportion="0.0">
+            <state line="128" column="107" selection-start="4154" selection-end="4154" vertical-scroll-proportion="-5.647059">
               <folding />
             </state>
           </provider>
@@ -181,7 +194,6 @@
         <option value="$PROJECT_DIR$/source/socialssurvey.html.haml" />
         <option value="$PROJECT_DIR$/source/success.html.haml" />
         <option value="$PROJECT_DIR$/source/layouts/html5.haml" />
-        <option value="$PROJECT_DIR$/source/about.html.haml" />
         <option value="$PROJECT_DIR$/source/404.html.haml" />
         <option value="$PROJECT_DIR$/source/javascripts/other.js" />
         <option value="$PROJECT_DIR$/source/index.html.haml" />
@@ -190,9 +202,10 @@
         <option value="$PROJECT_DIR$/source/apply.html.haml" />
         <option value="$PROJECT_DIR$/source/javascripts/map.js" />
         <option value="$PROJECT_DIR$/source/javascripts/vendor/hidpi_modernizr_test.js" />
-        <option value="$PROJECT_DIR$/source/javascripts/site.js" />
-        <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
         <option value="$PROJECT_DIR$/source/partials/_menu.haml" />
+        <option value="$PROJECT_DIR$/source/javascripts/site.js" />
+        <option value="$PROJECT_DIR$/source/about.html.haml" />
+        <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
         <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
       </list>
     </option>
@@ -806,18 +819,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="24" selection-start="3878" selection-end="3878" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/javascripts/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="1330" selection-start="213684" selection-end="213684" vertical-scroll-proportion="0.8737864" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/javascripts/map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="2355" selection-start="98098" selection-end="98098" vertical-scroll-proportion="0.32038835" />
@@ -842,18 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="175" column="0" selection-start="71" selection-end="12358" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1382027299000" expanded="true" signature="0:1516" placeholder="%body.white" />
-            <marker date="1382027299000" expanded="true" signature="60:65" placeholder=".page" />
-            <marker date="1382027299000" expanded="true" signature="1519:2241" placeholder=":javascript" />
-            <marker date="1382027299000" expanded="true" signature="2244:2276" placeholder="= javascript_include_tag &quot;other&quot;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -885,20 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="36" selection-start="4173" selection-end="4173" vertical-scroll-proportion="-9.52">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="6" selection-start="2942" selection-end="2942" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="-13.125">
@@ -906,9 +881,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="-6.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="-16.041666">
+          <folding>
+            <marker date="1382027299000" expanded="true" signature="0:1516" placeholder="%body.white" />
+            <marker date="1382027299000" expanded="true" signature="60:65" placeholder=".page" />
+            <marker date="1382027299000" expanded="true" signature="1519:2241" placeholder=":javascript" />
+            <marker date="1382027299000" expanded="true" signature="2244:2276" placeholder="= javascript_include_tag &quot;other&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/about.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="0" selection-start="61" selection-end="7616" vertical-scroll-proportion="-110.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="46" selection-start="2427" selection-end="2443" vertical-scroll-proportion="-11.666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="107" selection-start="4154" selection-end="4154" vertical-scroll-proportion="-5.647059">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="3" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0996016">
+        <state line="31" column="20" selection-start="849" selection-end="849" vertical-scroll-proportion="0.47808766">
           <folding />
         </state>
       </provider>

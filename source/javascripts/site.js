@@ -9,7 +9,7 @@
 //= require  "vendor/jquery-timeago/jquery.timeago"
 
 //= require  "menu"
-//= require  "vendor/hidpi_modernizr_test"
+
 
 
 
@@ -48,7 +48,7 @@ var list = [
 
 
 $(document).ready(function() {
-    retinize();
+
     $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
 	landing =  $("#landing");
 
@@ -57,14 +57,7 @@ $(document).ready(function() {
       	BV.show('videos/background_07052013.mp4',{ambient:true});
       	
 	});
-
-
-
-
   	setupLifeStream();
-
-	
- 	
 });
 
 
@@ -138,16 +131,7 @@ function feedcallback(){
       }
 }
 
-function retinize(){
-    var logo = $("#logo");
-    var menuopen = $("#menuopen");
-    var menuclose = $("#menuclose");
-    if (isRetina){
-        logo.toggleClass("normal","retina");
-        menuopen.toggleClass("normal","retina");
-        menuclose.toggleClass("normal","retina");
-    }
-}
+
 
 
 function showVideo(){
