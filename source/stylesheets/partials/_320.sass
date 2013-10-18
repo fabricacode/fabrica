@@ -58,20 +58,12 @@ ul#nav.about-black
     #menuclose
       &.static
         +assign-sprite-background($assets)
-        +sprite($assets, "open_icon_white_15", true)
+        +sprite($assets, "close_icon_white16", true)
         margin-top: 10px
         &.retina
           +assign-sprite-background($assets)
-          +sprite($assets, "open_icon_white", true)
-      &.animate
-        background: image-url("open_icon_white_anim_15.gif") no-repeat top left
-        width: image-width("open_icon_white_anim_15.gif")
-        height: image-height("open_icon_white_anim_15.gif")
-        margin-top: 10px
-        &.retina
-          background: image-url("open_icon_white_anim.gif") no-repeat top left
-          width: image-width("open_icon_white_anim_15.gif")
-          height: image-height("open_icon_white_anim_15.gif")
+          +sprite($assets, "close_icon_white", true)
+
     #logo
       +assign-sprite-background($assets)
       &.normal
@@ -119,22 +111,15 @@ ul#nav.about-black
         &.retina
           +assign-sprite-background($assets)
           +sprite($assets, "open_icon_black", true)
-      &.animate
-        background: image-url("open_icon_black_anim_15.gif") no-repeat top left
-        width: image-width("open_icon_black_anim_15.gif")
-        height: image-height("open_icon_black_anim_15.gif")
-        &.retina
-          background: image-url("open_icon_black_anim.gif") no-repeat top left
-          width: image-width("open_icon_black_anim_15.gif")
-          height: image-height("open_icon_black_anim_15.gif")
+
     #menuclose
       &.static
         margin-top: 10px
         +assign-sprite-background($assets)
-        +sprite($assets, "open_icon_black_15", true)
+        +sprite($assets, "close_icon_black16", true)
         &.retina
           +assign-sprite-background($assets)
-          +sprite($assets, "open_icon_black", true)
+          +sprite($assets, "close_icon_black", true)
       &.animate
         background: image-url("open_icon_black_anim_15.gif") no-repeat top left
         width: image-width("open_icon_black_anim_15.gif")
