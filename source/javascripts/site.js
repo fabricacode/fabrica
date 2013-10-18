@@ -9,11 +9,14 @@
 //= require  "vendor/jquery-timeago/jquery.timeago"
 
 //= require  "menu"
+//= require  "vendor/hidpi_modernizr_test"
 
 
 
 var landing;
 var isTouch = Modernizr.touch;
+var isRetina = Modernizr.highresdisplay;
+console.log(isRetina, isTouch);
 var BV;
 var count = 0;
 var list = [
@@ -45,7 +48,7 @@ var list = [
 
 
 $(document).ready(function() {
-
+    retinize();
     $("#headline").fitText(1.0, { minFontSize: '14px', maxFontSize: '152px' });
 	landing =  $("#landing");
 
@@ -135,13 +138,22 @@ function feedcallback(){
       }
 }
 
-
+function retinize(){
+    var logo = $("#logo");
+    var menuopen = $("#menuopen");
+    var menuclose = $("#menuclose");
+    if (isRetina){
+        logo.addClass("retina");
+        menuopen.addClass("retina");
+        menuclose.addClass("retina");
+    }
+}
 
 
 function showVideo(){
     BV = new $.BigVideo({forceAutoplay:isTouch});
     BV.init();
-    if (Modernizr.touch) {
+    if (isTouch){
         BV.show('images/cover.png');
     } else {
         BV.show('videos/background_07052013.mp4',{ambient:true});
