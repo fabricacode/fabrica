@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/images/assets/open_icon_black_anim.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/images/assets/open_icon_white_anim.gif" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/partials/_menuwhite.haml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" afterPath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/about.html.haml" afterPath="$PROJECT_DIR$/source/about.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fabrica.iws" />
@@ -130,24 +135,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_menu.haml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_menu.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="49" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
+            <state line="21" column="49" selection-start="557" selection-end="557" vertical-scroll-proportion="0.6262425">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_320.sass" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_320.sass" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="469" column="0" selection-start="8973" selection-end="8973" vertical-scroll-proportion="1.4206349">
+            <state line="469" column="0" selection-start="8933" selection-end="8933" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1382089046000" expanded="true" signature="565:1384" placeholder="..." />
-                <marker date="1382089046000" expanded="true" signature="579:586" placeholder="..." />
-                <marker date="1382089046000" expanded="true" signature="882:969" placeholder="..." />
-                <marker date="1382089046000" expanded="true" signature="8869:8973" placeholder="..." />
+                <marker date="1382089282000" expanded="true" signature="565:1384" placeholder="..." />
+                <marker date="1382089282000" expanded="true" signature="579:586" placeholder="..." />
+                <marker date="1382089282000" expanded="true" signature="882:969" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -157,15 +161,6 @@
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_640.sass">
           <provider selected="true" editor-type-id="text-editor">
             <state line="1" column="18" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_960.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_960.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="9" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -199,13 +194,13 @@
         <option value="$PROJECT_DIR$/source/javascripts/site.js" />
         <option value="$PROJECT_DIR$/source/javascripts/other.js" />
         <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
-        <option value="$PROJECT_DIR$/source/partials/_menu.haml" />
         <option value="$PROJECT_DIR$/source/index.html.haml" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_640.sass" />
         <option value="$PROJECT_DIR$/source/studios.html.haml" />
         <option value="$PROJECT_DIR$/source/apply.html.haml" />
         <option value="$PROJECT_DIR$/source/javascripts/map.js" />
         <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
+        <option value="$PROJECT_DIR$/source/partials/_menu.haml" />
       </list>
     </option>
   </component>
@@ -491,68 +486,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fabrica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fabrica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fabrica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fabrica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fabrica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fabrica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="step_definitions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -735,7 +668,6 @@
       <are-modules-shown value="false" />
       <flatten-packages value="true" />
       <is-autoscroll-to-source value="false" />
-      <is-preview-enabled value="true" />
     </todo-panel>
     <todo-panel id="default-changelist">
       <are-packages-shown value="false" />
@@ -749,15 +681,15 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25151148" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.6710354" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26040173" sideWeight="0.69575757" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32209468" sideWeight="0.6711004" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32209468" sideWeight="0.6989117" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30108827" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30108827" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -868,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="49" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/studios.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="175" column="0" selection-start="71" selection-end="12358" vertical-scroll-proportion="0.0">
@@ -924,13 +849,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="469" column="0" selection-start="8973" selection-end="8973" vertical-scroll-proportion="1.4206349">
+        <state line="469" column="0" selection-start="8933" selection-end="8933" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1382089046000" expanded="true" signature="565:1384" placeholder="..." />
-            <marker date="1382089046000" expanded="true" signature="579:586" placeholder="..." />
-            <marker date="1382089046000" expanded="true" signature="882:969" placeholder="..." />
-            <marker date="1382089046000" expanded="true" signature="8869:8973" placeholder="..." />
+            <marker date="1382089282000" expanded="true" signature="565:1384" placeholder="..." />
+            <marker date="1382089282000" expanded="true" signature="579:586" placeholder="..." />
+            <marker date="1382089282000" expanded="true" signature="882:969" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="49" selection-start="557" selection-end="557" vertical-scroll-proportion="0.6262425">
+          <folding />
         </state>
       </provider>
     </entry>
