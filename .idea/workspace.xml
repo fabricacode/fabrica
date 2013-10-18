@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/images/assets-s5c13fe39de.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/images/assets/logo_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/images/assets/logo_white.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" afterPath="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/about.html.haml" afterPath="$PROJECT_DIR$/source/about.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/layouts/html5.haml" afterPath="$PROJECT_DIR$/source/layouts/html5.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/menu.js" afterPath="$PROJECT_DIR$/source/javascripts/menu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/javascripts/site.js" afterPath="$PROJECT_DIR$/source/javascripts/site.js" />
     </list>
@@ -94,7 +92,7 @@
       <file leaf-file-name="about.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/about.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="0" selection-start="61" selection-end="7616" vertical-scroll-proportion="-110.0">
+            <state line="174" column="32" selection-start="7581" selection-end="7581" vertical-scroll-proportion="-16.041666">
               <folding />
             </state>
           </provider>
@@ -103,7 +101,7 @@
       <file leaf-file-name="html5.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="46" selection-start="2427" selection-end="2443" vertical-scroll-proportion="-11.666667">
+            <state line="23" column="4" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.8333333">
               <folding />
             </state>
           </provider>
@@ -112,16 +110,16 @@
       <file leaf-file-name="site.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="-6.6">
+            <state line="17" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="-9.6">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="menu.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="20" selection-start="849" selection-end="849" vertical-scroll-proportion="0.47808766">
+            <state line="4" column="40" selection-start="148" selection-end="148" vertical-scroll-proportion="-2.4">
               <folding />
             </state>
           </provider>
@@ -163,10 +161,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_320.sass" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_320.sass" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="107" selection-start="4154" selection-end="4154" vertical-scroll-proportion="-5.647059">
+            <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.6587473">
               <folding />
             </state>
           </provider>
@@ -193,7 +191,6 @@
       <list>
         <option value="$PROJECT_DIR$/source/socialssurvey.html.haml" />
         <option value="$PROJECT_DIR$/source/success.html.haml" />
-        <option value="$PROJECT_DIR$/source/layouts/html5.haml" />
         <option value="$PROJECT_DIR$/source/404.html.haml" />
         <option value="$PROJECT_DIR$/source/javascripts/other.js" />
         <option value="$PROJECT_DIR$/source/index.html.haml" />
@@ -203,10 +200,11 @@
         <option value="$PROJECT_DIR$/source/javascripts/map.js" />
         <option value="$PROJECT_DIR$/source/javascripts/vendor/hidpi_modernizr_test.js" />
         <option value="$PROJECT_DIR$/source/partials/_menu.haml" />
-        <option value="$PROJECT_DIR$/source/javascripts/site.js" />
         <option value="$PROJECT_DIR$/source/about.html.haml" />
-        <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
+        <option value="$PROJECT_DIR$/source/layouts/html5.haml" />
+        <option value="$PROJECT_DIR$/source/javascripts/site.js" />
         <option value="$PROJECT_DIR$/source/javascripts/menu.js" />
+        <option value="$PROJECT_DIR$/source/stylesheets/partials/_320.sass" />
       </list>
     </option>
   </component>
@@ -846,13 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="604" selection-end="606" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/vendor/mobileGmap/jquery.mobilegmap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="114" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
@@ -881,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="-6.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="-16.041666">
@@ -902,28 +886,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/about.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="0" selection-start="61" selection-end="7616" vertical-scroll-proportion="-110.0">
+        <state line="174" column="32" selection-start="7581" selection-end="7581" vertical-scroll-proportion="-16.041666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="604" selection-end="606" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="46" selection-start="2427" selection-end="2443" vertical-scroll-proportion="-11.666667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="107" selection-start="4154" selection-end="4154" vertical-scroll-proportion="-5.647059">
+        <state line="23" column="4" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.8333333">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="20" selection-start="849" selection-end="849" vertical-scroll-proportion="0.47808766">
+        <state line="4" column="40" selection-start="148" selection-end="148" vertical-scroll-proportion="-2.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="451" selection-end="451" vertical-scroll-proportion="-9.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.6587473">
           <folding />
         </state>
       </provider>

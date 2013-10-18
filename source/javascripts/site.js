@@ -15,7 +15,7 @@
 
 var landing;
 var isTouch = Modernizr.touch;
-var isRetina = Modernizr.highresdisplay;
+
 
 var BV;
 var count = 0;

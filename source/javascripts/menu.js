@@ -2,7 +2,7 @@
 //= require  "vendor/hidpi_modernizr_test"
 
 var visible = false;
-
+var isRetina = Modernizr.highresdisplay;
 $(document).ready(function(){
     $('body').fadeIn(300);
 
