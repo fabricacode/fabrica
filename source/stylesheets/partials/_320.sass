@@ -33,8 +33,17 @@ ul#nav.about-black
   z-index: 10
 
   &.black
+    //background: rgba(0,0,0,0.8)
 
-
+    #headerbg
+      +opacity(0.5)
+      background-color: black
+      position: fixed
+      top: 0px
+      left: 0px
+      width: 100%
+      height: 50px
+      display: none
     #menubg
       +opacity(0.9)
       background-color: black
@@ -98,7 +107,16 @@ ul#nav.about-black
       position: relative
       clear: both
   &.white
-    background: rgba(255,255,255,0.9)
+    //background: rgba(255,255,255,0.9)
+
+    #headerbg
+      +opacity(0.95)
+      background-color: white
+      position: fixed
+      top: 0px
+      left: 0px
+      width: 100%
+      height: 50px
     #menubg
       background: rgba(255, 255, 255, 0.95)
     #breadcrumb
@@ -184,7 +202,7 @@ ul#nav.about-black
   position: relative
   //+span-columns(6 omega,7)
   top: 15px
-  font-family: "Fago", helvetica, arial, sans-serif
+  font-family: "Circular", helvetica, arial, sans-serif
   font-weight: 400
   font-size: px-to-em(16px,16px)
   #breadcrumb
@@ -213,7 +231,7 @@ ul#nav.about-black
     text-decoration: none
 
     padding-bottom: 0px
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
 
 
 
@@ -238,7 +256,7 @@ ul#nav
     //border-bottom: 2px solid white
     //padding-bottom: 2px
     color: white
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     &:hover,&.current
       border-bottom: 4px solid white
     &:active,&.current
@@ -292,10 +310,10 @@ a#menuclose
     background-color: black
 
   h1
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     margin-top: 0
   p, a
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     margin-top: 0
   p
     font-weight: 400
@@ -372,7 +390,7 @@ a#menuclose
     //float: left
 
   .studioleft
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     font-weight: 400
     font-size: px-to-em(16px,16px)
     line-height: 20px
@@ -380,7 +398,7 @@ a#menuclose
       color: black
 
   .studioright
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     font-weight: 400
     font-size: px-to-em(16px,16px)
     line-height: 20px
@@ -396,7 +414,7 @@ a#menuclose
     .timelineleft
       float: left
       width: 50%
-      font-family: "Fago", helvetica, arial, sans-serif
+      font-family: "Circular", helvetica, arial, sans-serif
       font-weight: 400
       font-size: px-to-em(16px,16px)
       line-height: 20px
@@ -410,7 +428,7 @@ a#menuclose
     .timelineright
       float: right
       width: 50%
-      font-family: "Fago", helvetica, arial, sans-serif
+      font-family: "Circular", helvetica, arial, sans-serif
       font-weight: 400
       font-size: px-to-em(16px,16px)
       line-height: 20px
@@ -450,7 +468,7 @@ a#menuclose
     text-decoration: none
 
   ul.studio
-    font-family: "Fago", helvetica, arial, sans-serif
+    font-family: "Circular", helvetica, arial, sans-serif
     margin: 0px
     padding-left: 18px
 
@@ -569,4 +587,4 @@ span.redirect
 
       +horizontal-list-item
       color: white
-      font-family: "Fago", helvetica, arial, sans-serif
+      font-family: "Circular", helvetica, arial, sans-serif

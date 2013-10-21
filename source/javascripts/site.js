@@ -15,6 +15,7 @@
 
 var landing;
 var isTouch = Modernizr.touch;
+var headerBGVisible = false;
 
 
 var BV;
@@ -180,4 +181,14 @@ function trackLinks(){
            };
         });
     });
+}
+
+window.onscroll = function(event){
+  if(document.body.scrollTop > 0 && headerBGVisible == false){
+    $('#headerbg').fadeIn(300);
+    headerBGVisible = true;
+  } else if(document.body.scrollTop == 0 && headerBGVisible == true){
+    $('#headerbg').fadeOut(300);
+    headerBGVisible = false;
+  }
 }

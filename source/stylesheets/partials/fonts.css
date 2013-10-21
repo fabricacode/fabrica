@@ -22,16 +22,38 @@
   font-weight:  700;
 }
 
+/*
+ * Legal Disclaimer
+ *
+ * These Fonts are licensed only for use on these domains and their subdomains:
+ * fabrica.it
+ *
+ * It is illegal to download or use them on other websites.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2013
+ */
+
 @font-face {
   font-family: 'Circular';
-  src: url('/fonts/circular/CircularStd-Book.otf');
-  font-style: normal;
+  src: url('/fonts/circular/lineto-circular-book.eot');
+  src: url('/fonts/circular/lineto-circular-book.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/circular/lineto-circular-book.woff') format('woff'),
+       url('/fonts/circular/lineto-circular-book.ttf') format('truetype'),
+       url('/fonts/circular/lineto-circular-book.svg#CircularBook') format('svg');
   font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Circular';
-  src: url('/fonts/circular/CircularStd-Bold.otf');
-  font-style: normal;
+  src: url('/fonts/circular/lineto-circular-bold.eot');
+  src: url('/fonts/circular/lineto-circular-bold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/circular/lineto-circular-bold.woff') format('woff'),
+       url('/fonts/circular/lineto-circular-bold.ttf') format('truetype'),
+       url('/fonts/circular/lineto-circular-bold.svg#CircularBold') format('svg');
   font-weight: 700;
+  font-style: normal;
 }
