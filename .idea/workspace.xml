@@ -6,7 +6,7 @@
     </list>
     <ignored path="fabrica.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1382106935574" ignored="false" />
+    <file path="/Dummy.txt" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1382132792227" ignored="false" />
     <file path="/a.rxml" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993948242" ignored="false" />
     <file path="/a.coffee" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993951424" ignored="false" />
     <file path="/a.feature" changelist="6be655ad-8e68-4219-afb1-f2c67c2a5ab8" time="1375993953120" ignored="false" />
@@ -74,7 +74,7 @@
       <file leaf-file-name="apply.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="-16.041666">
+            <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1382027299000" expanded="true" signature="0:1516" placeholder="%body.white" />
                 <marker date="1382027299000" expanded="true" signature="60:65" placeholder=".page" />
@@ -88,16 +88,25 @@
       <file leaf-file-name="about.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/about.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="174" column="32" selection-start="7581" selection-end="7581" vertical-scroll-proportion="-16.041666">
+            <state line="174" column="32" selection-start="7581" selection-end="7581" vertical-scroll-proportion="-26.416666">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="html5.haml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.haml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/index.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="47" selection-start="150" selection-end="150" vertical-scroll-proportion="0.15957446">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html5.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="27" selection-start="2178" selection-end="2178" vertical-scroll-proportion="0.85714287">
+            <state line="17" column="28" selection-start="832" selection-end="832" vertical-scroll-proportion="-5.7916665">
               <folding />
             </state>
           </provider>
@@ -106,7 +115,7 @@
       <file leaf-file-name="site.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="10" selection-start="3094" selection-end="3094" vertical-scroll-proportion="-64.8">
+            <state line="108" column="10" selection-start="3094" selection-end="3094" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -115,7 +124,7 @@
       <file leaf-file-name="menu.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="8" selection-start="915" selection-end="915" vertical-scroll-proportion="-9.0">
+            <state line="33" column="8" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,19 +148,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.mobilegmap.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/javascripts/vendor/mobileGmap/jquery.mobilegmap.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="114" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_menu.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="-13.125">
+            <state line="21" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,7 +160,7 @@
       <file leaf-file-name="_320.sass" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="22.019608">
+            <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -495,14 +495,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="136" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="138" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="136" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="141" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="936" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="936" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="936" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="141" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="138" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -736,11 +736,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.6710354" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26040173" sideWeight="0.69575757" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33142036" sideWeight="0.70060605" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3364419" sideWeight="0.70060605" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29939395" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29939395" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32848486" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -818,11 +818,6 @@
         <state line="11" column="2355" selection-start="98098" selection-end="98098" vertical-scroll-proportion="0.32038835" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="47" selection-start="150" selection-end="150" vertical-scroll-proportion="-5.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_960.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="9" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0" />
@@ -835,9 +830,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/studios.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="0" selection-start="71" selection-end="12358" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="175" column="0" selection-start="71" selection-end="12358" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/vendor/mobileGmap/jquery.mobilegmap.js">
@@ -849,9 +842,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/vendor/hidpi_modernizr_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="287" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="3" column="287" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/other.js">
@@ -863,27 +854,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/partials/_menu.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="-13.125">
+        <state line="21" column="23" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/apply.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="-16.041666">
+        <state line="45" column="0" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1382027299000" expanded="true" signature="0:1516" placeholder="%body.white" />
             <marker date="1382027299000" expanded="true" signature="60:65" placeholder=".page" />
             <marker date="1382027299000" expanded="true" signature="1519:2241" placeholder=":javascript" />
             <marker date="1382027299000" expanded="true" signature="2244:2276" placeholder="= javascript_include_tag &quot;other&quot;" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/about.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="32" selection-start="7581" selection-end="7581" vertical-scroll-proportion="-16.041666">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,30 +878,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="22.019608">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="8" selection-start="915" selection-end="915" vertical-scroll-proportion="-9.0">
+        <state line="33" column="8" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/javascripts/site.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="10" selection-start="3094" selection-end="3094" vertical-scroll-proportion="-64.8">
+        <state line="108" column="10" selection-start="3094" selection-end="3094" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/stylesheets/partials/_320.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="105" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/layouts/html5.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="27" selection-start="2178" selection-end="2178" vertical-scroll-proportion="0.85714287">
+        <state line="17" column="28" selection-start="832" selection-end="832" vertical-scroll-proportion="-5.7916665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/about.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="32" selection-start="7581" selection-end="7581" vertical-scroll-proportion="-26.416666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="47" selection-start="150" selection-end="150" vertical-scroll-proportion="0.15957446">
           <folding />
         </state>
       </provider>
