@@ -7339,16 +7339,22 @@ var landing, isTouch = Modernizr.touch,
             posted: '<div class="content"><p class="info">{{html tweet}}</p></div>'
         }
     }];
+
 $(document).ready(function () {
     $("#headline").fitText(1, {
         minFontSize: "14px",
         maxFontSize: "152px"
-    }), landing = $("#landing"), landing.click(function (e) {
+    });
+    /*
+    landing = $("#landing"), landing.click(function (e) {
         e.preventDefault(), BV.show("/_videos/background_07052013.mp4", {
             ambient: !0
         })
-    }), setupLifeStream()
-}), Date.prototype.toISO8601 = function (e) {
+    }), setupLifeStream();
+    */
+});
+
+Date.prototype.toISO8601 = function (e) {
     var t = function (e, t) {
         for (var n = ""; n.length < t - 1 && e < Math.pow(10, t - n.length - 1);) n += "0";
         return n + e.toString()

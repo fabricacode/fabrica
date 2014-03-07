@@ -424,6 +424,7 @@ body {
 
 body.black {
 	background-color: black;
+	color: white;
 }
 
 body.white {
@@ -1011,6 +1012,40 @@ a#menuclose:hover {
 	color: black;
 }
 
+.page .thirds {
+	font-family: "Circular", helvetica, arial, sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 20px;
+}
+
+.page .thirds a {
+	color: black;
+}
+/*
+.page .columnmiddle {
+	font-family: "Circular", helvetica, arial, sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 20px;
+}
+
+.page .columnmiddle a {
+	color: black;
+}
+
+.page .columnright {
+	font-family: "Circular", helvetica, arial, sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 20px;
+}
+
+.page .columnright a {
+	color: black;
+}
+*/
+
 .page .timeline {
 	position: relative;
 	max-width: 640px;
@@ -1425,6 +1460,25 @@ span.redirect {
 		float: left;
 		margin-right: 3.44828%;
 	}
+
+	.thirds {
+		width: 31.03448%;
+		float: left;
+		margin-right: 3.44828%;
+	}
+	/*
+	.columnmiddle {
+		width: 31.03448%;
+		float: left;
+		margin-right: 3.44828%;
+	}
+
+	.columnright {
+		width: 31.03448%;
+		float: left;
+		margin-right: 0px;
+	}
+	*/
 }
 
 @media (min-width: 58.75em) {
@@ -1543,6 +1597,25 @@ span.redirect {
 		float: left;
 		margin-right: 2.12766%;
 	}
+
+	.thirds {
+		width: 31.914893%;
+		float: left;
+		margin-right: 2.12766%;
+	}
+	/*
+	.columnmiddle {
+		width: 31.914893%;
+		float: left;
+		margin-right: 2.12766%;
+	}
+
+	.columnright {
+		width: 31.914893%;
+		float: left;
+		margin-right: 0px;
+	}
+	*/
 
 	.apply {
 		width: 48.93617%;

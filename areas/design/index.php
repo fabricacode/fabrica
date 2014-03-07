@@ -2,8 +2,9 @@
 
 ini_set('display_errors', 'On');
 
-include("_php/connect.php");	// connect to the database
-include("_php/login.php");		// login or logout
+// connect to the database
+include("../../_php/connect.php");
+include("../../_php/login.php");
 
 ?>
 
@@ -15,7 +16,7 @@ include("_php/login.php");		// login or logout
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-	    <title>Fabrica</title>
+	    <title>Fabrica | Areas</title>
 	    <meta name='description'>
 	    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 	    <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -49,9 +50,9 @@ include("_php/login.php");		// login or logout
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	
-	<body class='black'>
+	<body class='white'>
 
-		<div class='black' id='header'>
+		<div class='white' id='header'>
 			<div class='center'>
 				<div id='headerbg'></div>
 				<div id='menubg'></div>
@@ -80,55 +81,76 @@ include("_php/login.php");		// login or logout
 			</div>
 		</div>
 
-		<div class='page black'>
-			<div class='head'>
-				<h1 id='headline'>
-					Fabrica is a communications research centre.
-				</h1>
-				<hr class='primary'>
-			</div>
-
-			<!--
-			<div class='hook' id='hook'>
-				<div id='loader'>
-					<div class='spinner'></div>
-				</div>
-				<span class='hook-text'>Reloading...</span>
-			</div>
-			<div id='lifestream'></div>
-			-->
+		<div class='page'>
+			<h1 id='headline'>
+				Designers make stuff every once and a while.
+			</h1>
+			<hr class='primary'>
+			<br/>
 
 			<div class='studioinfo'>
           		<div class='studioleft'>
-          			DESIGN<br/>
-					<br/>
+          			We produce artefacts that bring a unique view or statement to a particular context, produced through design processes that are questioned each time. We work with printed three dimensional & digital languages, visual and spoken sketches, hybrid products and approaches, and through constant editing. We design on different scales from artisanal to industrial, from conceptual projects to international exhibitions and object collections, from installations to media and apps, researching about how contemporary communication is changing the way we live, work and engage with cultures.<br/><br/>
           		</div>
           		<div class='studioright'>
-		        	EDITORIAL<br/>
-            		<br/>
+		        	<b>We are looking for:</b><br/>
+		            Product designers, architects, graphic designers, interaction designers, creative coders, web designers, electrical engineers.<br/><br/>
+		            <a class='applybutton' href='/apply'>
+		            	Apply Now
+		            </a>
+		            <br/><br/><br/>
 		        </div>
           	</div>
 
-          	<div class='studioinfo'>
-          		<div class='studioleft'>
-          			SOCIAL ENGAGEMENT CAMPAIGN<br/>
-					<br/>
-          		</div>
-          		<div class='studioright'>
-		        	NEWS<br/>
-            		<br/>
-		        </div>
-          	</div>
+			<hr class='primary'>
+			<br/>
 
-			<?php
+      		<div class='thirds'>
+      			LEFT!<br/>
+				<br/>
+      		</div>
+      		<div class='thirds'>
+	        	MIDDLE!<br/>
+        		<br/>
+	        </div>
+      		<div class='thirds' style="margin-right: 0px">
+	        	RIGHT!<br/>
+	        	<br/>
+	        </div>
+	        <div class='thirds'>
+      			LEFT!<br/>
+				<br/>
+      		</div>
+      		<div class='thirds'>
+	        	MIDDLE!<br/>
+        		<br/>
+	        </div>
+      		<div class='thirds' style="margin-right: 0px">
+	        	RIGHT!<br/>
+	        	<br/>
+	        </div>
+	        <div class='thirds'>
+      			LEFT!<br/>
+				<br/>
+      		</div>
+      		<div class='thirds'>
+	        	MIDDLE!<br/>
+        		<br/>
+	        </div>
+      		<div class='thirds' style="margin-right: 0px">
+	        	RIGHT!<br/>
+	        	<br/>
+	        </div>
 
-			include("_php/footer.php");
+	        <?php
+
+			include("../../_php/footer.php");
 
 			?>
 
-		</div>
+        </div>
 
-		<script src="/_js/site.js" type="text/javascript"></script>
+        <script src="/_js/other.js" type="text/javascript"></script>
 		
 	</body>
 </html>
