@@ -50,9 +50,9 @@ include("../_php/login.php");
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	
-	<body class='white'>
+	<body class='black'>
 
-		<div class='white' id='header'>
+		<div class='black' id='header'>
 			<div class='center'>
 				<div id='headerbg'></div>
 				<div id='menubg'></div>
@@ -77,15 +77,13 @@ include("../_php/login.php");
 				<div id='menu'>
 					<a class='animate' href='javascript:toggleMenu();' id='menuopen'></a>
 				</div>
-				<hr>
 			</div>
 		</div>
 
-		<div class='page'>
+		<div class='page black'>
 			<h1 id='headline'>
 				Applications are accepted throughout the year.
 			</h1>
-			<hr class='primary'>
 			<div class='apply'>
 				<p class='about'>
 			    	We are looking for interesting and interested people to become researchers at Fabrica. You might be a coder, graphic designer, musician, industrial designer, filmmaker, motion graphics artist, writer, illustrator, interaction designer, animator, some combination of these or even something else. You must be 25 years old or younger. Please see the Facebook pages for <a href="http://www.facebook.com/pages/Fabrica/48283858451">Fabrica</a> and <a href="http://www.facebook.com/colorsmagazine">Colors</a> for more information about the projects we are currently working on.<br/>
@@ -95,7 +93,6 @@ include("../_php/login.php");
 				</p>
 			</div>
 
-			<hr class='primary'>
 			<br/>
 
 			<div class='form'>

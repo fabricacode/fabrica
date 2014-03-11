@@ -16,7 +16,7 @@ include("../../_php/login.php");
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-	    <title>Fabrica | Areas</title>
+	    <title>Fabrica | Design</title>
 	    <meta name='description'>
 	    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 	    <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -50,9 +50,9 @@ include("../../_php/login.php");
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	
-	<body class='white'>
+	<body class='black'>
 
-		<div class='white' id='header'>
+		<div class='black' id='header'>
 			<div class='center'>
 				<div id='headerbg'></div>
 				<div id='menubg'></div>
@@ -77,72 +77,45 @@ include("../../_php/login.php");
 				<div id='menu'>
 					<a class='animate' href='javascript:toggleMenu();' id='menuopen'></a>
 				</div>
-				<hr>
 			</div>
 		</div>
 
-		<div class='page'>
-			<h1 id='headline'>
-				Designers make stuff every once and a while.
-			</h1>
-			<hr class='primary'>
+		<div class='page black'>
+			<h2 id='headline'>
+				<font class="areaname">design</font> produces artefacts that bring a unique view or statement to a particular context.
+			</h2>
 			<br/>
 
-			<div class='studioinfo'>
-          		<div class='studioleft'>
-          			We produce artefacts that bring a unique view or statement to a particular context, produced through design processes that are questioned each time. We work with printed three dimensional & digital languages, visual and spoken sketches, hybrid products and approaches, and through constant editing. We design on different scales from artisanal to industrial, from conceptual projects to international exhibitions and object collections, from installations to media and apps, researching about how contemporary communication is changing the way we live, work and engage with cultures.<br/><br/>
-          		</div>
-          		<div class='studioright'>
-		        	<b>We are looking for:</b><br/>
-		            Product designers, architects, graphic designers, interaction designers, creative coders, web designers, electrical engineers.<br/><br/>
-		            <a class='applybutton' href='/apply'>
-		            	Apply Now
-		            </a>
-		            <br/><br/><br/>
-		        </div>
-          	</div>
+			<?php
 
-			<hr class='primary'>
-			<br/>
-
-      		<div class='thirds'>
-      			LEFT!<br/>
-				<br/>
-      		</div>
-      		<div class='thirds'>
-	        	MIDDLE!<br/>
-        		<br/>
-	        </div>
-      		<div class='thirds' style="margin-right: 0px">
-	        	RIGHT!<br/>
-	        	<br/>
-	        </div>
-	        <div class='thirds'>
-      			LEFT!<br/>
-				<br/>
-      		</div>
-      		<div class='thirds'>
-	        	MIDDLE!<br/>
-        		<br/>
-	        </div>
-      		<div class='thirds' style="margin-right: 0px">
-	        	RIGHT!<br/>
-	        	<br/>
-	        </div>
-	        <div class='thirds'>
-      			LEFT!<br/>
-				<br/>
-      		</div>
-      		<div class='thirds'>
-	        	MIDDLE!<br/>
-        		<br/>
-	        </div>
-      		<div class='thirds' style="margin-right: 0px">
-	        	RIGHT!<br/>
-	        	<br/>
-	        </div>
-
-	        <?php
+			// get all projects from the design area
+			$index = 1;
+			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = 'design' ORDER BY enddate DESC");
+			while($project = mysql_fetch_assoc($result)){
+				if($index % 3 == 0){
+					echo "<div class='thirds' style='margin-right: 0px'>";
+				} else {
+					echo "<div class='thirds'>";
+				}
+				echo "<a href='/projects/" . $project['link'] . "'>";
+				echo "<img src='" . $project['mainthumb'] . "' class='projectthumb'>";
+				echo "<span class='projecttitle'>" . $project['title'] . "</span>";
+				echo "</a>";
+				echo "<span class='projecttags'>";
+				$tagresults = mysql_query("SELECT tag FROM project_tags WHERE project_id = '" . $project['id'] . "'");
+				$numtags = mysql_num_rows($tagresults);
+				$tagindex = 0;
+				while($tags = mysql_fetch_assoc($tagresults)){
+					echo "<a href='/projects/tag/" . $tags['tag'] . "'>" . $tags['tag'] . "</a>";
+					$tagindex++;
+					if($tagindex < $numtags){
+						echo ", ";
+					}
+				}
+				echo "</span>";
+				echo "</div>";
+				$index++;
+			}
 
 			include("../../_php/footer.php");
 

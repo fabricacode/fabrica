@@ -16,7 +16,7 @@ include("../_php/login.php");
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-	    <title>Fabrica | About</title>
+	    <title>Fabrica | Projects</title>
 	    <meta name='description'>
 	    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 	    <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -81,43 +81,55 @@ include("../_php/login.php");
 		</div>
 
 		<div class='page black'>
-			<h1 id='headline'>
-				We are based in Italy and work globally.
-			</h1>
+			<h2 id='headline'>
+				Fabrica produces projects across a variety of disciplines and mediums.
+			</h2>
 			<br/>
 
-			<div class='studioinfo'>
-          		<div class='studioleft'>
-          			<b>Our web site is in beta and under constant development. Check back soon for new content.</b><br/>
-		            <br/>
-		            Fabrica is a research workshop, new school and studio. It pursues research through making, producing groundbreaking projects in collaboration with the world’s best creative talents. Our desire is to positively impact upon social and cultural change. Fabrica pursues its own projects as well as working for others, from commercial clients to governments, NGOs and the cultural sector, developing tangible research, expertly communicated.<br/>
-		            <br/>
-		            Fabrica was created by Benetton in 1994, and projects have won Webbies, Academy Awards, Cannes Grand Prix, Art Directors Club and D&AD awards and more besides. If you are 25 or under, you can <a href="/apply">apply</a> for a scholarship to join our research community. If you are interested in collaborating, we'd be happy to talk.<br/>
-		            <br/>
-		            <b>Contact Us</b>
-		            <br>
-		            Fabrica
-		            <br>
-		            Villa Pastega, via Postioma 54/F
-		            <br>
-		            Catena di Villorba
-		            <br>
-		            31020, Treviso, Italy
-		            <br>
-		            <br>
-		            <a href='mailto:fabrica@fabrica.it'>
-		            	<span class='redirect'>ti.acirbaf@acirbaf</span>
-		            </a>
-		            <br>
-		            Phone +39 0422 516111
-		            <br/><br/>
-          		</div>
-          		<div class='studioright'>
-		        	<div class='gmap' data-center='via Postioma 54/F Catena di Villorba 31020, Treviso, Italy' data-zoom='15' id='map'></div>
-		        </div>
-          	</div>
+      		<div class='thirds'>
+      			<a href="/projectlink">
+	      			<img src="/_images/design.jpg" class="projectthumb">
+	      			<span class="projecttitle">Project Title 1</span>
+	      		</a>
+      		</div>
+      		<div class='thirds'>
+	        	<a href="/projectlink">
+	      			<img src="/_images/design.jpg" class="projectthumb">
+	      			<span class="projecttitle">Project Title 2</span>
+	      		</a>
+	        </div>
+      		<div class='thirds' style="margin-right: 0px">
+	        	<a href="/projectlink">
+	      			<img src="/_images/design.jpg" class="projectthumb">
+	      			<span class="projecttitle">Project Title 3</span>
+	      		</a>
+	        </div>
+	        <div class='thirds'>
+      			<a href="/projectlink">
+	      			<img src="/_images/design.jpg" class="projectthumb">
+	      			<span class="projecttitle">Project Title 4</span>
+	      		</a>
+      		</div>
+      		<div class='thirds'>
+	        	<a href="/projectlink">
+	      			<img src="/_images/design.jpg" class="projectthumb">
+	      			<span class="projecttitle">Project Title 5</span>
+	      		</a>
+	        </div>
+      		<div class='thirds' style="margin-right: 0px">
+	        	<a href="/projectlink">
+	      			<img src="/_images/design.jpg" class="projectthumb">
+	      			<span class="projecttitle">Project Title 6</span>
+	      		</a>
+	        </div>
+	        <div class='thirds'>
+      			<a href="/projectlink">
+	      			<img src="/_images/design.jpg" class="projectthumb">
+	      			<span class="projecttitle">Project Title 7</span>
+	      		</a>
+      		</div>
 
-          	<?php
+	        <?php
 
 			include("../_php/footer.php");
 
@@ -125,8 +137,7 @@ include("../_php/login.php");
 
         </div>
 
-        <script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyCKTYhE_M2R4xDkbw52flmdIfni7KlvWmk&amp;sensor=false' type='text/javascript'></script>
-      	<script src="/_js/map.js" type="text/javascript"></script>
+        <script src="/_js/other.js" type="text/javascript"></script>
 		
 	</body>
 </html>

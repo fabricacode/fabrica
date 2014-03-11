@@ -46,6 +46,7 @@ include("_php/login.php");		// login or logout
 	    <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 	    <!-- For Google+ bidirectional linking -->
 	    <link href='https://plus.google.com/103695675753742819996' rel='publisher'>
+	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	
@@ -76,7 +77,6 @@ include("_php/login.php");		// login or logout
 				<div id='menu'>
 					<a class='animate' href='javascript:toggleMenu();' id='menuopen'></a>
 				</div>
-				<hr>
 			</div>
 		</div>
 
@@ -85,40 +85,101 @@ include("_php/login.php");		// login or logout
 				<h1 id='headline'>
 					Fabrica is a communications research centre.
 				</h1>
-				<hr class='primary'>
-			</div>
+			</div>			
 
-			<!--
+      		<div class='studioleft'>
+      			<div class="frontmenu">
+      				<a href="areas/campaign/">
+      					<img src="_images/socialcampaigns.jpg">
+          				<span class="frontmenutext">social campaigns</span>
+          			</a>
+          		</div>
+      		</div>
+      		<div class='studioright'>
+      			<div class="frontmenu">
+      				<a href="areas/design/">
+      					<img src="_images/design.jpg">
+		        		<span class="frontmenutext">design</span>
+		        	</a>
+		        </div>
+	        </div>
+      		<div class='studioleft'>
+      			<div class="frontmenu">
+      				<a href="areas/editorial/">
+      					<img src="_images/editorial.jpg">
+          				<span class="frontmenutext">editorial</span>
+          			</a>
+          		</div>
+      		</div>
+      		<div class='studioright'>
+      			<div class="frontmenu">
+      				<!--
+      				<a href="areas/news/">
+      					<img src="_images/news.jpg">
+		        		<span class="frontmenutext">news</span>
+		        	</a>
+		        	-->
+
+		        	<div id="newscarousel" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#newscarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#newscarousel" data-slide-to="1"></li>
+							<li data-target="#newscarousel" data-slide-to="2"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active">
+								<a href="/news/fabrica-loves-daikin">
+									<img src="_images/news.jpg">
+									<div class="frontmenutext">
+									fabrica loves daikin - salone 2014.
+									</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="/news/whats-new">
+									<img src="_images/news2.jpg">
+									<div class="frontmenutext">
+									what's new at fabrica?
+									</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="/news/roberto-saviano-at-fabrica">
+									<img src="_images/news3.jpg">
+									<div class="frontmenutext">
+									roberto saviano at fabrica.
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<!-- Controls -->
+						<!--
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+						-->
+					</div>
+
+		        </div>
+	        </div>
+
+          	<!--
 			<div class='hook' id='hook'>
 				<div id='loader'>
 					<div class='spinner'></div>
 				</div>
 				<span class='hook-text'>Reloading...</span>
 			</div>
-			<div id='lifestream'></div>
 			-->
 
-			<div class='studioinfo'>
-          		<div class='studioleft'>
-          			DESIGN<br/>
-					<br/>
-          		</div>
-          		<div class='studioright'>
-		        	EDITORIAL<br/>
-            		<br/>
-		        </div>
-          	</div>
-
-          	<div class='studioinfo'>
-          		<div class='studioleft'>
-          			SOCIAL ENGAGEMENT CAMPAIGN<br/>
-					<br/>
-          		</div>
-          		<div class='studioright'>
-		        	NEWS<br/>
-            		<br/>
-		        </div>
-          	</div>
+			<div id='lifestream'></div>
 
 			<?php
 
@@ -129,6 +190,7 @@ include("_php/login.php");		// login or logout
 		</div>
 
 		<script src="/_js/site.js" type="text/javascript"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		
 	</body>
 </html>

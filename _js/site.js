@@ -35,11 +35,13 @@ function feedcallback() {
 }
 
 function showVideo() {
+    /*
     BV = new $.BigVideo({
         forceAutoplay: isTouch
     }), BV.init(), isTouch ? BV.show("images/cover.png") : BV.show("/_videos/background_07052013.mp4", {
         ambient: !0
     }), $("#big-video-wrap").fadeIn(400)
+    */
 }
 
 function trackLinks() {
@@ -7350,8 +7352,9 @@ $(document).ready(function () {
         e.preventDefault(), BV.show("/_videos/background_07052013.mp4", {
             ambient: !0
         })
-    }), setupLifeStream();
+    });
     */
+    setupLifeStream();
 });
 
 Date.prototype.toISO8601 = function (e) {

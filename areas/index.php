@@ -50,9 +50,9 @@ include("../_php/login.php");
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	
-	<body class='white'>
+	<body class='black'>
 
-		<div class='white' id='header'>
+		<div class='black' id='header'>
 			<div class='center'>
 				<div id='headerbg'></div>
 				<div id='menubg'></div>
@@ -77,15 +77,13 @@ include("../_php/login.php");
 				<div id='menu'>
 					<a class='animate' href='javascript:toggleMenu();' id='menuopen'></a>
 				</div>
-				<hr>
 			</div>
 		</div>
 
-		<div class='page'>
+		<div class='page black'>
 			<h1 id='headline'>
 				You can apply to Fabrica throughout the year.
 			</h1>
-			<hr class='primary'>
 			<br/>
 
 			<div class='studioinfo'>
@@ -99,12 +97,11 @@ include("../_php/login.php");
 		        </div>
           	</div>
 
-			<hr class='primary'>
 			<br/>
 
 			<div class='studio'>
 				<p class='studiotitle'>
-					<b>Design</b>
+					<a href="design"><b>Design</b></a>
 				</p>
 				<p>
 					<b>Creative Director: Sam Baron</b>
@@ -128,7 +125,7 @@ include("../_php/login.php");
 
           	<div class='studio'>
 				<p class='studiotitle'>
-					<b>Editorial</b>
+					<a href="editorial"><b>Editorial</b></a>
 				</p>
 				<p>
 					<b>Creative Director: Enrico Bossan</b>
@@ -152,7 +149,7 @@ include("../_php/login.php");
 
           	<div class='studio'>
 				<p class='studiotitle'>
-					<b>COLORS Magazine</b>
+					<a href="colors"><b>COLORS Magazine</b></a>
 				</p>
 				<p>
 					<b>Creative Director: Patrick Waterhouse</b>
@@ -175,7 +172,7 @@ include("../_php/login.php");
 
           	<div class='studio'>
 				<p class='studiotitle'>
-					<b>Social Engagement Campaigns</b>
+					<a href="campaign"><b>Social Engagement Campaigns</b></a>
 				</p>
 				<p>
 					<b>Creative Director: Erik Ravelo</b>
