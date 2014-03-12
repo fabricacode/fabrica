@@ -16,7 +16,7 @@ include("../../_php/login.php");
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-	    <title>Fabrica | Design</title>
+	    <title>Fabrica | Editorial</title>
 	    <meta name='description'>
 	    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 	    <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -60,15 +60,15 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h2 id='headline'>
-				<font class="areaname">design</font> produces artefacts that bring a unique view or statement to a particular context.
+				<font class="areaname">editorial</font> produces books, documentaries and exhibitions focusing on the human condition.
 			</h2>
 			<br/>
 
 			<?php
 
-			// get all projects from the design area
+			// get all projects from the editorial area
 			$index = 1;
-			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = 'design' ORDER BY enddate DESC");
+			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = 'editorial' ORDER BY enddate DESC");
 			while($project = mysql_fetch_assoc($result)){
 				if($index % 3 == 0){
 					echo "<div class='thirds' style='margin-right: 0px'>";

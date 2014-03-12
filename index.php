@@ -52,33 +52,11 @@ include("_php/login.php");		// login or logout
 	
 	<body class='black'>
 
-		<div class='black' id='header'>
-			<div class='center'>
-				<div id='headerbg'></div>
-				<div id='menubg'></div>
-				<div id='options'>
-					<a class='static' href='javascript:toggleMenu();' id='menuclose'></a>
-					<ul>
-						<li>
-							<a class='menulink' href='/apply'>Apply</a>
-						</li>
-						<li>
-							<a class='menulink' href='/about'>About</a>
-						</li>
-						<li>
-							<a class='menulink' href='/areas'>Areas</a>
-						</li>
-						<li>
-							<a class='menulink' href='http://store.fabrica.it'>Store</a>
-						</li>
-					</ul>
-				</div>
-				<a class='homelink logo-icon normal' href='/' id='logo'></a>
-				<div id='menu'>
-					<a class='animate' href='javascript:toggleMenu();' id='menuopen'></a>
-				</div>
-			</div>
-		</div>
+		<?php
+
+		include("_html/header.html");
+
+		?>
 
 		<div class='page black'>
 			<div class='head'>
@@ -113,52 +91,74 @@ include("_php/login.php");		// login or logout
       		</div>
       		<div class='studioright'>
       			<div class="frontmenu">
-      				<!--
-      				<a href="areas/news/">
-      					<img src="_images/news.jpg">
-		        		<span class="frontmenutext">news</span>
-		        	</a>
-		        	-->
 
 		        	<div id="newscarousel" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
-						<ol class="carousel-indicators">
-							<li data-target="#newscarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#newscarousel" data-slide-to="1"></li>
-							<li data-target="#newscarousel" data-slide-to="2"></li>
-						</ol>
 
-						<!-- Wrapper for slides -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<a href="/news/fabrica-loves-daikin">
-									<img src="_images/news.jpg">
-									<div class="frontmenutext">
-									fabrica loves daikin - salone 2014.
-									</div>
-								</a>
-							</div>
-							<div class="item">
-								<a href="/news/whats-new">
-									<img src="_images/news2.jpg">
-									<div class="frontmenutext">
-									what's new at fabrica?
-									</div>
-								</a>
-							</div>
-							<div class="item">
-								<a href="/news/roberto-saviano-at-fabrica">
-									<img src="_images/news3.jpg">
-									<div class="frontmenutext">
-									roberto saviano at fabrica.
-									</div>
-								</a>
-							</div>
-						</div>
+		        		<?php
+
+		        		// grab the 5 most recent news entries
+		        		$result = mysql_query("SELECT title,link,mainthumb FROM news ORDER BY dt DESC LIMIT 5");
+		        		$newscount = mysql_num_rows($result);
+
+		        		// print out the carousel controls first
+		        		echo "<ol class='carousel-indicators'>";
+		        		for($i=0; $i<$newscount; $i++){
+		        			if($i == 0){
+		        				echo "<li data-target='#newscarousel' data-slide-to='0' class='active'></li>";
+		        			} else {
+		        				echo "<li data-target='#newscarousel' data-slide-to='" . $i . "'></li>";
+		        			}
+		        		}
+		        		echo "</ol>";
+
+		        		// iterate over news entries and print out carousel elements
+		        		echo "<div class='carousel-inner'>";
+		        		$first = True;
+		        		while($news = mysql_fetch_assoc($result)){
+		        			if($first){
+		        				echo "<div class='item active'>";
+		        				$first = False;
+		        			} else {
+		        				echo "<div class='item'>";
+		        			}
+		        			echo "<a href='/news/" . $news["link"] . "'>";
+		        			echo "<img src='" . $news["mainthumb"] ."'>";
+		        			echo "<div class='frontmenutext'>" . $news["title"] . "</div>";
+		        			echo "</a></div>";
+		        		}
+		        		echo "</div>";
+
+		        		?>
 
 						<!-- Controls -->
 						<!--
 						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+						-->
+					</div>
+
+		        </div>
+	        </div>
+
+			<div id='lifestream'></div>
+
+			<?php
+
+			include("_php/footer.php");
+
+			?>
+
+		</div>
+
+		<script src="/_js/site.js" type="text/javascript"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
+	</body>
+</html>-example-generic" data-slide="prev">
 							<span class="glyphicon glyphicon-chevron-left"></span>
 						</a>
 						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">

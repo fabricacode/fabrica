@@ -50,38 +50,15 @@ include("../_php/login.php");
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	
-	<body class='white'>
+	<body class='black'>
 
-		<div class='white' id='header'>
-			<div class='center'>
-				<div id='headerbg'></div>
-				<div id='menubg'></div>
-				<div id='options'>
-					<a class='static' href='javascript:toggleMenu();' id='menuclose'></a>
-					<ul>
-						<li>
-							<a class='menulink' href='/apply'>Apply</a>
-						</li>
-						<li>
-							<a class='menulink' href='/about'>About</a>
-						</li>
-						<li>
-							<a class='menulink' href='/areas'>Areas</a>
-						</li>
-						<li>
-							<a class='menulink' href='http://store.fabrica.it'>Store</a>
-						</li>
-					</ul>
-				</div>
-				<a class='homelink logo-icon normal' href='/' id='logo'></a>
-				<div id='menu'>
-					<a class='animate' href='javascript:toggleMenu();' id='menuopen'></a>
-				</div>
-				<hr>
-			</div>
-		</div>
+		<?php
 
-		<div class='page'>
+		include("../_html/header.html");
+
+		?>
+
+		<div class='page black'>
 			<h1 id='headline'>
 
 				<?php

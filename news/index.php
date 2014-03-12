@@ -16,22 +16,23 @@ include("../_php/login.php");
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+
 	    <?php
 
   		if(isset($_GET["link"])){
   			// fetch project data based on URL
-  			$result = mysql_query("SELECT * FROM project WHERE link = '" . mysql_real_escape_string($_GET["link"]) . "'");
-  			$project = mysql_fetch_assoc($result);
-  			if(isset($project["title"])){
-	  			echo "<title>Fabrica | " . $project["title"] . "</title>";
+  			$result = mysql_query("SELECT * FROM news WHERE link = '" . mysql_real_escape_string($_GET["link"]) . "'");
+  			$news = mysql_fetch_assoc($result);
+  			if(isset($news["title"])){
+	  			echo "<title>Fabrica | " . $news["title"] . "</title>";
 	  		} else {
-	  			echo "<title>Fabrica | Projects</title>";
+	  			echo "<title>Fabrica | News</title>";
 	  		}
 	  	} else if(isset($_GET["tag"])){
 	  		echo "<title>Fabrica | " . mysql_real_escape_string($_GET["tag"]) . "</title>";
   		} else {
   			// list projects
-  			echo "<title>Fabrica | Projects</title>";
+  			echo "<title>Fabrica | News</title>";
   		}
 
   		?>
@@ -81,12 +82,12 @@ include("../_php/login.php");
 			<h2 id='headline'>
 				<?php
 
-				if(isset($project["title"])){
-					echo "<font class='areaname' style='margin-bottom:40px;'>" . $project["area"] . "</font><br/><font style='display:block; margin-top: 20px'>" . $project["title"] . "</font>";
+				if(isset($news["title"])){
+					echo $news["title"];
 				} else if(isset($_GET["tag"])){
 					echo "tag: " . mysql_real_escape_string($_GET["tag"]);
 				} else {
-					echo "we produce projects across a variety of disciplines and mediums.";
+					echo "These are the latest updates about what Fabrica is doing around the world.";
 				}
 				
 				?>
@@ -95,25 +96,25 @@ include("../_php/login.php");
 
       		<?php
 
-      		function listProjects($result){
+      		function listNews($result){
       			// list all projects returned by the query
 				$index = 1;
-				while($project = mysql_fetch_assoc($result)){
+				while($news = mysql_fetch_assoc($result)){
 					if($index % 3 == 0){
 						echo "<div class='thirds' style='margin-right: 0px'>";
 					} else {
 						echo "<div class='thirds'>";
 					}
-					echo "<a href='/projects/" . $project['link'] . "'>";
-					echo "<img src='" . $project['mainthumb'] . "' class='projectthumb'>";
-					echo "<span class='projecttitle'>" . $project['title'] . "</span>";
+					echo "<a href='/news/" . $news['link'] . "'>";
+					echo "<img src='" . $news['mainthumb'] . "' class='projectthumb'>";
+					echo "<span class='projecttitle'>" . $news['title'] . "</span>";
 					echo "</a>";
 					echo "<span class='projecttags'>";
-					$tagresults = mysql_query("SELECT tag FROM project_tags WHERE project_id = '" . $project['id'] . "'");
+					$tagresults = mysql_query("SELECT tag FROM news_tags WHERE news_id = '" . $news['id'] . "'");
 					$numtags = mysql_num_rows($tagresults);
 					$tagindex = 0;
 					while($tags = mysql_fetch_assoc($tagresults)){
-						echo "<a href='/projects/tag/" . $tags['tag'] . "'>" . $tags['tag'] . "</a>";
+						echo "<a href='/news/tag/" . $tags['tag'] . "'>" . $tags['tag'] . "</a>";
 						$tagindex++;
 						if($tagindex < $numtags){
 							echo ", ";
@@ -125,46 +126,32 @@ include("../_php/login.php");
 				}
       		}
 
-      		function fetchAllProjects(){
-      			// fetch everything for the projects page
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project ORDER BY enddate DESC");
-      			listProjects($result);
+      		function fetchAllNews(){
+      			// fetch everything for the news page
+      			$result = mysql_query("SELECT id,title,link,mainthumb FROM news ORDER BY dt DESC");
+      			listNews($result);
       		}
 
-      		function fetchAreaProjects($area){
-      			// fetch only projects from the specified area
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '" . $area . "' ORDER BY enddate DESC");
-      			listProjects($result);
-      		}
-
-      		function fetchAreaProjectsExcept($area, $id){
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '" . $area . "' AND id <> '" . $id . "' ORDER BY enddate DESC");
-      			listProjects($result);
-      		}
-
-      		function fetchTaggedProjects($tag){
+      		function fetchTaggedNews($tag){
       			// TODO: grab project_id's from project_tags table based on tag value.
-      			$result = mysql_query("SELECT project.id,project.title,project.link,project.mainthumb FROM project INNER JOIN project_tags ON project.id = project_tags.project_id WHERE project_tags.tag = '" . $tag . "' ORDER BY enddate DESC");
-      			listProjects($result);
+      			$result = mysql_query("SELECT news.id,news.title,news.link,news.mainthumb FROM news INNER JOIN news_tags ON news.id = news_tags.news_id WHERE news_tags.tag = '" . $tag . "' ORDER BY dt DESC");
+      			listNews($result);
       		}
 
-      		function projectDetails($project){
-      			echo "<font class='projectsubtitle'>" . $project["subtitle"] . "</font><br/><br/>";
-      			echo "<img class='projectmainimg' src='" . $project["mainimage"] . "'><br/><br/>";
-      			echo $project["bodytext"] . "<br/><br/>";
-      			// TODO: build gallery(s)
+      		function newsDetails($news){
+      			echo "<font class='projectsubtitle'>" . $news["subtitle"] . "</font><br/><br/>";
+      			echo "<img class='projectmainimg' src='" . $news["mainimage"] . "'><br/><br/>";
+      			echo $news["bodytext"] . "<br/><br/>";
+      			// TODO: build gallery(s)?
       			// TODO: add social media sharing buttons
-      			echo "<hr class='primary'><br/>";
-      			// list the other projects from this area
-      			fetchAreaProjectsExcept($project["area"], $project["id"]);
       		}
 
-      		if(isset($project["title"])){
-      			projectDetails($project);
+      		if(isset($news["title"])){
+      			newsDetails($news);
       		} else if(isset($_GET["tag"])){
-      			fetchTaggedProjects(mysql_real_escape_string($_GET["tag"]));
+      			fetchTaggedNews(mysql_real_escape_string($_GET["tag"]));
       		} else {
-      			fetchAllProjects();
+      			fetchAllNews();
       		}
 			
 			include("../_php/footer.php");

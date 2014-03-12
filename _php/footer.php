@@ -1,4 +1,5 @@
 <div id="footer">
+<br/>
 <hr class="primary">
 
 Copyright © 1994 - 2014 Fabrica S.p.A. all rights reserved&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;VAT n. 01926330265&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
