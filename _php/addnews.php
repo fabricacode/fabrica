@@ -20,10 +20,15 @@ if(isset($_SESSION['loggedin'])){
 			//echo "Return Code: " . $_FILES["image"]["error"] . "<br/>";
 		} else {
 		
-			$title = $_POST["title"];
-			$subtitle = $_POST["subtitle"];
-			$link = $_POST["link"];
-			$bodytext = $_POST["bodytext"];
+			$title = mysql_real_escape_string($_POST["title"]);
+			$subtitle = mysql_real_escape_string($_POST["subtitle"]);
+			$link = mysql_real_escape_string($_POST["link"]);
+			$bodytext = mysql_real_escape_string($_POST["bodytext"]);
+			$tags = trim(mysql_real_escape_string($_POST["tags"]));
+
+			if(strpos($tags, ",") !== false){
+				$taglist = explode(",", $tags);
+			}
 			
 			// move temp file to a real location in news directory
 			$imagedest = "/_images/news/" . $link . "." . $ext;
@@ -44,7 +49,21 @@ if(isset($_SESSION['loggedin'])){
 			
 			// insert new row into news table
 			mysql_query("INSERT INTO news (title, subtitle, bodytext, mainthumb, mainimage, link) VALUES ('{$title}', '{$subtitle}', '{$bodytext}', '{$thumbdest}', '{$imagedest}', '{$link}')");
-			
+			$news_id = mysql_insert_id();
+
+			// inserts tags referencing news_id
+			if(isset($taglist)){
+				foreach($taglist as $tag){
+					$tag = trim($tag);
+					if(strlen($tag) > 0){
+						mysql_query("INSERT INTO news_tags (news_id, tag) VALUES ('{$news_id}', '{$tag}')");
+					}
+				}
+			} else if(strlen($tags) > 0){
+				// only one tag entered
+				mysql_query("INSERT INTO news_tags (news_id, tag) VALUES ('{$news_id}', '{$tags}')");
+			}
+
 			echo "<b>News Successfully Added!</b><br/><br/>See your post <a href='/news/" . $link . "'>here</a>.<br/>";
 		}
 	
@@ -53,18 +72,13 @@ if(isset($_SESSION['loggedin'])){
 }
 
 function make_thumb($source_image, $ext, $width, $height, $dest, $desired_width) {
-
 	// TODO: constrain to a prespecified aspect ratio to fit thumbnail with front page grid of image links.
-
 	// find the "desired height" of this thumbnail, relative to the desired width
 	$desired_height = floor($height * ($desired_width / $width));
-  
 	// create a new, "virtual" image
 	$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
-
 	// copy source image at a resized size
 	imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
-  
 	// create the physical thumbnail image to its destination
 	if($ext == "jpg" || $ext == "jpeg"){
 		imagejpeg($virtual_image, $dest, 80);

@@ -70,7 +70,6 @@ include("../_php/login.php");
 				?>
 				
 			</h1>
-			<hr class='primary'>
 			<div class='apply'>
 				<p class='about'>
 
@@ -85,7 +84,6 @@ include("../_php/login.php");
 				</p>
 			</div>
 
-			<hr class='primary'>
 			<br/>
 
 			<p class='about'>

@@ -141,6 +141,7 @@ include("../_php/login.php");
       		function newsDetails($news){
       			echo "<font class='projectsubtitle'>" . $news["subtitle"] . "</font><br/><br/>";
       			echo "<img class='projectmainimg' src='" . $news["mainimage"] . "'><br/><br/>";
+      			echo "<b>" . date("F j, Y", strtotime($news['dt'])) . "</b><br/><br/>";
       			echo $news["bodytext"] . "<br/><br/>";
       			// TODO: build gallery(s)?
       			// TODO: add social media sharing buttons
