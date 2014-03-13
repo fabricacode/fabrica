@@ -158,39 +158,4 @@ include("_php/login.php");		// login or logout
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		
 	</body>
-</html>-example-generic" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
-						-->
-					</div>
-
-		        </div>
-	        </div>
-
-          	<!--
-			<div class='hook' id='hook'>
-				<div id='loader'>
-					<div class='spinner'></div>
-				</div>
-				<span class='hook-text'>Reloading...</span>
-			</div>
-			-->
-
-			<div id='lifestream'></div>
-
-			<?php
-
-			include("_php/footer.php");
-
-			?>
-
-		</div>
-
-		<script src="/_js/site.js" type="text/javascript"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		
-	</body>
 </html>

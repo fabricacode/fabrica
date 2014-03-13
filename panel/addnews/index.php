@@ -3,8 +3,8 @@
 ini_set('display_errors', 'On');
 
 // connect to the database
-include("../_php/connect.php");
-include("../_php/login.php");
+include("../../_php/connect.php");
+include("../../_php/login.php");
 
 ?>
 
@@ -16,7 +16,7 @@ include("../_php/login.php");
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-	    <title>Fabrica | User Panel</title>
+	    <title>Fabrica | Add News</title>
 	    <meta name='description'>
 	    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 	    <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -54,94 +54,43 @@ include("../_php/login.php");
 
 		<?php
 
-		include("../_html/header.html");
+		include("../../_html/header.html");
 
 		?>
 
 		<div class='page black'>
 			<h1 id='headline'>
-
-				<?php
-					if(isset($_SESSION["loggedin"])){
-						echo "Hello, " . $_SESSION["firstname"] . ".<br/>";
-					} else {
-						echo "Login to get info and make changes.";
-					}
-				?>
-				
+				Add News
 			</h1>
 			<hr class='primary'>
-			<div class='apply'>
-				<p class='about'>
-
-					<?php
-						if(isset($_SESSION["loggedin"])){
-							echo "This area provides information relevant to your current position at Fabrica. Select from any of the functions below in order to make modifications.";
-						} else {
-							echo "The user panel is designed to give you access to information relevant to your position at Fabrica, as well as provide you the ability to modify settings, change your biographical information, and create content for the Fabrica web site. Only staff, consultants, and residents and trial residents have login permissions for the user panel. If you haven't received an email with instructions on how to access your user panel, please get in contact with Stefano Bosco.<br/>";
-						}
-					?>
-
-				</p>
-			</div>
-
-			<hr class='primary'>
-			<br/>
-
 			<p class='about'>
 		
 				<?php
-
-				function showLogin(){
-					echo "<div class='form'>";
-					echo "<form name='login' action='' method='post'>";
-					echo "<input type='hidden' name='login' value='login'>";
-					echo "<b>Username:</b><br/><input type='text' name='username'><br/><br/>";
-					echo "<b>Password:</b><br/><input type='password' name='password'><br/><br/>";
-					echo "<input type='submit' value='Login'>";
-					echo "</form>";
-					echo "</div>";
-				}
-
-				function showMenu(){
-					// admin options
-					if($_SESSION["position"] == "admin"){
-						echo "<a href='../applications/'>Review Applications</a><br/><br/>";
-						echo "<a href='addnews'>Add News</a><br/><br/>";
-						echo "<a href='editnews'>Edit News</a><br/><br/>";
-						echo "<a href='addproject'>Add Project</a><br/><br/>";
-						echo "<a href='editproject'>Edit Project</a><br/><br/>";
+				
+				if(isset($_SESSION["loggedin"]) && $_SESSION["position"] == "admin"){
+					if(isset($_POST["title"])){
+						include("../../_php/addnews.php");
+					} else {
+						include("../../_html/addnews.html");
 					}
-					// logout option
-					echo "<div class='form'>";
-					echo "<form name='logout' action='' method='post'>";
-					echo "<input type='hidden' name='logout' value='logout'>";
-					echo "<input type='submit' value='Logout'>";
-					echo "</form>";
-					echo "</div>";
-				}
-				
-				if(isset($_SESSION["loggedin"])){
-					// menu options
-					showMenu();
 				} else {
-					// login form
-					showLogin();
+					// redirect to the user panel
+					header("Location: /panel");
 				}
-				
+
 				?>
 
 			</p>
 
 			<?php
 
-			include("../_php/footer.php");
+			include("../../_php/footer.php");
 
 			?>
 
 		</div>
 
 		<script src="/_js/other.js" type="text/javascript"></script>
-		
+
 	</body>
 </html>
