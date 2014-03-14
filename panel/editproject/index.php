@@ -16,7 +16,7 @@ include("../../_php/login.php");
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-	    <title>Fabrica | Edit News</title>
+	    <title>Fabrica | Edit Project</title>
 	    <meta name='description'>
 	    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 	    <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -60,71 +60,73 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h2 id='headline'>
-				Select a news entry to edit.
+				Select a project to edit.
 			</h2>
 			<br/>
 		
 			<?php
 
-			function listNews($result){
+			function listProjects($result){
       			// list all projects returned by the query
 				$index = 1;
-				while($news = mysql_fetch_assoc($result)){
+				while($project = mysql_fetch_assoc($result)){
 					if($index % 3 == 0){
 						echo "<div class='thirds' style='margin-right: 0px'>";
 					} else {
 						echo "<div class='thirds'>";
 					}
-					echo "<a href='?id=" . $news['id'] . "'>";
-					echo "<img src='" . $news['mainthumb'] . "' class='projectthumb'>";
-					echo "<span class='projecttitle'>" . $news['title'] . "</span></a>";
-					echo "<span class='projecttags'>" . date("F j, Y", strtotime($news['dt'])) . "</span>";
+					echo "<a href='?id=" . $project['id'] . "'>";
+					echo "<img src='" . $project['mainthumb'] . "' class='projectthumb'>";
+					echo "<span class='projecttitle'>" . $project['title'] . "</span></a>";
+					echo "<span class='projecttags'>" . date("F j, Y", strtotime($project['enddate'])) . "</span>";
 					echo "</div>";
 					$index++;
 				}
       		}
 
-      		function printNewsForm($news){
+      		function printProjectForm($project){
       			echo "<form action='' method='post' enctype='multipart/form-data'>";
-      			echo "<input type='hidden' name='id' value='{$news['id']}'>";
+      			echo "<input type='hidden' name='id' value='{$project['id']}'>";
 				echo "<b>Title:</b><br/>";
-				echo "<input type='text' name='title' size='38' value='{$news['title']}'><br/><br/>";
+				echo "<input type='text' name='title' size='38' value='{$project['title']}'><br/><br/>";
 				echo "<b>Subtitle:</b><br/>";
-				echo "<input type='text' name='subtitle' size='38' value='{$news['subtitle']}'><br/><br/>";
+				echo "<input type='text' name='subtitle' size='38' value='{$project['subtitle']}'><br/><br/>";
 				echo "<b>Link:</b><br/>";
-				echo "<input type='text' name='link' size='38' value='{$news['link']}'><br/><br/>";
+				echo "<input type='text' name='link' size='38' value='{$project['link']}'><br/><br/>";
+				echo "<b>Area:</b><br/>";
+				echo "<input type='text' name='area' size='38' value='{$project['area']}'><br/><br/>";
 				echo "<b>Body Text:</b><br/>";
-				echo "<textarea name='bodytext' cols='38' rows='10'>{$news['bodytext']}</textarea><br/><br/>";
+				echo "<textarea name='bodytext' cols='38' rows='10'>{$project['bodytext']}</textarea><br/><br/>";
 				echo "<b>Main Image:</b><br/>";
-				echo "<img src='" . $news['mainthumb'] . "' width='320'><br/>";
+				echo "<img src='" . $project['mainthumb'] . "' width='320'><br/>";
 				echo "<input type='file' name='mainimage'><br/><br/>";
 				echo "<div style='float:left;'>";
 				echo "<input type='submit' value='Save'></div>";
 				echo "</form>";
 				echo "<div style='float:left; margin-left: 50px'>";
 				echo "<form action='' method='post' enctype='multipart/form-data'>";
-				echo "<input type='hidden' name='id' value='{$news['id']}'>";
+				echo "<input type='hidden' name='id' value='{$project['id']}'>";
 				echo "<input type='hidden' name='delete' value='delete'>";
 				echo "<input type='submit' value='Delete' style='background-color:#aa0000'><br/><br/>";
 				echo "</form></div>";
       		}
 
-      		function deleteNews($id){
-      			mysql_query("DELETE FROM news WHERE id='{$id}'");
-      			mysql_query("DELETE FROM news_tags WHERE news_id='{$id}'");
-      			echo "News entry deleted. <a href='/panel/editnews/'>Go back to news editing panel.</a>";
+      		function deleteProject($id){
+      			mysql_query("DELETE FROM project WHERE id='{$id}'");
+      			mysql_query("DELETE FROM project_tags WHERE project_id='{$id}'");
+      			echo "Project deleted. <a href='/panel/editproject/'>Go back to project editing panel.</a>";
       		}
 
-      		function saveNews(){
+      		function saveProject(){
       			$id = mysql_real_escape_string($_POST['id']);
       			$title = mysql_real_escape_string($_POST['title']);
       			$subtitle = mysql_real_escape_string($_POST['subtitle']);
       			$link = mysql_real_escape_string($_POST['link']);
       			$bodytext = mysql_real_escape_string($_POST['bodytext']);
-      			mysql_query("UPDATE news SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}' WHERE id='{$id}'");
+      			mysql_query("UPDATE project SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}' WHERE id='{$id}'");
       			updateImage($link);
 
-      			echo "News entry saved! You can see it <a href='/news/" . $link . "'>here</a>";
+      			echo "Project saved! You can see it <a href='/projects/" . $link . "'>here</a>";
       		}
 
       		function updateImage($link){
@@ -144,8 +146,8 @@ include("../../_php/login.php");
 							//echo "Return Code: " . $_FILES["image"]["error"] . "<br/>";
 						} else {
 							// move temp file to a real location in news directory
-							$imagedest = "/_images/news/" . $link . "." . $ext;
-							$thumbdest = "/_images/news/thumbs/" . $link . "." . $ext;
+							$imagedest = "/_images/projects/" . $link . "." . $ext;
+							$thumbdest = "/_images/projects/thumbs/" . $link . "." . $ext;
 							move_uploaded_file($_FILES["mainimage"]["tmp_name"], "../.." . $imagedest);
 							
 							// generate a thumbnail for this media
@@ -182,33 +184,33 @@ include("../../_php/login.php");
 				}
 			}
 
-      		function fetchAllNews(){
-      			// fetch everything for the news page
-      			$result = mysql_query("SELECT id,title,mainthumb,dt FROM news ORDER BY dt DESC");
-      			listNews($result);
+      		function fetchAllProjects(){
+      			// fetch everything for the projects page
+      			$result = mysql_query("SELECT id,title,mainthumb,enddate FROM project ORDER BY enddate DESC");
+      			listProjects($result);
       		}
 
-      		function fetchNewsEntry($id){
-      			// fetch news entry with specified id
-      			$result = mysql_query("SELECT * FROM news WHERE id = '" . $id . "'");
-      			$news = mysql_fetch_assoc($result);
-      			printNewsForm($news);
+      		function fetchProject($id){
+      			// fetch project with specified id
+      			$result = mysql_query("SELECT * FROM project WHERE id = '" . $id . "'");
+      			$project = mysql_fetch_assoc($result);
+      			printProjectForm($project);
       		}
 			
 			if(isset($_SESSION["loggedin"]) && $_SESSION["position"] == "admin"){
 				if(isset($_POST["id"])){
 					if(isset($_POST["delete"])){
-						deleteNews($_POST["id"]);
+						deleteProject($_POST["id"]);
 					} else {
 						// update data in the database and process image if it's included
-						saveNews();
+						saveProject();
 					}
 				} else if(isset($_GET["id"])){
 					// load form with data from news entry with this id
-					fetchNewsEntry(mysql_real_escape_string($_GET["id"]));
+					fetchProject(mysql_real_escape_string($_GET["id"]));
 				} else {
 					// list all news entries
-					fetchAllNews();
+					fetchAllProjects();
 				}
 			} else {
 				// redirect to the user panel
