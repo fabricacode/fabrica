@@ -48,6 +48,9 @@ include("../../_php/login.php");
 	    <!-- For Google+ bidirectional linking -->
 	    <link href='https://plus.google.com/103695675753742819996' rel='publisher'>
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
+	    <link rel="stylesheet" type="text/css" href="/_css/imgareaselect-animated.css" />
+		<script src="/_js/other.js" type="text/javascript"></script>
+		<script type="text/javascript" src="/_js/jquery.imgareaselect.pack.js"></script>
 	</head>
 	
 	<body class='black'>
@@ -60,7 +63,15 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h1 id='headline'>
-				Add News
+				<?php
+
+				if(isset($_POST["thumbdest"])){
+					echo "Drag to crop the thumbnail.";
+				} else {
+					echo "Add News";
+				}
+				
+				?>
 			</h1>
 			<hr class='primary'>
 			<p class='about'>
@@ -89,8 +100,6 @@ include("../../_php/login.php");
 			?>
 
 		</div>
-
-		<script src="/_js/other.js" type="text/javascript"></script>
 
 	</body>
 </html>
