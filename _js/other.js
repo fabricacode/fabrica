@@ -3303,7 +3303,12 @@ $(document).ready(function () {
     $("#headline").fitText(2.2, {
         minFontSize: "10px",
         maxFontSize: "42px"
-    }), $("#header").sticky({
+    });
+    $("#subheadline").fitText(2.2, {
+        minFontSize: "10px",
+        maxFontSize: "42px"
+    });
+    $("#header").sticky({
         topSpacing: 0
     }), $(".menulink").click(function (e) {
         e.preventDefault();

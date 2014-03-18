@@ -38,6 +38,7 @@ if(isset($_SESSION['loggedin'])){
 				$enddate = $endy . "-" . $endm . "-" . $endd;
 				$bodytext = mysql_real_escape_string(nl2br($_POST["bodytext"]));
 				$tags = trim(mysql_real_escape_string($_POST["tags"]));
+				$videocode = mysql_real_escape_string($_POST["videocode"]);
 
 				if(strpos($tags, ",") !== false){
 					$taglist = explode(",", $tags);
@@ -61,7 +62,7 @@ if(isset($_SESSION['loggedin'])){
 				// make_thumb($source_image, $ext, $width, $height, "../.." . $thumbdest, 900);
 				
 				// insert new row into news table
-				mysql_query("INSERT INTO project (title, subtitle, startdate, enddate, bodytext, mainthumb, mainimage, link, area) VALUES ('{$title}', '{$subtitle}', '{$startdate}', '{$enddate}', '{$bodytext}', '{$thumbdest}', '{$imagedest}', '{$link}', '{$area}')");
+				mysql_query("INSERT INTO project (title, subtitle, startdate, enddate, bodytext, mainthumb, mainimage, link, area, videocode) VALUES ('{$title}', '{$subtitle}', '{$startdate}', '{$enddate}', '{$bodytext}', '{$thumbdest}', '{$imagedest}', '{$link}', '{$area}', '{$videocode}')");
 				$project_id = mysql_insert_id();
 
 				// inserts tags referencing news_id

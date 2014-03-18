@@ -1039,7 +1039,33 @@ a#menuclose:hover {
 }
 
 .page .thirds a {
-	color: black;
+	color: white;
+	text-decoration: none;
+}
+
+.page .quarters {
+	font-family: "Circular", helvetica, arial, sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.page .quarters {
+	color: white;
+	text-decoration: none;
+}
+
+.page .fifths {
+	font-family: "Circular", helvetica, arial, sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.page .fifths a {
+	color: white;
 	text-decoration: none;
 }
 
@@ -1328,6 +1354,34 @@ span.redirect {
 	direction: rtl;
 }
 
+#sharebuttons{
+	width: 180px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sharebutton{
+	width: 40px;
+	margin: 10px;
+}
+
+#socialbuttons{
+	display: block;
+	width: 190px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#socialbuttons a:hover{
+	text-decoration: none;
+}
+
+.socialbutton{
+	width: 40px;
+	margin: 10px;
+	text-decoration: none;
+}
+
 #footer {
 	position: relative;
 	width: 100%;
@@ -1539,6 +1593,18 @@ span.redirect {
 		float: left;
 		margin-right: 3.44828%;
 	}
+
+	.quarters {
+		width: 22.41379%;
+		float: left;
+		margin-right: 3.44828%;
+	}
+
+	.fifths {
+		width: 17.241376%;
+		float: left;
+		margin-right: 3.44828%;
+	}
 	
 	.page .projectsubtitle {
 		font-size: 1em;
@@ -1667,6 +1733,18 @@ span.redirect {
 
 	.thirds {
 		width: 31.914893%;
+		float: left;
+		margin-right: 2.12766%;
+	}
+
+	.quarters {
+		width: 23.404255%;
+		float: left;
+		margin-right: 2.12766%;
+	}
+
+	.fifths {
+		width: 18.297872%;
 		float: left;
 		margin-right: 2.12766%;
 	}

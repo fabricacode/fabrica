@@ -100,6 +100,8 @@ include("../../_php/login.php");
 				echo "<b>Main Image:</b><br/>";
 				echo "<img src='" . $project['mainthumb'] . "' width='320'><br/>";
 				echo "<input type='file' name='mainimage'><br/><br/>";
+				echo "<b>Video Embed Code:</b><br/>";
+				echo "<textarea name='videocode' cols='38' rows='5'>{$project['videocode']}</textarea><br/><br/>";
 				echo "<div style='float:left;'>";
 				echo "<input type='submit' value='Save'></div>";
 				echo "</form>";

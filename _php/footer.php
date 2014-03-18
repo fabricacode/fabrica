@@ -8,7 +8,7 @@ Copyright © 1994 - 2014 Fabrica S.p.A. all rights reserved&nbsp;&nbsp;&nbsp;|&n
 
 if(isset($_SESSION["loggedin"])){
 	echo "Logged in as " . $_SESSION["firstname"] . ". ";
-	echo "<a href='/panel'>Logout</a>";
+	echo "<a href='/panel'>User Panel</a>";
 } else {
 	echo "<a href='/panel'>Login</a>";
 }

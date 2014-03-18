@@ -145,6 +145,21 @@ include("_php/login.php");		// login or logout
 	        </div>
 
 			<div id='lifestream'></div>
+			<br/>
+
+			<div style="float: left; width: 100%;">
+				<div id='socialbuttons'>
+					<a target='_new' href='https://www.facebook.com/pages/Fabrica/48283858451'>
+						<img src='_images/social_facebook.png' class='socialbutton' />
+					</a>
+					<a target='_new' href='https://twitter.com/fabrica'>
+						<img src='_images/social_twitter.png' class='socialbutton' />
+					</a>
+					<a target='_new' href='http://www.vimeo.com/fabrica'>
+						<img src='_images/social_pinterest.png' class='socialbutton' />
+					</a>
+	            </div>
+	        </div>
 
 			<?php
 

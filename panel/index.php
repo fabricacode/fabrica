@@ -63,7 +63,7 @@ include("../_php/login.php");
 
 				<?php
 					if(isset($_SESSION["loggedin"])){
-						echo "Hello, " . $_SESSION["firstname"] . ".<br/>";
+						echo "Hello, " . $_SESSION["firstname"] . ".<br/>what would you like to do?";
 					} else {
 						echo "Login to get info and make changes.";
 					}
@@ -74,9 +74,7 @@ include("../_php/login.php");
 				<p class='about'>
 
 					<?php
-						if(isset($_SESSION["loggedin"])){
-							echo "This area provides information relevant to your current position at Fabrica. Select from any of the functions below in order to make modifications.";
-						} else {
+						if(!isset($_SESSION["loggedin"])){
 							echo "The user panel is designed to give you access to information relevant to your position at Fabrica, as well as provide you the ability to modify settings, change your biographical information, and create content for the Fabrica web site. Only staff, consultants, and residents and trial residents have login permissions for the user panel. If you haven't received an email with instructions on how to access your user panel, please get in contact with Stefano Bosco.<br/>";
 						}
 					?>
@@ -85,53 +83,48 @@ include("../_php/login.php");
 			</div>
 
 			<br/>
+			<hr class="primary">
+			<br/>
 
-			<p class='about'>
 		
-				<?php
-
-				function showLogin(){
-					echo "<div class='form'>";
-					echo "<form name='login' action='' method='post'>";
-					echo "<input type='hidden' name='login' value='login'>";
-					echo "<b>Username:</b><br/><input type='text' name='username'><br/><br/>";
-					echo "<b>Password:</b><br/><input type='password' name='password'><br/><br/>";
-					echo "<input type='submit' value='Login'>";
-					echo "</form>";
-					echo "</div>";
-				}
-
-				function showMenu(){
-					// admin options
-					if($_SESSION["position"] == "admin"){
-						echo "<a href='../applications/'>Review Applications</a><br/><br/>";
-						echo "<a href='addnews'>Add News</a><br/><br/>";
-						echo "<a href='editnews'>Edit News</a><br/><br/>";
-						echo "<a href='addproject'>Add Project</a><br/><br/>";
-						echo "<a href='editproject'>Edit Project</a><br/><br/>";
-					}
-					// logout option
-					echo "<div class='form'>";
-					echo "<form name='logout' action='' method='post'>";
-					echo "<input type='hidden' name='logout' value='logout'>";
-					echo "<input type='submit' value='Logout'>";
-					echo "</form>";
-					echo "</div>";
-				}
-				
-				if(isset($_SESSION["loggedin"])){
-					// menu options
-					showMenu();
-				} else {
-					// login form
-					showLogin();
-				}
-				
-				?>
-
-			</p>
-
 			<?php
+
+			function showLogin(){
+				echo "<div class='form'>";
+				echo "<form name='login' action='' method='post'>";
+				echo "<input type='hidden' name='login' value='login'>";
+				echo "<b>Username:</b><br/><input type='text' name='username'><br/><br/>";
+				echo "<b>Password:</b><br/><input type='password' name='password'><br/><br/>";
+				echo "<input type='submit' value='Login'>";
+				echo "</form>";
+				echo "</div>";
+			}
+
+			function showMenu(){
+				// admin options
+				if($_SESSION["position"] == "admin"){
+					echo "<div class='quarters'><a href='addnews'>Add News</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='editnews'>Edit News</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='addproject'>Add Project</a><br/><br/></div>";
+					echo "<div class='quarters' style='margin-right: 0px;'><a href='editproject'>Edit Project</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='../applications/'>Review Applications</a><br/><br/></div>";
+				}
+				// logout option
+				echo "<div class='form'>";
+				echo "<form name='logout' action='' method='post'>";
+				echo "<input type='hidden' name='logout' value='logout'>";
+				echo "<input type='submit' value='Logout'>";
+				echo "</form>";
+				echo "</div>";
+			}
+			
+			if(isset($_SESSION["loggedin"])){
+				// menu options
+				showMenu();
+			} else {
+				// login form
+				showLogin();
+			}
 
 			include("../_php/footer.php");
 

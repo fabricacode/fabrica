@@ -16,6 +16,7 @@ include("../_php/login.php");
 	<head>
 	    <meta charset='utf-8'>
 	    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+
 	    <?php
 
   		if(isset($_GET["link"])){
@@ -32,6 +33,13 @@ include("../_php/login.php");
   		} else {
   			// list projects
   			echo "<title>Fabrica | Projects</title>";
+  		}
+
+  		if(isset($_GET["offset"])){
+  			$offset = mysql_real_escape_string($_GET["offset"]);
+  			$result = mysql_query("SELECT COUNT(1) FROM project");
+  			$row = mysql_fetch_array($result);
+			$total = $row[0];
   		}
 
   		?>
@@ -127,24 +135,28 @@ include("../_php/login.php");
 
       		function fetchAllProjects(){
       			// fetch everything for the projects page
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project ORDER BY enddate DESC");
+      			if(isset($offset)){
+      				$result = mysql_query("SELECT id,title,link,mainthumb FROM project ORDER BY enddate DESC LIMIT {$offset},24");
+      			} else {
+      				$result = mysql_query("SELECT id,title,link,mainthumb FROM project ORDER BY enddate DESC LIMIT 24");
+      			}
       			listProjects($result);
       		}
 
       		function fetchAreaProjects($area){
       			// fetch only projects from the specified area
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '" . $area . "' ORDER BY enddate DESC");
+      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '{$area}' ORDER BY enddate DESC LIMIT 24");
       			listProjects($result);
       		}
 
       		function fetchAreaProjectsExcept($area, $id){
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '" . $area . "' AND id <> '" . $id . "' ORDER BY enddate DESC");
+      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '{$area}' AND id <> '{$id}' ORDER BY enddate DESC LIMIT 12");
       			listProjects($result);
       		}
 
       		function fetchTaggedProjects($tag){
       			// TODO: grab project_id's from project_tags table based on tag value.
-      			$result = mysql_query("SELECT project.id,project.title,project.link,project.mainthumb FROM project INNER JOIN project_tags ON project.id = project_tags.project_id WHERE project_tags.tag = '" . $tag . "' ORDER BY enddate DESC");
+      			$result = mysql_query("SELECT project.id,project.title,project.link,project.mainthumb FROM project INNER JOIN project_tags ON project.id = project_tags.project_id WHERE project_tags.tag = '{$tag}' ORDER BY enddate DESC LIMIT 24");
       			listProjects($result);
       		}
 
@@ -153,9 +165,22 @@ include("../_php/login.php");
       			echo "<img class='projectmainimg' src='" . $project["mainimage"] . "'><br/><br/>";
       			echo $project["bodytext"] . "<br/><br/>";
       			// TODO: build gallery(s)
-      			// TODO: add social media sharing buttons
-      			echo "<hr class='primary'><br/>";
+
+      			// add social media sharing buttons
+				echo "<div id='sharebuttons'>";
+				echo "<a target='_new' href='https://www.facebook.com/sharer.php?u=http://www.fabrica.it/projects/{$project["link"]}'>";
+				echo "<img src='../_images/share_facebook.png' class='sharebutton' />";
+				echo "</a>";
+				echo "<a target='_new' href='https://twitter.com/intent/tweet?url=http://www.fabrica.it/projects/{$project["link"]}'>";
+				echo "<img src='../_images/share_twitter.png' class='sharebutton' />";
+				echo "</a>";
+				echo "<a target='_new' href='http://pinterest.com/pin/create/button/?url=http://www.fabrica.it/projects/{$project["link"]}&amp;media=http://www.fabrica.it{$project["mainimage"]}'>";
+				echo "<img src='../_images/share_pinterest.png' class='sharebutton' />";
+				echo "</a>";
+                echo "</div><br/>";
+
       			// list the other projects from this area
+      			echo "<hr class='primary'><br/>";
       			fetchAreaProjectsExcept($project["area"], $project["id"]);
       		}
 

@@ -73,7 +73,7 @@ include("../../_php/login.php");
 
 				?>
 			</h1>
-			<hr class='primary'>
+			<hr class='primary'><br/>
 		
 			<?php
 			

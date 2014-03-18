@@ -35,6 +35,13 @@ include("../_php/login.php");
   			echo "<title>Fabrica | News</title>";
   		}
 
+  		if(isset($_GET["offset"])){
+  			$offset = mysql_real_escape_string($_GET["offset"]);
+  			$result = mysql_query("SELECT COUNT(1) FROM news");
+  			$row = mysql_fetch_array($result);
+			$total = $row[0];
+  		}
+
   		?>
 	    
 	    <meta name='description'>
@@ -110,16 +117,17 @@ include("../_php/login.php");
 					echo "<span class='projecttitle'>" . $news['title'] . "</span>";
 					echo "</a>";
 					echo "<span class='projecttags'>";
-					$tagresults = mysql_query("SELECT tag FROM news_tags WHERE news_id = '" . $news['id'] . "'");
-					$numtags = mysql_num_rows($tagresults);
-					$tagindex = 0;
-					while($tags = mysql_fetch_assoc($tagresults)){
-						echo "<a href='/news/tag/" . $tags['tag'] . "'>" . $tags['tag'] . "</a>";
-						$tagindex++;
-						if($tagindex < $numtags){
-							echo ", ";
-						}
-					}
+					echo date("F j, Y", strtotime($news['dt']));
+					// $tagresults = mysql_query("SELECT tag FROM news_tags WHERE news_id = '" . $news['id'] . "'");
+					// $numtags = mysql_num_rows($tagresults);
+					// $tagindex = 0;
+					// while($tags = mysql_fetch_assoc($tagresults)){
+					// 	echo "<a href='/news/tag/" . $tags['tag'] . "'>" . $tags['tag'] . "</a>";
+					// 	$tagindex++;
+					// 	if($tagindex < $numtags){
+					// 		echo ", ";
+					// 	}
+					// }
 					echo "</span>";
 					echo "</div>";
 					$index++;
@@ -128,23 +136,50 @@ include("../_php/login.php");
 
       		function fetchAllNews(){
       			// fetch everything for the news page
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM news ORDER BY dt DESC");
+      			if(isset($offset)){
+					$result = mysql_query("SELECT id,title,link,mainthumb,dt FROM news ORDER BY dt DESC LIMIT {$offset},24");
+      			} else {
+      				$result = mysql_query("SELECT id,title,link,mainthumb,dt FROM news ORDER BY dt DESC LIMIT 24");
+      			}
+      			listNews($result);
+      		}
+
+      		function fetchAllNewsExcept($id){
+      			$result = mysql_query("SELECT id,title,link,mainthumb,dt FROM news WHERE id <> '{$id}' ORDER BY dt DESC LIMIT 12");
       			listNews($result);
       		}
 
       		function fetchTaggedNews($tag){
       			// TODO: grab project_id's from project_tags table based on tag value.
-      			$result = mysql_query("SELECT news.id,news.title,news.link,news.mainthumb FROM news INNER JOIN news_tags ON news.id = news_tags.news_id WHERE news_tags.tag = '" . $tag . "' ORDER BY dt DESC");
+      			$result = mysql_query("SELECT news.id,news.title,news.link,news.mainthumb FROM news INNER JOIN news_tags ON news.id = news_tags.news_id WHERE news_tags.tag = '{$tag}' ORDER BY dt DESC");
       			listNews($result);
       		}
 
       		function newsDetails($news){
+      			// list news details
       			echo "<font class='projectsubtitle'>" . $news["subtitle"] . "</font><br/><br/>";
       			echo "<img class='projectmainimg' src='" . $news["mainimage"] . "'><br/><br/>";
       			echo "<b>" . date("F j, Y", strtotime($news['dt'])) . "</b><br/><br/>";
       			echo $news["bodytext"] . "<br/><br/>";
       			// TODO: build gallery(s)?
-      			// TODO: add social media sharing buttons
+      			
+      			// add social media sharing buttons
+				echo "<div id='sharebuttons'>";
+				echo "<a target='_new' href='https://www.facebook.com/sharer.php?u=http://www.fabrica.it/news/{$news["link"]}'>";
+				echo "<img src='../_images/share_facebook.png' class='sharebutton' />";
+				echo "</a>";
+				echo "<a target='_new' href='https://twitter.com/intent/tweet?url=http://www.fabrica.it/news/{$news["link"]}'>";
+				echo "<img src='../_images/share_twitter.png' class='sharebutton' />";
+				echo "</a>";
+				echo "<a target='_new' href='http://pinterest.com/pin/create/button/?url=http://www.fabrica.it/news/{$news["link"]}&amp;media=http://www.fabrica.it{$news["mainimage"]}'>";
+				echo "<img src='../_images/share_pinterest.png' class='sharebutton' />";
+				echo "</a>";
+                echo "</div><br/>";
+
+      			// list the other news
+      			echo "<hr class='primary'>";
+      			echo "<h2 id='subheadline' style='text-decoration: underline;'>more news</h2>";
+      			fetchAllNewsExcept($news["id"]);
       		}
 
       		if(isset($news["title"])){
