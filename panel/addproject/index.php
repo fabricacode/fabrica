@@ -50,6 +50,7 @@ include("../../_php/login.php");
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	    <link rel="stylesheet" type="text/css" href="/_css/imgareaselect-animated.css" />
 		<script src="/_js/other.js" type="text/javascript"></script>
+		<script src="/_js/addproject.js" type="text/javascript"></script>
 		<script type="text/javascript" src="/_js/jquery.imgareaselect.pack.js"></script>
 	</head>
 	

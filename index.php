@@ -142,7 +142,7 @@ include("_php/login.php");		// login or logout
 					</div>
 
 					<div class='frontmenutext' style="left: 20px; top: 20px; width: auto;">
-						news
+						<a href="news">news</a>
 					</div>
 
 		        </div>

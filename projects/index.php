@@ -174,6 +174,14 @@ include("../_php/login.php");
       			// check if additional photos and captions exist, and if so add them
 
       			// check if credits exist, and if so add them
+      			$creditsresults = mysql_query("SELECT title,content FROM project_credits WHERE project_id = '" . $project['id'] . "'");
+				if(mysql_num_rows($creditsresults) > 0){
+					echo "<div id='credits'>";
+					while($credit = mysql_fetch_assoc($creditsresults)){
+						echo "<span class='credittitle'>" . $credit['title'] . ":</span> " . $credit['content'] . "<br/>";
+					}
+					echo "</div>";
+				}
 
       			// add social media sharing buttons
 				echo "<div id='sharebuttons'>";

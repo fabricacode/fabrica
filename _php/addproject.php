@@ -39,6 +39,16 @@ if(isset($_SESSION['loggedin'])){
 				$bodytext = mysql_real_escape_string(nl2br($_POST["bodytext"]));
 				$tags = trim(mysql_real_escape_string($_POST["tags"]));
 				$videocode = mysql_real_escape_string($_POST["videocode"]);
+				$creditcount = mysql_real_escape_string($_POST["creditcount"]);
+
+				if($creditcount > 0){
+					$credits = array();
+					for($i=0; $i <= $creditcount; $i++){
+						if(!empty($_POST["credittitle".$i])){
+							$credits[mysql_real_escape_string($_POST["credittitle".$i])] = mysql_real_escape_string($_POST["creditcontent".$i]);
+						}
+					}
+				}
 
 				if(strpos($tags, ",") !== false){
 					$taglist = explode(",", $tags);
@@ -65,7 +75,7 @@ if(isset($_SESSION['loggedin'])){
 				mysql_query("INSERT INTO project (title, subtitle, startdate, enddate, bodytext, mainthumb, mainimage, link, area, videocode) VALUES ('{$title}', '{$subtitle}', '{$startdate}', '{$enddate}', '{$bodytext}', '{$thumbdest}', '{$imagedest}', '{$link}', '{$area}', '{$videocode}')");
 				$project_id = mysql_insert_id();
 
-				// inserts tags referencing news_id
+				// insert tags referencing project_id
 				if(isset($taglist)){
 					foreach($taglist as $tag){
 						$tag = trim($tag);
@@ -76,6 +86,13 @@ if(isset($_SESSION['loggedin'])){
 				} else if(strlen($tags) > 0){
 					// only one tag entered
 					mysql_query("INSERT INTO project_tags (project_id, tag) VALUES ('{$project_id}', '{$tags}')");
+				}
+
+				// insert credits referencing project_id
+				if(isset($credits)){
+					foreach($credits as $title => $content){
+						mysql_query("INSERT INTO project_credits (project_id, title, content) VALUES ('{$project_id}', '{$title}', '{$content}')");
+					}
 				}
 
 				selectThumbArea($title, $project_id, "../.." . $imagedest, "../.." . $thumbdest, $ext, $link);
