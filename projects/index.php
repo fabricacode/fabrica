@@ -166,6 +166,15 @@ include("../_php/login.php");
       			echo $project["bodytext"] . "<br/><br/>";
       			// TODO: build gallery(s)
 
+      			// check if video exists, and if so add it
+      			if(!empty($project["videocode"])){
+      				echo $project["videocode"];
+      			}
+
+      			// check if additional photos and captions exist, and if so add them
+
+      			// check if credits exist, and if so add them
+
       			// add social media sharing buttons
 				echo "<div id='sharebuttons'>";
 				echo "<a target='_new' href='https://www.facebook.com/sharer.php?u=http://www.fabrica.it/projects/{$project["link"]}'>";
@@ -199,6 +208,7 @@ include("../_php/login.php");
         </div>
 
         <script src="/_js/other.js" type="text/javascript"></script>
+        <script src="/_js/video.js" type="text/javascript"></script>
 		
 	</body>
 </html>

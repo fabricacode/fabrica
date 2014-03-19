@@ -98,6 +98,8 @@ include("../../_php/login.php");
 				echo "<b>Main Image:</b><br/>";
 				echo "<img src='" . $news['mainthumb'] . "' width='320'><br/>";
 				echo "<input type='file' name='mainimage'><br/><br/>";
+				echo "<b>Video Embed Code:</b><br/>";
+				echo "<textarea name='videocode' cols='38' rows='5'>{$news['videocode']}</textarea><br/><br/>";
 				echo "<div style='float:left;'>";
 				echo "<input type='submit' value='Save'></div>";
 				echo "</form>";
@@ -121,14 +123,15 @@ include("../../_php/login.php");
       			$subtitle = mysql_real_escape_string($_POST['subtitle']);
       			$link = mysql_real_escape_string($_POST['link']);
       			$bodytext = mysql_real_escape_string($_POST['bodytext']);
-      			mysql_query("UPDATE news SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}' WHERE id='{$id}'");
+      			$videocode = mysql_real_escape_string($_POST['videocode']);
+      			mysql_query("UPDATE news SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}', videocode='{$videocode}' WHERE id='{$id}'");
       			updateImage($link);
 
       			echo "News entry saved! You can see it <a href='/news/" . $link . "'>here</a>";
       		}
 
       		function updateImage($link){
-      			if(isset($_FILES["mainimage"])){
+      			if(!empty($_FILES["mainimage"]["name"])){
       				// allowed extensions, types and size
 					$allowedExts = array("jpg", "jpeg", "gif", "png");
 					$allowedType = array("image/gif", "image/jpeg", "image/png", "image/pjpeg");

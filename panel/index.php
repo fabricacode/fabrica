@@ -103,14 +103,14 @@ include("../_php/login.php");
 			function showMenu(){
 				// admin options
 				if($_SESSION["position"] == "admin"){
-					echo "<div class='quarters'><a href='addnews'>Add News</a><br/><br/></div>";
-					echo "<div class='quarters'><a href='editnews'>Edit News</a><br/><br/></div>";
-					echo "<div class='quarters'><a href='addproject'>Add Project</a><br/><br/></div>";
-					echo "<div class='quarters' style='margin-right: 0px;'><a href='editproject'>Edit Project</a><br/><br/></div>";
-					echo "<div class='quarters'><a href='../applications/'>Review Applications</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='addnews'><img src='../_images/panel_addnews.png'><br/><br/>Add News</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='editnews'><img src='../_images/panel_editproject.png'><br/><br/>Edit News</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='addproject'><img src='../_images/panel_addproject.png'><br/><br/>Add Project</a><br/><br/></div>";
+					echo "<div class='quarters' style='margin-right: 0px;'><a href='editproject'><img src='../_images/panel_editproject.png'><br/><br/>Edit Project</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='../applications/'><img src='../_images/panel_reviewapplications.png'><br/><br/>Review Applications</a><br/><br/></div>";
 				}
 				// logout option
-				echo "<div class='form'>";
+				echo "<div class='form' id='logout'>";
 				echo "<form name='logout' action='' method='post'>";
 				echo "<input type='hidden' name='logout' value='logout'>";
 				echo "<input type='submit' value='Logout'>";

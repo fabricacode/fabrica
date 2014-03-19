@@ -125,14 +125,15 @@ include("../../_php/login.php");
       			$subtitle = mysql_real_escape_string($_POST['subtitle']);
       			$link = mysql_real_escape_string($_POST['link']);
       			$bodytext = mysql_real_escape_string($_POST['bodytext']);
-      			mysql_query("UPDATE project SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}' WHERE id='{$id}'");
+      			$videocode = mysql_real_escape_string($_POST['videocode']);
+      			mysql_query("UPDATE project SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}', videocode='{$videocode}' WHERE id='{$id}'");
       			updateImage($link);
 
       			echo "Project saved! You can see it <a href='/projects/" . $link . "'>here</a>";
       		}
 
       		function updateImage($link){
-      			if(isset($_FILES["mainimage"])){
+      			if(!empty($_FILES["mainimage"]["name"])){
       				// allowed extensions, types and size
 					$allowedExts = array("jpg", "jpeg", "gif", "png");
 					$allowedType = array("image/gif", "image/jpeg", "image/png", "image/pjpeg");
@@ -164,6 +165,10 @@ include("../../_php/login.php");
 							$height = imagesy($source_image);
 							make_thumb($source_image, $ext, $width, $height, "../.." . $thumbdest, 900);
 						}
+					} else if($size >= $allowedSize){
+						echo "The image you are trying to upload is too large. Hit the \"back\" button in your browser and try again with a different version of the image under 500kb.<br/>";
+					} else if(!in_array($type, $allowedType)){
+						echo "The image you are trying to upload is not recognized as a supported format. Hit the \"back\" button in your browser and try again with a different version of the image that is either a JPG, PNG, or GIF.";
 					}
       			}
       		}

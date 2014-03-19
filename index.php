@@ -116,10 +116,10 @@ include("_php/login.php");		// login or logout
 		        		$first = True;
 		        		while($news = mysql_fetch_assoc($result)){
 		        			if($first){
-		        				echo "<div class='item active'>";
+		        				echo "<div class='item active news'>";
 		        				$first = False;
 		        			} else {
-		        				echo "<div class='item'>";
+		        				echo "<div class='item news'>";
 		        			}
 		        			echo "<a href='/news/" . $news["link"] . "'>";
 		        			echo "<img src='" . $news["mainthumb"] ."'>";
@@ -139,6 +139,10 @@ include("_php/login.php");		// login or logout
 							<span class="glyphicon glyphicon-chevron-right"></span>
 						</a>
 						-->
+					</div>
+
+					<div class='frontmenutext' style="left: 20px; top: 20px; width: auto;">
+						news
 					</div>
 
 		        </div>

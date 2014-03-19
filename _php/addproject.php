@@ -81,6 +81,10 @@ if(isset($_SESSION['loggedin'])){
 				selectThumbArea($title, $project_id, "../.." . $imagedest, "../.." . $thumbdest, $ext, $link);
 			}
 		
+		} else if($size >= $allowedSize){
+			echo "The image you are trying to upload is too large. Hit the \"back\" button in your browser and try again with a different version of the image under 500kb.<br/>";
+		} else if(!in_array($type, $allowedType)){
+			echo "The image you are trying to upload is not recognized as a supported format. Hit the \"back\" button in your browser and try again with a different version of the image that is either a JPG, PNG, or GIF.";
 		}
 
 	}

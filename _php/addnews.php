@@ -28,6 +28,7 @@ if(isset($_SESSION['loggedin'])){
 				$subtitle = mysql_real_escape_string($_POST["subtitle"]);
 				$link = mysql_real_escape_string($_POST["link"]);
 				$bodytext = mysql_real_escape_string(nl2br($_POST["bodytext"]));
+				$videocode = mysql_real_escape_string($_POST["videocode"]);
 				$tags = trim(mysql_real_escape_string($_POST["tags"]));
 
 				if(strpos($tags, ",") !== false){
@@ -52,7 +53,7 @@ if(isset($_SESSION['loggedin'])){
 				// make_thumb($source_image, $ext, $width, $height, "../.." . $thumbdest, 900);
 				
 				// insert new row into news table
-				mysql_query("INSERT INTO news (title, subtitle, bodytext, mainthumb, mainimage, link) VALUES ('{$title}', '{$subtitle}', '{$bodytext}', '{$thumbdest}', '{$imagedest}', '{$link}')");
+				mysql_query("INSERT INTO news (title, subtitle, bodytext, mainthumb, mainimage, link, videocode) VALUES ('{$title}', '{$subtitle}', '{$bodytext}', '{$thumbdest}', '{$imagedest}', '{$link}', '{$videocode}')");
 				$news_id = mysql_insert_id();
 
 				// inserts tags referencing news_id

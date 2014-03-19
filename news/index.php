@@ -162,6 +162,11 @@ include("../_php/login.php");
       			echo "<b>" . date("F j, Y", strtotime($news['dt'])) . "</b><br/><br/>";
       			echo $news["bodytext"] . "<br/><br/>";
       			// TODO: build gallery(s)?
+
+      			// check if video exists, and if so add it
+      			if(!empty($news["videocode"])){
+      				echo $news["videocode"];
+      			}
       			
       			// add social media sharing buttons
 				echo "<div id='sharebuttons'>";
@@ -197,6 +202,7 @@ include("../_php/login.php");
         </div>
 
         <script src="/_js/other.js" type="text/javascript"></script>
+        <script src="/_js/video.js" type="text/javascript"></script>
 		
 	</body>
 </html>

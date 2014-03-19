@@ -3310,18 +3310,21 @@ $(document).ready(function () {
     });
     $("#header").sticky({
         topSpacing: 0
-    }), $(".menulink").click(function (e) {
+    });
+    $(".menulink").click(function (e) {
         e.preventDefault();
         var t = this.href;
         $("body").fadeOut(300, function () {
             window.location = t
         })
-    }), $(".homelink").click(function (e) {
+    });
+    $(".homelink").click(function (e) {
         e.preventDefault();
         var t = this.href;
         $("body").fadeOut(300, function () {
             window.location = t
         })
-    }), retinize()
+    });
+    retinize();
 });
 
