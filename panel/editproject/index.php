@@ -47,6 +47,7 @@ include("../../_php/login.php");
 	    <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 	    <!-- For Google+ bidirectional linking -->
 	    <link href='https://plus.google.com/103695675753742819996' rel='publisher'>
+		<script src="/_js/addproject.js" type="text/javascript"></script>
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	
@@ -102,6 +103,7 @@ include("../../_php/login.php");
 				echo "<input type='file' name='mainimage'><br/><br/>";
 				echo "<b>Video Embed Code:</b><br/>";
 				echo "<textarea name='videocode' cols='38' rows='5'>{$project['videocode']}</textarea><br/><br/>";
+				printCredits($project['id']);
 				echo "<div style='float:left;'>";
 				echo "<input type='submit' value='Save'></div>";
 				echo "</form>";
@@ -111,6 +113,25 @@ include("../../_php/login.php");
 				echo "<input type='hidden' name='delete' value='delete'>";
 				echo "<input type='submit' value='Delete' style='background-color:#aa0000'><br/><br/>";
 				echo "</form></div>";
+      		}
+
+      		function printCredits($id){
+      			$result = mysql_query("SELECT * FROM project_credits WHERE project_id = '" . $id . "'");
+      			$creditcount = mysql_num_rows($result);
+      			echo "<script>creditCount = " . $creditcount . ";</script>";
+      			if($creditcount > 0){
+      				echo "<b>Credits:</b><br/>";
+      				echo "<div id='addcredits'>";
+      				echo "<table><tr><td width='100'>Title:</td><td>Content:</td></tr></table>";
+      				while($credit = mysql_fetch_assoc($result)){
+      					echo "<input type='text' name='credittitle" . $creditcount . "' size='10' style='margin-bottom:5px;' value='{$credit['title']}'> ";
+      					echo "<input type='text' name='creditcontent" . $creditcount . "' size='26' value='{$credit['content']}'><br/>";
+      				}
+      				echo "</div>";
+					echo "<input type='hidden' name='creditcount' id='creditcount' value='{$creditcount}'>";
+					echo "<a href='javascript:addCredit();''>Add a credit</a><br/><br/>";
+      			}
+      			// TODO: add the ability to add new credit fields
       		}
 
       		function deleteProject($id){
@@ -126,7 +147,35 @@ include("../../_php/login.php");
       			$link = mysql_real_escape_string($_POST['link']);
       			$bodytext = mysql_real_escape_string($_POST['bodytext']);
       			$videocode = mysql_real_escape_string($_POST['videocode']);
+      			$creditcount = mysql_real_escape_string($_POST["creditcount"]);
+
       			mysql_query("UPDATE project SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}', videocode='{$videocode}' WHERE id='{$id}'");
+
+      			if($creditcount > 0){
+					for($i=1; $i <= $creditcount; $i++){
+						if(!empty($_POST["credittitle".$i])){
+							$title = mysql_real_escape_string($_POST["credittitle".$i]);
+							$content = mysql_real_escape_string($_POST["creditcontent".$i]);
+							$credit_id = $i;
+							// check if project_id + credit_id exist, and if so, update that entry
+							$result = mysql_query("SELECT * FROM project_credits WHERE project_id='{$id}' AND credit_id='{$credit_id}'");
+							if(mysql_num_rows($result) > 0){
+								mysql_query("UPDATE project_credits SET title='{$title}', content='{$content}' WHERE project_id='{$id}' AND credit_id='{$credit_id}'");
+							} else {
+								// if not, insert a new entry into the able
+								mysql_query("INSERT INTO project_credits (project_id, credit_id, title, content) VALUES ('{$id}', '{$credit_id}', '{$title}', '{$content}')");
+							}
+						}
+					}
+				}
+
+				// // insert credits referencing project_id
+				// if(isset($credits)){
+				// 	foreach($credits as $title => $content){
+				// 		mysql_query("INSERT INTO project_credits (project_id, title, content) VALUES ('{$project_id}', '{$title}', '{$content}')");
+				// 	}
+				// }
+
       			updateImage($link);
 
       			echo "Project saved! You can see it <a href='/projects/" . $link . "'>here</a>";

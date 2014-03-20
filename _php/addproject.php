@@ -90,8 +90,10 @@ if(isset($_SESSION['loggedin'])){
 
 				// insert credits referencing project_id
 				if(isset($credits)){
+					$credit_id = 1;
 					foreach($credits as $title => $content){
-						mysql_query("INSERT INTO project_credits (project_id, title, content) VALUES ('{$project_id}', '{$title}', '{$content}')");
+						mysql_query("INSERT INTO project_credits (project_id, credit_id, title, content) VALUES ('{$project_id}', '{$credit_id}', '{$title}', '{$content}')");
+						$credit_id++;
 					}
 				}
 
