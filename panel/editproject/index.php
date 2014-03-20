@@ -89,9 +89,9 @@ include("../../_php/login.php");
       			echo "<form action='' method='post' enctype='multipart/form-data'>";
       			echo "<input type='hidden' name='id' value='{$project['id']}'>";
 				echo "<b>Title:</b><br/>";
-				echo "<input type='text' name='title' size='38' value='{$project['title']}'><br/><br/>";
+				echo "<input type='text' name='title' size='38' value='" . htmlentities($project['title'], ENT_QUOTES) . "'><br/><br/>";
 				echo "<b>Subtitle:</b><br/>";
-				echo "<input type='text' name='subtitle' size='38' value='{$project['subtitle']}'><br/><br/>";
+				echo "<input type='text' name='subtitle' size='38' value='" . htmlentities($project['subtitle'], ENT_QUOTES) . "'><br/><br/>";
 				echo "<b>Link:</b><br/>";
 				echo "<input type='text' name='link' size='38' value='{$project['link']}'><br/><br/>";
 				echo "<b>Area:</b><br/>";
@@ -103,6 +103,7 @@ include("../../_php/login.php");
 				echo "<input type='file' name='mainimage'><br/><br/>";
 				echo "<b>Video Embed Code:</b><br/>";
 				echo "<textarea name='videocode' cols='38' rows='5'>{$project['videocode']}</textarea><br/><br/>";
+				printTags($project['id']);
 				printCredits($project['id']);
 				echo "<div style='float:left;'>";
 				echo "<input type='submit' value='Save'></div>";
@@ -131,7 +132,24 @@ include("../../_php/login.php");
 					echo "<input type='hidden' name='creditcount' id='creditcount' value='{$creditcount}'>";
 					echo "<a href='javascript:addCredit();''>Add a credit</a><br/><br/>";
       			}
-      			// TODO: add the ability to add new credit fields
+      		}
+
+      		function printTags($id){
+      			$result = mysql_query("SELECT * FROM project_tags WHERE project_id = '" . $id . "'");
+      			$tagcount = mysql_num_rows($result);
+      			$i = 0;
+      			$tags = "";
+      			echo "<b>Tags:</b><br/>";
+      			if($tagcount > 0){
+      				while($tag = mysql_fetch_assoc($result)){
+						$tags = $tags . $tag['tag'];
+						$i++;
+						if($i < $tagcount){
+							$tags = $tags . ", ";
+						}
+      				}
+      			}
+      			echo "<input type='text' name='tags' size='38' value='{$tags}'><br/><br/>";
       		}
 
       		function deleteProject($id){
@@ -147,10 +165,30 @@ include("../../_php/login.php");
       			$link = mysql_real_escape_string($_POST['link']);
       			$bodytext = mysql_real_escape_string($_POST['bodytext']);
       			$videocode = mysql_real_escape_string($_POST['videocode']);
-      			$creditcount = mysql_real_escape_string($_POST["creditcount"]);
+      			$creditcount = mysql_real_escape_string($_POST['creditcount']);
+      			$tags = trim(mysql_real_escape_string($_POST['tags']));
 
+      			// update standard info
       			mysql_query("UPDATE project SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}', videocode='{$videocode}' WHERE id='{$id}'");
 
+      			// remove old tags and replace with new ones
+      			mysql_query("DELETE FROM project_tags WHERE project_id='{$id}'");
+      			if(strpos($tags, ",") !== false){
+					$taglist = explode(",", $tags);
+				}
+				if(isset($taglist)){
+					foreach($taglist as $tag){
+						$tag = trim($tag);
+						if(strlen($tag) > 0){
+							mysql_query("INSERT INTO project_tags (project_id, tag) VALUES ('{$project_id}', '{$tag}')");
+						}
+					}
+				} else if(strlen($tags) > 0){
+					// only one tag entered
+					mysql_query("INSERT INTO project_tags (project_id, tag) VALUES ('{$project_id}', '{$tags}')");
+				}
+
+      			// update project credits if they exist
       			if($creditcount > 0){
 					for($i=1; $i <= $creditcount; $i++){
 						if(!empty($_POST["credittitle".$i])){
@@ -168,13 +206,6 @@ include("../../_php/login.php");
 						}
 					}
 				}
-
-				// // insert credits referencing project_id
-				// if(isset($credits)){
-				// 	foreach($credits as $title => $content){
-				// 		mysql_query("INSERT INTO project_credits (project_id, title, content) VALUES ('{$project_id}', '{$title}', '{$content}')");
-				// 	}
-				// }
 
       			updateImage($link);
 

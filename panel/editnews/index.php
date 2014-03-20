@@ -88,9 +88,9 @@ include("../../_php/login.php");
       			echo "<form action='' method='post' enctype='multipart/form-data'>";
       			echo "<input type='hidden' name='id' value='{$news['id']}'>";
 				echo "<b>Title:</b><br/>";
-				echo "<input type='text' name='title' size='38' value='{$news['title']}'><br/><br/>";
+				echo "<input type='text' name='title' size='38' value='" . htmlentities($news['title'], ENT_QUOTES) . "'><br/><br/>";
 				echo "<b>Subtitle:</b><br/>";
-				echo "<input type='text' name='subtitle' size='38' value='{$news['subtitle']}'><br/><br/>";
+				echo "<input type='text' name='subtitle' size='38' value='" . htmlentities($news['subtitle'], ENT_QUOTES) . "'><br/><br/>";
 				echo "<b>Link:</b><br/>";
 				echo "<input type='text' name='link' size='38' value='{$news['link']}'><br/><br/>";
 				echo "<b>Body Text:</b><br/>";
@@ -100,6 +100,7 @@ include("../../_php/login.php");
 				echo "<input type='file' name='mainimage'><br/><br/>";
 				echo "<b>Video Embed Code:</b><br/>";
 				echo "<textarea name='videocode' cols='38' rows='5'>{$news['videocode']}</textarea><br/><br/>";
+				printTags($news['id']);
 				echo "<div style='float:left;'>";
 				echo "<input type='submit' value='Save'></div>";
 				echo "</form>";
@@ -109,6 +110,24 @@ include("../../_php/login.php");
 				echo "<input type='hidden' name='delete' value='delete'>";
 				echo "<input type='submit' value='Delete' style='background-color:#aa0000'><br/><br/>";
 				echo "</form></div>";
+      		}
+
+      		function printTags($id){
+      			$result = mysql_query("SELECT * FROM news_tags WHERE news_id = '" . $id . "'");
+      			$tagcount = mysql_num_rows($result);
+      			$i = 0;
+      			$tags = "";
+      			echo "<b>Tags:</b><br/>";
+      			if($tagcount > 0){
+      				while($tag = mysql_fetch_assoc($result)){
+						$tags = $tags . $tag['tag'];
+						$i++;
+						if($i < $tagcount){
+							$tags = $tags . ", ";
+						}
+      				}
+      			}
+      			echo "<input type='text' name='tags' size='38' value='{$tags}'><br/><br/>";
       		}
 
       		function deleteNews($id){
@@ -124,7 +143,29 @@ include("../../_php/login.php");
       			$link = mysql_real_escape_string($_POST['link']);
       			$bodytext = mysql_real_escape_string($_POST['bodytext']);
       			$videocode = mysql_real_escape_string($_POST['videocode']);
+      			$tags = trim(mysql_real_escape_string($_POST["tags"]));
+
+      			// update standard info
       			mysql_query("UPDATE news SET title='{$title}', subtitle='{$subtitle}', link='{$link}', bodytext='{$bodytext}', videocode='{$videocode}' WHERE id='{$id}'");
+      			
+      			// remove old tags and replace with new ones
+      			mysql_query("DELETE FROM news_tags WHERE news_id='{$id}'");
+      			if(strpos($tags, ",") !== false){
+					$taglist = explode(",", $tags);
+				}
+				if(isset($taglist)){
+					foreach($taglist as $tag){
+						$tag = trim($tag);
+						if(strlen($tag) > 0){
+							mysql_query("INSERT INTO news_tags (news_id, tag) VALUES ('{$id}', '{$tag}')");
+						}
+					}
+				} else if(strlen($tags) > 0){
+					// only one tag entered
+					mysql_query("INSERT INTO news_tags (news_id, tag) VALUES ('{$news_id}', '{$tags}')");
+				}
+
+      			// update image
       			updateImage($link);
 
       			echo "News entry saved! You can see it <a href='/news/" . $link . "'>here</a>";
