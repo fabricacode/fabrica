@@ -21,7 +21,7 @@ if(isset($_SESSION['loggedin'])){
 		
 			// make sure there are no errors in the file
 			if($_FILES["mainimage"]["error"] > 0){
-				//echo "Return Code: " . $_FILES["image"]["error"] . "<br/>";
+				echo "Return Code: " . $_FILES["mainimage"]["error"] . "<br/>";
 			} else {
 			
 				$title = mysql_real_escape_string($_POST["title"]);
@@ -54,7 +54,7 @@ if(isset($_SESSION['loggedin'])){
 					$taglist = explode(",", $tags);
 				}
 				
-				// move temp file to a real location in news directory
+				// move temp file to a real location in projects directory
 				$imagedest = "/_images/projects/" . $link . "." . $ext;
 				$thumbdest = "/_images/projects/thumbs/" . $link . "." . $ext;
 				move_uploaded_file($_FILES["mainimage"]["tmp_name"], "../.." . $imagedest);
@@ -71,7 +71,7 @@ if(isset($_SESSION['loggedin'])){
 				// $height = imagesy($source_image);
 				// make_thumb($source_image, $ext, $width, $height, "../.." . $thumbdest, 900);
 				
-				// insert new row into news table
+				// insert new row into project table
 				mysql_query("INSERT INTO project (title, subtitle, startdate, enddate, bodytext, mainthumb, mainimage, link, area, videocode) VALUES ('{$title}', '{$subtitle}', '{$startdate}', '{$enddate}', '{$bodytext}', '{$thumbdest}', '{$imagedest}', '{$link}', '{$area}', '{$videocode}')");
 				$project_id = mysql_insert_id();
 
@@ -170,8 +170,8 @@ function saveThumb(){
 	$height = $y2 - $y1; //imagesy($source_image);
 
 	// copy image with specified coordinates
-	$desired_width = 900;	// arbitrary width based on monitor size
-	$desired_height = 506;	// 16:9 ratio
+	$desired_width = 500;	// width based on max page size of 1000px
+	$desired_height = 281;	// 16:9 ratio
 	$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
 	imagecopyresampled($virtual_image, $source_image, 0, 0, $x1, $y1, $desired_width, $desired_height, $width, $height);
 
