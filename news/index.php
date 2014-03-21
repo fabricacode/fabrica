@@ -103,6 +103,32 @@ include("../_php/login.php");
 
       		<?php
 
+      		function listGalleries($result){
+      			// list all galleries returned by the query
+      			while($gallery = mysql_fetch_assoc($result)){
+      				echo "<div>";
+      				$galleryresults = mysql_query("SELECT * FROM news_gallery_item WHERE gallery_id = '" . $gallery['id'] . "'");
+      				
+      				echo "<b>{$gallery['title']}</b><br/><br/>";	// print title
+      				echo "{$gallery['description']}<br/><br/>";		// print description
+
+      				// print grid of thumbnails
+      				$index = 1;
+      				while($item = mysql_fetch_assoc($galleryresults)){
+      					if($index % 3 == 0){
+							echo "<div class='thirds' style='margin-right: 0px'>";
+						} else {
+							echo "<div class='thirds'>";
+						}
+						// TODO: make a link that opens a lightbox and shows the image caption
+						echo "<a href='{$item['image']}'><img src='{$item['thumb']}' class='projectthumb'></a>";
+						echo "</div>";
+						$index++;
+      				}
+      				echo "</div><br/><br/>";
+      			}
+      		}
+
       		function listNews($result){
       			// list all projects returned by the query
 				$index = 1;
@@ -165,7 +191,13 @@ include("../_php/login.php");
 
       			// check if video exists, and if so add it
       			if(!empty($news["videocode"])){
-      				echo $news["videocode"];
+      				echo $news["videocode"] . "<br/><br/>";
+      			}
+
+      			// check if additional photos and captions exist, and if so add them
+      			$galleryresults = mysql_query("SELECT * FROM news_gallery WHERE news_id = '" . $news['id'] . "'");
+      			if(mysql_num_rows($galleryresults) > 0){
+      				listGalleries($galleryresults);
       			}
       			
       			// add social media sharing buttons

@@ -106,7 +106,7 @@ include("../_php/login.php");
       		function listGalleries($result){
       			// list all galleries returned by the query
       			while($gallery = mysql_fetch_assoc($result)){
-      				echo "<br/><br/><div>";
+      				echo "<div>";
       				$galleryresults = mysql_query("SELECT * FROM project_gallery_item WHERE gallery_id = '" . $gallery['id'] . "'");
       				
       				echo "<b>{$gallery['title']}</b><br/><br/>";	// print title
@@ -125,7 +125,7 @@ include("../_php/login.php");
 						echo "</div>";
 						$index++;
       				}
-      				echo "</div>";
+      				echo "</div><br/><br/>";
       			}
       		}
 
@@ -194,7 +194,7 @@ include("../_php/login.php");
 
       			// check if video exists, and if so add it
       			if(!empty($project["videocode"])){
-      				echo $project["videocode"];
+      				echo $project["videocode"] . "<br/><br/>";
       			}
 
       			// check if additional photos and captions exist, and if so add them
@@ -228,6 +228,7 @@ include("../_php/login.php");
 
       			// list the other projects from this area
       			echo "<hr class='primary'><br/>";
+      			echo "<h2 id='subheadline' style='text-decoration: underline;'>more projects</h2>";
       			fetchAreaProjectsExcept($project["area"], $project["id"]);
       		}
 
