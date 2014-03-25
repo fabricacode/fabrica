@@ -266,9 +266,9 @@ include("../../_php/login.php");
 
 					// insert data into database
 					if($table == "project"){
-						mysql_query("INSERT INTO project_gallery_item (project_id, gallery_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', '{$thumbdest}', '{$filename}', '{$caption}')");
+						mysql_query("INSERT INTO project_gallery_item (project_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$i}, '{$thumbdest}', '{$filename}', '{$caption}')");
 					} else if($table == "news"){
-						mysql_query("INSERT INTO news_gallery_item (news_id, gallery_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', '{$thumbdest}', '{$filename}', '{$caption}')");
+						mysql_query("INSERT INTO news_gallery_item (news_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$i}, '{$thumbdest}', '{$filename}', '{$caption}')");
 					}
 				}
 
