@@ -760,9 +760,10 @@ ul#nav.about-black a:active,ul#nav.about-black a.current {
 
 #logout {
 	position: absolute;
-	right: 0.625em;
-	top: 70px;
-	margin-right: auto;
+	right: 0px;
+	top: 0px;
+	font-weight: 700;
+	font-size: 16px;
 }
 
 ul#nav {
@@ -917,12 +918,12 @@ a#menuclose:hover {
 
 .page h2#headline{
 	font-weight: 700;
-	font-size: 1em;
-	line-height: 1.2em;
+	font-size: 1.2em;
+	line-height: 1em;
 	letter-spacing: 0px;
 	margin-top: 10px;
 	position: relative;
-	margin-bottom: 0.3em;
+	margin-bottom: 0.5em;
 }
 
 .page h2 .areaname{
@@ -1564,6 +1565,13 @@ span.redirect {
 		width: 100%;
 	}
 
+	.page h2#headline{
+		font-size: 1.7em;
+		line-height: 1em;
+		margin-top: 10px;
+		margin-bottom: 0.5em;
+	}
+
 	.columns {
 		width: 100%;
 		float: left;
@@ -1651,10 +1659,6 @@ span.redirect {
 		margin-top: -30px;
 	}
 
-	#logout {
-		margin-right: 10.34483%;
-	}
-
 }
 
 @media (min-width: 58.75em) {
@@ -1722,6 +1726,13 @@ span.redirect {
 
 	.page .handbooktextstudios {
 		width: 50%;
+	}
+
+	.page h2#headline{
+		font-size: 2.5em;
+		line-height: 1em;
+		margin-top: 10px;
+		margin-bottom: 0.5em;
 	}
 
 	.columns {
@@ -1816,10 +1827,6 @@ span.redirect {
 		width: 23.40426%;
 		float: left;
 		margin-right: 2.12766%;
-	}
-
-	#logout {
-		margin-right: 12.76596%;
 	}
 }
 

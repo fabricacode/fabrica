@@ -59,11 +59,17 @@ include("../_php/login.php");
 		?>
 
 		<div class='page black'>
-			<h1 id='headline'>
+			<h2 id='headline'>
 
 				<?php
 					if(isset($_SESSION["loggedin"])){
 						echo "Hello, " . $_SESSION["firstname"] . ".<br/>what would you like to do?";
+						echo "<div class='form' id='logout'>";
+						echo "<form name='logout' action='' method='post'>";
+						echo "<input type='hidden' name='logout' value='logout'>";
+						echo "<input type='submit' value='Logout'>";
+						echo "</form>";
+						echo "</div>";
 					} else {
 						echo "Login to get info and make changes.";
 					}
@@ -112,12 +118,12 @@ include("../_php/login.php");
 					//echo "<div class='quarters'><a href='editgallery'><img src='../_images/panel_editproject.png'><br/><br/>Edit Gallery</a><br/><br/></div>";
 				}
 				// logout option
-				echo "<div class='form' id='logout'>";
-				echo "<form name='logout' action='' method='post'>";
-				echo "<input type='hidden' name='logout' value='logout'>";
-				echo "<input type='submit' value='Logout'>";
-				echo "</form>";
-				echo "</div>";
+				// echo "<div class='form' id='logout'>";
+				// echo "<form name='logout' action='' method='post'>";
+				// echo "<input type='hidden' name='logout' value='logout'>";
+				// echo "<input type='submit' value='Logout'>";
+				// echo "</form>";
+				// echo "</div>";
 			}
 			
 			if(isset($_SESSION["loggedin"])){

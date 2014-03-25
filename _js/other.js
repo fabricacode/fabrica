@@ -3300,10 +3300,10 @@ var visible = !1,
 
 $(document).ready(function () {
     $("body").fadeIn(300);
-    $("#headline").fitText(2.2, {
+    /*$("#headline").fitText(2.2, {
         minFontSize: "10px",
         maxFontSize: "42px"
-    });
+    });*/
     $("#subheadline").fitText(2.2, {
         minFontSize: "10px",
         maxFontSize: "42px"
