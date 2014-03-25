@@ -90,7 +90,7 @@ include("../_php/login.php");
 				<?php
 
 				if(isset($project["title"])){
-					echo "<font class='areaname' style='margin-bottom:40px;'>" . $project["area"] . "</font><br/><font style='display:block; margin-top: 20px'>" . $project["title"] . "</font>";
+					echo "<a href='/areas/{$project['area']}' class='areaname' style='margin-bottom:40px;'>" . $project["area"] . "</a><br/><font style='display:block; margin-top: 20px'>" . $project["title"] . "</font>";
 				} else if(isset($_GET["tag"])){
 					echo "tag: " . mysql_real_escape_string($_GET["tag"]);
 				} else {

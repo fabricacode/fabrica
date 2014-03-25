@@ -60,7 +60,7 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h2 id='headline'>
-				<font class="areaname">design</font> produces artefacts that bring a unique view or statement to a particular context.
+				<a href="#" class="areaname">design</a> produces artefacts that bring a unique view or statement to a particular context.
 			</h2>
 			<br/>
 

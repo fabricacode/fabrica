@@ -60,7 +60,7 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h2 id='headline'>
-				<font class="areaname">social campaigns</font> create movements that bring attention to important contemporary issues.
+				<a href="#" class="areaname">social campaigns</a> create movements that bring attention to important contemporary issues.
 			</h2>
 			<br/>
 

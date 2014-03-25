@@ -60,7 +60,7 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h2 id='headline'>
-				<font class="areaname">editorial</font> produces books, documentaries and exhibitions focusing on the human condition.
+				<a href="#" class="areaname">editorial</a> produces books, documentaries and exhibitions focusing on the human condition.
 			</h2>
 			<br/>
 
