@@ -75,6 +75,9 @@ include("../_php/login.php");
 	    <!-- For Google+ bidirectional linking -->
 	    <link href='https://plus.google.com/103695675753742819996' rel='publisher'>
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
+	    <link href="/_css/lightbox.css" rel="stylesheet" />
+	    <script src="/_js/other.js" type="text/javascript"></script>
+		<script src="/_js/lightbox-2.6.min.js"></script>
 	</head>
 	
 	<body class='black'>
@@ -120,8 +123,9 @@ include("../_php/login.php");
 						} else {
 							echo "<div class='thirds'>";
 						}
-						// TODO: make a link that opens a lightbox and shows the image caption
-						echo "<a href='{$item['image']}'><img src='{$item['thumb']}' class='projectthumb'></a>";
+						// make a link that opens a lightbox and shows the image caption
+						echo "<a href='{$item['image']}' data-lightbox='gallery_{$gallery['id']}' title='" . htmlentities($item['caption'], ENT_QUOTES) . "'>";
+						echo "<img src='{$item['thumb']}' class='projectthumb'></a>";
 						echo "</div>";
 						$index++;
       				}
@@ -246,7 +250,6 @@ include("../_php/login.php");
 
         </div>
 
-        <script src="/_js/other.js" type="text/javascript"></script>
         <script src="/_js/video.js" type="text/javascript"></script>
 		
 	</body>
