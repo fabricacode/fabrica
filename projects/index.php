@@ -112,7 +112,7 @@ include("../_php/login.php");
       				echo "<div>";
       				$galleryresults = mysql_query("SELECT * FROM project_gallery_item WHERE gallery_id = '" . $gallery['id'] . "'");
       				
-      				echo "<b>{$gallery['title']}</b><br/><br/>";	// print title
+      				echo "<b>{$gallery['title']}</b><br/>";	// print title
       				echo "{$gallery['description']}<br/><br/>";		// print description
 
       				// print grid of thumbnails

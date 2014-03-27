@@ -115,15 +115,9 @@ include("../_php/login.php");
 					echo "<div class='quarters' style='margin-right: 0px;'><a href='editproject'><img src='../_images/panel_editproject.png'><br/><br/>Edit Project</a><br/><br/></div>";
 					echo "<div class='quarters'><a href='../applications/'><img src='../_images/panel_reviewapplications.png'><br/><br/>Review Applications</a><br/><br/></div>";
 					echo "<div class='quarters'><a href='addgallery'><img src='../_images/panel_addnews.png'><br/><br/>Add Gallery</a><br/><br/></div>";
-					//echo "<div class='quarters'><a href='editgallery'><img src='../_images/panel_editproject.png'><br/><br/>Edit Gallery</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='editgallery'><img src='../_images/panel_editproject.png'><br/><br/>Edit Gallery</a><br/><br/></div>";
+					echo "<div class='quarters' style='margin-right: 0px;'><a href='settings'><img src='../_images/panel_editproject.png'><br/><br/>User Settings</a><br/><br/></div>";
 				}
-				// logout option
-				// echo "<div class='form' id='logout'>";
-				// echo "<form name='logout' action='' method='post'>";
-				// echo "<input type='hidden' name='logout' value='logout'>";
-				// echo "<input type='submit' value='Logout'>";
-				// echo "</form>";
-				// echo "</div>";
 			}
 			
 			if(isset($_SESSION["loggedin"])){

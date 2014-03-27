@@ -67,6 +67,20 @@ include("../../_php/login.php");
 		
 			<?php
 
+			function addImages($table, $entry_id, $gallery_id){
+				// TODO: dynamically add news images to the gallery
+			}
+
+			function removeImages($table, $entry_id, $gallery_id){
+				// TODO: add checkboxes for user to select which images to remove
+				fetchGalleryItems($table, $entry_id, $gallery_id);
+			}
+
+			function editDescription($table, $entry_id, $gallery_id){
+				// TODO: text areas for editing description text
+				echo "<textarea name='caption{$index}' cols='37' rows='5'>{$item['caption']}</textarea><br/><br/>";
+			}
+
 			function fetchAllGalleries($table){
 				// fetch everything for the projects page
       			$result = mysql_query("SELECT {$table}_gallery.id as gallery_id,{$table}_gallery.title as gallery_title,{$table}.id,{$table}.title,{$table}_gallery_item.thumb FROM {$table}_gallery INNER JOIN {$table} ON {$table}_gallery.{$table}_id={$table}.id INNER JOIN {$table}_gallery_item ON {$table}_gallery.id={$table}_gallery_item.gallery_id WHERE {$table}_gallery_item.item_id=1 ORDER BY {$table}_gallery.id DESC");
@@ -76,7 +90,7 @@ include("../../_php/login.php");
 			function fetchGalleryItems($table, $entry_id, $gallery_id){
 				// fetch all of the items for this gallery entry
 				$result = mysql_query("SELECT * FROM {$table}_gallery_item WHERE {$table}_id=$entry_id AND gallery_id={$gallery_id} ORDER BY item_id ASC");
-      			listGalleryItems($result);
+      			listGalleryItems($result, $table, $entry_id);
 			}
 
 			function listGalleries($result, $table){
@@ -97,8 +111,13 @@ include("../../_php/login.php");
 				}
 			}
 
-			function listGalleryItems($result){
+			function listGalleryItems($result, $table, $entry_id){
 				// list all gallery items returned by the query
+				echo "<form action='' method='post' enctype='multipart/form-data'>";
+				echo "<input type='hidden' name='entry_id' value='{$entry_id}'>";
+				echo "<input type='hidden' name='gallery_id' value='{$result['gallery_id']}'>";
+				echo "<input type='hidden' name='table' value='{$table}'>";
+				echo "<input type='hidden' name='action' value='deleteitems'>";
 				$index = 1;
 				while($item = mysql_fetch_assoc($result)){
 					if($index % 3 == 0){
@@ -107,10 +126,13 @@ include("../../_php/login.php");
 						echo "<div class='thirds'>";
 					}
 					echo "<a href='{$item['image']}'><img src='{$item['thumb']}' class='projectthumb'></a>";
-					echo "<textarea name='caption{$index}' cols='37' rows='5'>{$item['caption']}</textarea><br/><br/>";
+					echo "<input type='checkbox' name='delete' value='{$item['item_id']}'>";
 					echo "</div>";
 					$index++;
 				}
+				echo "<div style='clear: both;'>";
+				echo "<input type='submit' value='Delete Selected Items' style='background-color:#aa0000'>";
+				echo "</form></div>";
 			}
 
 			function printgalleryDetails($table, $entry_id, $gallery_id){
@@ -126,12 +148,48 @@ include("../../_php/login.php");
 
 			
 			if(isset($_SESSION["loggedin"]) && $_SESSION["position"] == "admin"){
-				if(isset($_GET["gallery_id"])){
+				if(isset($_GET["action"])){
+					// STEP 4: route to function user has selected
+					$table = mysql_real_escape_string($_GET["table"]);
+					$entry_id = mysql_real_escape_string($_GET["entry_id"]);
+					$gallery_id = mysql_real_escape_string($_GET["gallery_id"]);
+
+					if($_GET["action"] == "editdescription"){
+						editDescription($table, $entry_id, $gallery_id);
+					} else if($_GET["action"] == "addimages"){
+						addImages($table, $entry_id, $gallery_id);
+					} else if($_GET["action"] == "removeimages"){
+						removeImages($table, $entry_id, $gallery_id);
+					}
+				} else if(isset($_GET["gallery_id"])){
 					// STEP 3: present edit options for individual gallery
-					echo "<form action='' method='post' enctype='multipart/form-data' name='galleryform'>";
-					printGalleryDetails(mysql_real_escape_string($_GET["table"]), mysql_real_escape_string($_GET["entry_id"]), mysql_real_escape_string($_GET["gallery_id"]));
-					fetchGalleryItems(mysql_real_escape_string($_GET["table"]), mysql_real_escape_string($_GET["entry_id"]), mysql_real_escape_string($_GET["gallery_id"]));
-					echo "</form>";
+					$table = mysql_real_escape_string($_GET["table"]);
+					$entry_id = mysql_real_escape_string($_GET["entry_id"]);
+					$gallery_id = mysql_real_escape_string($_GET["gallery_id"]);
+
+					echo "<div class='thirds' style='text-align: center;'>";
+					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=editdescription'>Edit Description</a>";
+					echo "</div>";
+					echo "<div class='thirds' style='text-align: center;'>";
+					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=addimages'>Add Images</a>";
+					echo "</div>";
+					echo "<div class='thirds' style='text-align: center; margin-right: 0px;'>";
+					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=removeimages'>Remove Images</a>";
+					echo "</div>";
+
+					// echo "<form action='' method='post' enctype='multipart/form-data' name='galleryform'>";
+					// printGalleryDetails(mysql_real_escape_string($_GET["table"]), mysql_real_escape_string($_GET["entry_id"]), mysql_real_escape_string($_GET["gallery_id"]));
+					// fetchGalleryItems(mysql_real_escape_string($_GET["table"]), mysql_real_escape_string($_GET["entry_id"]), mysql_real_escape_string($_GET["gallery_id"]));
+					// TODO: add ability to add new images
+					// echo "<div style='clear: both; float: left;'><input type='submit' value='Save'></form></div>";
+					// echo "<div style='float: left; margin-left: 20px;'>";
+					// echo "<form action='' method='post' enctype='multipart/form-data'>";
+					// echo "<input type='hidden' name='project_id' value='{$_GET["entry_id"]}'>";
+					// echo "<input type='hidden' name='gallery_id' value='{$_GET["gallery_id"]}'>";
+					// echo "<input type='hidden' name='table' value='{$_GET["table"]}'>";
+					// echo "<input type='hidden' name='action' value='deletegallery'>";
+					// echo "<input type='submit' value='Delete Gallery' style='background-color:#aa0000'>";
+					// echo "</div>";
 				} else if(isset($_GET["table"])){
 					// STEP 2: list all gallery entries related to that table
 					fetchAllGalleries(mysql_real_escape_string($_GET["table"]));
