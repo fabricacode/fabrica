@@ -144,34 +144,36 @@ include("../../_php/login.php");
 				$query = mysql_query("UPDATE person SET firstname='{$firstname}', lastname='{$lastname}', username='{$username}', password='{$password}', area_id='{$area_id}', nationality='{$nationality}', dob='{$dob}', startdate='{$startdate}', enddate='{$enddate}', position='{$position}', bio='{$bio}', address='{$address}', officephone='{$officephone}', cellphone='{$cellphone}', website='{$website}', email='{$email}' WHERE id='{$id}'");
 				
 				// see if a new photo has been uploaded, and if so save it.
-				updatePhoto($username);	
+				if(!empty($_FILES["photo"]["name"])){
+					updatePhoto($username);	
+				} else {
+					echo "Your user information was successfully saved. You can view it on <a href='/people/{$username}'>your person page</a>.";
+				}
 			}
 
 			function updatePhoto($username){
-				if(!empty($_FILES["photo"]["name"])){
-					// allowed extensions, types and size
-					$allowedExts = array("jpg", "jpeg", "gif", "png");
-					$allowedType = array("image/gif", "image/jpeg", "image/png", "image/pjpeg");
-					$allowedSize = 500000;
-					
-					$ext = end(explode(".", $_FILES["photo"]["name"]));
-					$type = $_FILES["photo"]["type"];
-					$size = $_FILES["photo"]["size"];
-					// check if extension, type and size are allowed
-					if(in_array($ext, $allowedExts) && in_array($type, $allowedType) && ($size < $allowedSize)){
-						// make sure there are no errors in the file
-						if($_FILES["photo"]["error"] > 0){
-							//echo "Return Code: " . $_FILES["image"]["error"] . "<br/>";
-						} else {
-							// move temp file to a real location in news directory
-							$imagedest = "/_images/people/" . $username . "." . $ext;
-							$thumbdest = "/_images/people/thumbs/" . $username . "." . $ext;
-							move_uploaded_file($_FILES["photo"]["tmp_name"], "../.." . $imagedest);
-							// prompt user to select the thumbnail area for the image
-							selectThumbArea($username, "../.." . $imagedest, "../.." . $thumbdest, $ext);
-							// update photo and thumb entries
-							$query = mysql_query("UPDATE person SET photo='{$imagedest}', thumb='{$thumbdest}' WHERE username='{$username}'");
-						}
+				// allowed extensions, types and size
+				$allowedExts = array("jpg", "jpeg", "gif", "png");
+				$allowedType = array("image/gif", "image/jpeg", "image/png", "image/pjpeg");
+				$allowedSize = 500000;
+				
+				$ext = end(explode(".", $_FILES["photo"]["name"]));
+				$type = $_FILES["photo"]["type"];
+				$size = $_FILES["photo"]["size"];
+				// check if extension, type and size are allowed
+				if(in_array($ext, $allowedExts) && in_array($type, $allowedType) && ($size < $allowedSize)){
+					// make sure there are no errors in the file
+					if($_FILES["photo"]["error"] > 0){
+						//echo "Return Code: " . $_FILES["image"]["error"] . "<br/>";
+					} else {
+						// move temp file to a real location in news directory
+						$imagedest = "/_images/people/" . $username . "." . $ext;
+						$thumbdest = "/_images/people/thumbs/" . $username . "." . $ext;
+						move_uploaded_file($_FILES["photo"]["tmp_name"], "../.." . $imagedest);
+						// prompt user to select the thumbnail area for the image
+						selectThumbArea($username, "../.." . $imagedest, "../.." . $thumbdest, $ext);
+						// update photo and thumb entries
+						$query = mysql_query("UPDATE person SET photo='{$imagedest}', thumb='{$thumbdest}' WHERE username='{$username}'");
 					}
 				}
 			}

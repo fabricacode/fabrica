@@ -117,6 +117,7 @@ include("../_php/login.php");
 					echo "<div class='quarters'><a href='addgallery'><img src='../_images/panel_addnews.png'><br/><br/>Add Gallery</a><br/><br/></div>";
 					echo "<div class='quarters'><a href='editgallery'><img src='../_images/panel_editproject.png'><br/><br/>Edit Gallery</a><br/><br/></div>";
 					echo "<div class='quarters' style='margin-right: 0px;'><a href='settings'><img src='../_images/panel_editproject.png'><br/><br/>User Settings</a><br/><br/></div>";
+					echo "<div class='quarters'><a href='adduser'><img src='../_images/panel_addnews.png'><br/><br/>Add User</a><br/><br/></div>";
 				}
 			}
 			

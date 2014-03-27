@@ -1405,6 +1405,7 @@ span.redirect {
 }
 
 #sharebuttons{
+	clear: both;
 	width: 180px;
 	margin-left: auto;
 	margin-right: auto;

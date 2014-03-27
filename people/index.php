@@ -100,7 +100,6 @@ include("../_php/login.php");
 				
 				?>
 			</h2>
-			<br/>
 
       		<?php
 
@@ -158,8 +157,16 @@ include("../_php/login.php");
 
       		function personDetails($person){
       			// TODO: reformat the person details page
+      			echo "<div class='studioleft'>";
       			echo "<img class='projectmainimg' src='" . $person["photo"] . "'><br/><br/>";
+      			$result = mysql_query("SELECT name FROM area WHERE id='{$person['area_id']}'");
+      			$area = mysql_fetch_assoc($result);
+      			echo "<b>Area:</b> <a href='/areas/{$area['name']}'>{$area['name']}</a><br/>";
+      			echo "<b>Country:</b> <a href='/people/country/{$person['nationality']}'>{$person['nationality']}</a><br/>";
+      			echo "<b>Web Site:</b> <a href='{$person['website']}'>{$person['website']}</a><br/><br/>";
+      			echo "</div><div class='studioright'>";
       			echo $person["bio"] . "<br/><br/>";
+      			echo "</div>";
 
       			// add social media sharing buttons
 				echo "<div id='sharebuttons'>";
