@@ -114,7 +114,7 @@ include("../_php/login.php");
 						echo "<div class='thirds'>";
 					}
 					echo "<a href='/people/{$person['username']}'>";
-					echo "<img src='{$person['photo']}' class='projectthumb'>";
+					echo "<img src='{$person['thumb']}' class='projectthumb'>";
 					echo "<span class='projecttitle'>{$person['firstname']} {$person['lastname']}</span>";
 					echo "</a>";
 					echo "<span class='projecttags'>";
@@ -137,7 +137,7 @@ include("../_php/login.php");
       		function fetchAllPeople(){
       			// fetch everybody for the people page
       			// FIXME: this doesn't include people who do not have a valid "area_id"
-      			$result = mysql_query("SELECT person.id,person.username,person.firstname,person.lastname,person.photo,person.nationality,area.name as area FROM person INNER JOIN area ON person.area_id=area.id ORDER BY enddate DESC, firstname ASC");
+      			$result = mysql_query("SELECT person.id,person.username,person.firstname,person.lastname,person.thumb,person.nationality,area.name as area FROM person INNER JOIN area ON person.area_id=area.id ORDER BY enddate DESC, firstname ASC");
       			listPeople($result);
       		}
 
@@ -146,13 +146,13 @@ include("../_php/login.php");
       			$result = mysql_query("SELECT id FROM area WHERE name='{$area}'");
       			$row = mysql_fetch_assoc($result);
       			$area_id = $row['id'];
-      			$result = mysql_query("SELECT id,username,firstname,lastname,photo,nationality FROM person WHERE area_id = '{$area_id}' ORDER BY enddate DESC, firstname ASC");
+      			$result = mysql_query("SELECT id,username,firstname,lastname,thumb,nationality FROM person WHERE area_id = '{$area_id}' ORDER BY enddate DESC, firstname ASC");
       			listPeople($result);
       		}
 
       		function fetchCountryPeople($country){
       			// fetch only people from the specified country
-      			$result = mysql_query("SELECT person.id,person.username,person.firstname,person.lastname,person.photo,area.name as area FROM person INNER JOIN area ON person.area_id=area.id WHERE nationality = '{$country}' ORDER BY enddate DESC, firstname ASC");
+      			$result = mysql_query("SELECT person.id,person.username,person.firstname,person.lastname,person.thumb,area.name as area FROM person INNER JOIN area ON person.area_id=area.id WHERE nationality = '{$country}' ORDER BY enddate DESC, firstname ASC");
       			listPeople($result);
       		}
 

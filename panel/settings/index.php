@@ -48,6 +48,9 @@ include("../../_php/login.php");
 	    <!-- For Google+ bidirectional linking -->
 	    <link href='https://plus.google.com/103695675753742819996' rel='publisher'>
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
+	    <link rel="stylesheet" type="text/css" href="/_css/imgareaselect-animated.css" />
+		<script src="/_js/other.js" type="text/javascript"></script>
+		<script type="text/javascript" src="/_js/jquery.imgareaselect.pack.js"></script>
 	</head>
 	
 	<body class='black'>
@@ -69,8 +72,8 @@ include("../../_php/login.php");
 			function printUserInfo(){
 				$query = mysql_query("SELECT * FROM person WHERE id = '{$_SESSION['person_id']}'");
 				$person = mysql_fetch_assoc($query);
-				echo "<div class='form'>";
-				echo "<form name='usersettings' action='' method='post'>";
+				echo "<div class='thirds' style='overflow: hidden;'>";
+				echo "<form name='usersettings' action='' method='post' enctype='multipart/form-data'>";
 				echo "<input type='hidden' name='action' value='save'>";
 				echo "<input type='hidden' name='id' value='{$_SESSION['person_id']}'>";
 
@@ -82,7 +85,7 @@ include("../../_php/login.php");
 				
 				// look up area by id and switch to drop down menu
 				echo "<b>Area:</b><br/>";//<input type='text' size='38' name='area_id' value='{$person['area_id']}'><br/><br/>";
-				echo "<select id='nationality' name='nationality'>";
+				echo "<select id='area_id' name='area_id'>";
 				echo "<option "; if($person['area_id'] == 1){echo "selected='selected'";} echo " value='1'> Social Engagement Campaigns<br/>";
 				echo "<option "; if($person['area_id'] == 2){echo "selected='selected'";} echo " value='2'> COLORS Magazine<br/>";
 				echo "<option "; if($person['area_id'] == 3){echo "selected='selected'";} echo " value='3'> Design<br/>";
@@ -101,6 +104,13 @@ include("../../_php/login.php");
 				echo "<b>Cell Phone:</b><br/><input type='text' size='38' name='cellphone' value='{$person['cellphone']}'><br/><br/>";
 				echo "<b>Web Site:</b><br/><input type='text' size='38' name='website' value='{$person['website']}'><br/><br/>";
 				echo "<b>E-mail Address:</b><br/><input type='text' size='38' name='email' value='{$person['email']}'><br/><br/>";
+				echo "</div>";
+				echo "<div class='thirds'>";
+				echo "<a href='{$person['photo']}'><img src='{$person['thumb']}' class='projectthumb'></a>";
+				echo "<b>Change your profile photo:</b> (max 500kb)<br/>";
+				echo "<input type='file' name='photo'><br/><br/>";
+				echo "</div>";
+				echo "<div class='thirds' style='margin-right: 0px'>";
 				echo "<input type='submit' value='Save'>";
 				echo "</form>";
 				echo "</div>";
@@ -120,7 +130,6 @@ include("../../_php/login.php");
 				}
 				$area_id = mysql_real_escape_string($_POST['area_id']);
 				$nationality = mysql_real_escape_string($_POST['nationality']);
-				// TODO: will have to parse dates with separate fields when form is changed
 				$dob = mysql_real_escape_string($_POST['dob']);
 				$startdate = mysql_real_escape_string($_POST['startdate']);
 				$enddate = mysql_real_escape_string($_POST['enddate']);
@@ -131,15 +140,126 @@ include("../../_php/login.php");
 				$cellphone = mysql_real_escape_string($_POST['cellphone']);
 				$website = mysql_real_escape_string($_POST['website']);
 				$email = mysql_real_escape_string($_POST['email']);
-				// TODO: see if a new photo has been uploaded, and if so save it.
-				$query = mysql_query("UPDATE person SET firstname='{$firstname}', lastname='{$lastname}', username='{$username}', password='{$password}', area_id='{$area_id}', nationality='{$nationality}', dob='{$dob}', startdate='{$startdate}', enddate='{$enddate}', position='{$position}', bio='{$bio}', address='{$address}', officephone='{$officephone}', cellphone='{$cellphone}', website='{$website}', email='{$email}' WHERE id='{$id}'");
 
-				echo "Your user information was successfully saved. You can view it on <a href='/person/{$username}'>your person page</a>.";
+				$query = mysql_query("UPDATE person SET firstname='{$firstname}', lastname='{$lastname}', username='{$username}', password='{$password}', area_id='{$area_id}', nationality='{$nationality}', dob='{$dob}', startdate='{$startdate}', enddate='{$enddate}', position='{$position}', bio='{$bio}', address='{$address}', officephone='{$officephone}', cellphone='{$cellphone}', website='{$website}', email='{$email}' WHERE id='{$id}'");
+				
+				// see if a new photo has been uploaded, and if so save it.
+				updatePhoto($username);	
 			}
+
+			function updatePhoto($username){
+				if(!empty($_FILES["photo"]["name"])){
+					// allowed extensions, types and size
+					$allowedExts = array("jpg", "jpeg", "gif", "png");
+					$allowedType = array("image/gif", "image/jpeg", "image/png", "image/pjpeg");
+					$allowedSize = 500000;
+					
+					$ext = end(explode(".", $_FILES["photo"]["name"]));
+					$type = $_FILES["photo"]["type"];
+					$size = $_FILES["photo"]["size"];
+					// check if extension, type and size are allowed
+					if(in_array($ext, $allowedExts) && in_array($type, $allowedType) && ($size < $allowedSize)){
+						// make sure there are no errors in the file
+						if($_FILES["photo"]["error"] > 0){
+							//echo "Return Code: " . $_FILES["image"]["error"] . "<br/>";
+						} else {
+							// move temp file to a real location in news directory
+							$imagedest = "/_images/people/" . $username . "." . $ext;
+							$thumbdest = "/_images/people/thumbs/" . $username . "." . $ext;
+							move_uploaded_file($_FILES["photo"]["tmp_name"], "../.." . $imagedest);
+							// prompt user to select the thumbnail area for the image
+							selectThumbArea($username, "../.." . $imagedest, "../.." . $thumbdest, $ext);
+							// update photo and thumb entries
+							$query = mysql_query("UPDATE person SET photo='{$imagedest}', thumb='{$thumbdest}' WHERE username='{$username}'");
+						}
+					}
+				}
+			}
+
+			function selectThumbArea($username, $filename, $thumbdest, $ext){
+				echo "<img src='" . $filename . "' id='projectmainimage'>";
+				echo "<form action='' method='post'>";
+				echo "<input type='hidden' name='action' value='savephoto' />";
+				echo "<input type='hidden' name='username' value='{$username}' />";
+				echo "<input type='hidden' name='filename' value='{$filename}' />";
+				echo "<input type='hidden' name='thumbdest' value='{$thumbdest}' />";
+				echo "<input type='hidden' name='ext' value='{$ext}' />";
+				echo "<input type='hidden' name='x1' value='' />";
+				echo "<input type='hidden' name='y1' value='' />";
+				echo "<input type='hidden' name='x2' value='' />";
+				echo "<input type='hidden' name='y2' value='' />";
+				echo "<input type='submit' name='submit' value='Save Thumb' />";
+				echo "</form>";
+
+				echo "<script type='text/javascript'>
+					$(document).ready(function () {
+						$('#projectmainimage').imgAreaSelect({
+							aspectRatio: '1:1',
+							handles: true,
+							onSelectEnd: function (img, selection) {
+					            $('input[name=\"x1\"]').val(selection.x1);
+					            $('input[name=\"y1\"]').val(selection.y1);
+					            $('input[name=\"x2\"]').val(selection.x2);
+					            $('input[name=\"y2\"]').val(selection.y2);            
+					        }
+						});
+					});
+				</script>";
+
+				echo "<br/><br/>";
+				echo "Drag your cursor on top of the image to the left to define the area of the image you wish to use for the thumbnail. The thumbnail image must constrain to a 16:9 aspect ratio so that it fits nicely in a grid on each of the projects pages.";
+			}
+
+			function saveThumb(){
+				// grab crop data for the thumbnail
+				$username = $_POST["username"];
+				$filename = $_POST["filename"];
+				$thumbdest = $_POST["thumbdest"];
+				$ext = $_POST["ext"];
+				$x1 = $_POST["x1"];
+				$y1 = $_POST["y1"];
+				$x2 = $_POST["x2"];
+				$y2 = $_POST["y2"];
+
+				// load image and get dimensions
+				if($ext == "jpg" || $ext == "jpeg"){
+					$source_image = imagecreatefromjpeg($filename);
+				} elseif($ext == "png"){
+					$source_image = imagecreatefrompng($filename);
+				} elseif($ext == "gif"){
+					$source_image = imagecreatefromgif($filename);
+				}
+				$width = $x2 - $x1; //imagesx($source_image);
+				$height = $y2 - $y1; //imagesy($source_image);
+
+				// copy image with specified coordinates
+				$desired_width = 500;	// width based on max page size of 1000px
+				$desired_height = 500;	// 1:1 ratio
+				$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
+				imagecopyresampled($virtual_image, $source_image, 0, 0, $x1, $y1, $desired_width, $desired_height, $width, $height);
+
+				// create the physical thumbnail image to its destination
+				if($ext == "jpg" || $ext == "jpeg"){
+					imagejpeg($virtual_image, $thumbdest, 80);
+				} elseif($ext == "png"){
+					imagepng($virtual_image, $thumbdest, 1);
+				} elseif($ext == "gif"){
+					imagegif($virtual_image, $thumbdest);
+				}
+
+				echo "Your user information was successfully saved. You can view it on <a href='/people/{$username}'>your person page</a>.";
+			}
+
+
+
 			
 			if(isset($_SESSION["loggedin"])){
 				if(isset($_POST["action"])){
-					saveUserInfo();
+					if($_POST["action"] == "save"){
+						saveUserInfo();
+					} else if($_POST["action"] == "savephoto"){
+						saveThumb();
+					}
 				} else {
 					// show user info and allow them to save
 					printUserInfo();
@@ -154,8 +274,6 @@ include("../../_php/login.php");
 			?>
 
 		</div>
-
-		<script src="/_js/other.js" type="text/javascript"></script>
 		
 	</body>
 </html>
