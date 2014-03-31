@@ -49,6 +49,10 @@ include("../../_php/login.php");
 	    <link href='https://plus.google.com/103695675753742819996' rel='publisher'>
 		<script src="/_js/addproject.js" type="text/javascript"></script>
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
+	    <link rel="stylesheet" type="text/css" href="/_css/imgareaselect-animated.css" />
+		<script src="/_js/other.js" type="text/javascript"></script>
+		<script src="/_js/addproject.js" type="text/javascript"></script>
+		<script type="text/javascript" src="/_js/jquery.imgareaselect.pack.js"></script>
 	</head>
 	
 	<body class='black'>
@@ -129,9 +133,9 @@ include("../../_php/login.php");
       					echo "<input type='text' name='creditcontent" . $creditcount . "' size='26' value='{$credit['content']}'><br/>";
       				}
       				echo "</div>";
-					echo "<input type='hidden' name='creditcount' id='creditcount' value='{$creditcount}'>";
 					echo "<a href='javascript:addCredit();''>Add a credit</a><br/><br/>";
       			}
+				echo "<input type='hidden' name='creditcount' id='creditcount' value='{$creditcount}'>";
       		}
 
       		function printTags($id){
@@ -180,12 +184,12 @@ include("../../_php/login.php");
 					foreach($taglist as $tag){
 						$tag = trim($tag);
 						if(strlen($tag) > 0){
-							mysql_query("INSERT INTO project_tags (project_id, tag) VALUES ('{$project_id}', '{$tag}')");
+							mysql_query("INSERT INTO project_tags (project_id, tag) VALUES ('{$id}', '{$tag}')");
 						}
 					}
 				} else if(strlen($tags) > 0){
 					// only one tag entered
-					mysql_query("INSERT INTO project_tags (project_id, tag) VALUES ('{$project_id}', '{$tags}')");
+					mysql_query("INSERT INTO project_tags (project_id, tag) VALUES ('{$id}', '{$tags}')");
 				}
 
       			// update project credits if they exist
@@ -207,12 +211,12 @@ include("../../_php/login.php");
 					}
 				}
 
-      			updateImage($link);
+      			updateImage($id, $link);
 
       			echo "Project saved! You can see it <a href='/projects/" . $link . "'>here</a>";
       		}
 
-      		function updateImage($link){
+      		function updateImage($id, $link){
       			if(!empty($_FILES["mainimage"]["name"])){
       				// allowed extensions, types and size
 					$allowedExts = array("jpg", "jpeg", "gif", "png");
@@ -243,7 +247,8 @@ include("../../_php/login.php");
 							}
 							$width = imagesx($source_image);
 							$height = imagesy($source_image);
-							make_thumb($source_image, $ext, $width, $height, "../.." . $thumbdest, 900);
+							//make_thumb($source_image, $ext, $width, $height, "../.." . $thumbdest, 900);
+							selectThumbArea($id, "../.." . $imagedest, "../.." . $thumbdest, $ext, $link);
 						}
 					} else if($size >= $allowedSize){
 						echo "The image you are trying to upload is too large. Hit the \"back\" button in your browser and try again with a different version of the image under 500kb.<br/>";
@@ -253,23 +258,98 @@ include("../../_php/login.php");
       			}
       		}
 
-      		function make_thumb($source_image, $ext, $width, $height, $dest, $desired_width) {
-				// TODO: constrain to a prespecified aspect ratio to fit thumbnail with front page grid of image links.
-				// find the "desired height" of this thumbnail, relative to the desired width
-				$desired_height = floor($height * ($desired_width / $width));
-				// create a new, "virtual" image
+      		function selectThumbArea($id, $filename, $thumbdest, $ext, $link){
+				echo "<img src='" . $filename . "' id='projectmainimage'>";
+				echo "<form action='' method='post'>";
+				echo "<input type='hidden' name='id' value='{$id}' />";
+				echo "<input type='hidden' name='filename' value='{$filename}' />";
+				echo "<input type='hidden' name='thumbdest' value='{$thumbdest}' />";
+				echo "<input type='hidden' name='ext' value='{$ext}' />";
+				echo "<input type='hidden' name='link' value='{$link}' />";
+				echo "<input type='hidden' name='x1' value='' />";
+				echo "<input type='hidden' name='y1' value='' />";
+				echo "<input type='hidden' name='x2' value='' />";
+				echo "<input type='hidden' name='y2' value='' />";
+				echo "<input type='submit' name='submit' value='Save Thumb' />";
+				echo "</form>";
+
+				echo "<script type='text/javascript'>
+					$(document).ready(function () {
+						$('#projectmainimage').imgAreaSelect({
+							aspectRatio: '16:9',
+							handles: true,
+							onSelectEnd: function (img, selection) {
+					            $('input[name=\"x1\"]').val(selection.x1);
+					            $('input[name=\"y1\"]').val(selection.y1);
+					            $('input[name=\"x2\"]').val(selection.x2);
+					            $('input[name=\"y2\"]').val(selection.y2);            
+					        }
+						});
+					});
+				</script>";
+
+				echo "<br/><br/>";
+				echo "Drag your cursor on top of the image to the left to define the area of the image you wish to use for the thumbnail. The thumbnail image must constrain to a 16:9 aspect ratio so that it fits nicely in a grid on each of the projects pages.";
+			}
+
+			function saveThumb(){
+				// grab crop data for the thumbnail
+				$id = $_POST["id"];
+				$filename = $_POST["filename"];
+				$thumbdest = $_POST["thumbdest"];
+				$link = $_POST["link"];
+				$ext = $_POST["ext"];
+				$x1 = $_POST["x1"];
+				$y1 = $_POST["y1"];
+				$x2 = $_POST["x2"];
+				$y2 = $_POST["y2"];
+
+				// load image and get dimensions
+				if($ext == "jpg" || $ext == "jpeg"){
+					$source_image = imagecreatefromjpeg($filename);
+				} elseif($ext == "png"){
+					$source_image = imagecreatefrompng($filename);
+				} elseif($ext == "gif"){
+					$source_image = imagecreatefromgif($filename);
+				}
+				$width = $x2 - $x1; //imagesx($source_image);
+				$height = $y2 - $y1; //imagesy($source_image);
+
+				// copy image with specified coordinates
+				$desired_width = 500;	// width based on max page size of 1000px
+				$desired_height = 281;	// 16:9 ratio
 				$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
-				// copy source image at a resized size
-				imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
+				imagecopyresampled($virtual_image, $source_image, 0, 0, $x1, $y1, $desired_width, $desired_height, $width, $height);
+
 				// create the physical thumbnail image to its destination
 				if($ext == "jpg" || $ext == "jpeg"){
-					imagejpeg($virtual_image, $dest, 80);
+					imagejpeg($virtual_image, $thumbdest, 80);
 				} elseif($ext == "png"){
-					imagepng($virtual_image, $dest, 1);
+					imagepng($virtual_image, $thumbdest, 1);
 				} elseif($ext == "gif"){
-					imagegif($virtual_image, $dest);
+					imagegif($virtual_image, $thumbdest);
 				}
+
+				echo "<b>Project Successfully Added!</b><br/><br/>See the project page <a href='/projects/" . $link . "'>here</a>.<br/>";
 			}
+
+   //    		function make_thumb($source_image, $ext, $width, $height, $dest, $desired_width) {
+			// 	// TODO: constrain to a prespecified aspect ratio to fit thumbnail with front page grid of image links.
+			// 	// find the "desired height" of this thumbnail, relative to the desired width
+			// 	$desired_height = floor($height * ($desired_width / $width));
+			// 	// create a new, "virtual" image
+			// 	$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
+			// 	// copy source image at a resized size
+			// 	imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
+			// 	// create the physical thumbnail image to its destination
+			// 	if($ext == "jpg" || $ext == "jpeg"){
+			// 		imagejpeg($virtual_image, $dest, 80);
+			// 	} elseif($ext == "png"){
+			// 		imagepng($virtual_image, $dest, 1);
+			// 	} elseif($ext == "gif"){
+			// 		imagegif($virtual_image, $dest);
+			// 	}
+			// }
 
       		function fetchAllProjects(){
       			// fetch everything for the projects page
@@ -288,6 +368,8 @@ include("../../_php/login.php");
 				if(isset($_POST["id"])){
 					if(isset($_POST["delete"])){
 						deleteProject($_POST["id"]);
+					} else if(isset($_POST['thumbdest'])){
+						saveThumb();
 					} else {
 						// update data in the database and process image if it's included
 						saveProject();
@@ -309,8 +391,6 @@ include("../../_php/login.php");
 			?>
 
 		</div>
-
-		<script src="/_js/other.js" type="text/javascript"></script>
 
 	</body>
 </html>

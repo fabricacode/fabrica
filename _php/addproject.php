@@ -188,22 +188,22 @@ function saveThumb(){
 	//echo "<b>Project Successfully Added!</b><br/><br/>See it on the <a href='/projects/'>projects page</a>.<br/>";
 }
 
-function make_thumb($source_image, $ext, $width, $height, $dest, $desired_width) {
-	// TODO: constrain to a prespecified aspect ratio to fit thumbnail with projects page grid of image links.
-	// find the "desired height" of this thumbnail, relative to the desired width
-	$desired_height = floor($height * ($desired_width / $width));
-	// create a new, "virtual" image
-	$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
-	// copy source image at a resized size
-	imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
-	// create the physical thumbnail image to its destination
-	if($ext == "jpg" || $ext == "jpeg"){
-		imagejpeg($virtual_image, $dest, 80);
-	} elseif($ext == "png"){
-		imagepng($virtual_image, $dest, 1);
-	} elseif($ext == "gif"){
-		imagegif($virtual_image, $dest);
-	}
-}
+// function make_thumb($source_image, $ext, $width, $height, $dest, $desired_width) {
+// 	// TODO: constrain to a prespecified aspect ratio to fit thumbnail with projects page grid of image links.
+// 	// find the "desired height" of this thumbnail, relative to the desired width
+// 	$desired_height = floor($height * ($desired_width / $width));
+// 	// create a new, "virtual" image
+// 	$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
+// 	// copy source image at a resized size
+// 	imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
+// 	// create the physical thumbnail image to its destination
+// 	if($ext == "jpg" || $ext == "jpeg"){
+// 		imagejpeg($virtual_image, $dest, 80);
+// 	} elseif($ext == "png"){
+// 		imagepng($virtual_image, $dest, 1);
+// 	} elseif($ext == "gif"){
+// 		imagegif($virtual_image, $dest);
+// 	}
+// }
 
 ?>
