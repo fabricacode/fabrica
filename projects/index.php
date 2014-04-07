@@ -109,11 +109,15 @@ include("../_php/login.php");
       		function listGalleries($result){
       			// list all galleries returned by the query
       			while($gallery = mysql_fetch_assoc($result)){
-      				echo "<div>";
+      				echo "<div class='gallery'>";
       				$galleryresults = mysql_query("SELECT * FROM project_gallery_item WHERE gallery_id = '" . $gallery['id'] . "'");
       				
-      				echo "<b>{$gallery['title']}</b><br/>";	// print title
-      				echo "{$gallery['description']}<br/><br/>";		// print description
+      				if(!empty($gallery['title'])){
+      					echo "<b>{$gallery['title']}</b><br/>";	// print title
+      				}
+      				if(!empty($gallery['description'])){
+      					echo "{$gallery['description']}<br/><br/>";		// print description
+      				}
 
       				// print grid of thumbnails
       				$index = 1;
@@ -191,7 +195,9 @@ include("../_php/login.php");
       		}
 
       		function projectDetails($project){
-      			echo "<font class='projectsubtitle'>" . $project["subtitle"] . "</font><br/><br/>";
+      			if(!empty($project["subtitle"])){
+      				echo "<font class='projectsubtitle'>" . $project["subtitle"] . "</font><br/><br/>";
+      			}
       			echo "<img class='projectmainimg' src='" . $project["mainimage"] . "'><br/><br/>";
       			echo $project["bodytext"] . "<br/><br/>";
       			// TODO: build gallery(s)

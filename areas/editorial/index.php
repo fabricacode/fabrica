@@ -60,7 +60,7 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h2 id='headline'>
-				<a href="#" class="areaname">editorial</a> produces books, documentaries and exhibitions focusing on the human condition.
+				<a href="#" class="areaname">editorial</a> is a studio researching social issues through books, documentaries, music and photography
 			</h2>
 			<br/>
 

@@ -74,19 +74,24 @@ include("../_php/login.php");
 			<br/>
 
 			<div class='form'>
+          		<div id='wufoo-m7x3z9'></div>
+        	</div>
+
+			<!--
+			<div class='form'>
 
 				<?php
-				if(isset($_POST["firstname"])){
-					// verify submission
-					include("../_php/process_application.php");
-				} else {
-					// draw form
-					include("../_html/applyform.html");
-				}
-
+				// if(isset($_POST["firstname"])){
+				// 	// verify submission
+				// 	include("../_php/process_application.php");
+				// } else {
+				// 	// draw form
+				// 	include("../_html/applyform.html");
+				// }
 				?>
 
 			</div>
+			-->
 
 			<?php
 
@@ -95,6 +100,24 @@ include("../_php/login.php");
 			?>
 
 		</div>
+
+		<script>
+	        var m7x3z9;(function(d, t) {
+	        var s = d.createElement(t), options = {
+	        'userName':'thankyouforyoursubmission',
+	        'formHash':'m7x3z9',
+	        'autoResize':true,
+	        'height':'928',
+	        'async':true,
+	        'header':'hide',
+	        'ssl':false};
+	        s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+	        s.onload = s.onreadystatechange = function() {
+	        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+	        try { m7x3z9 = new WufooForm();m7x3z9.initialize(options);m7x3z9.display(); } catch (e) {}};
+	        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+	        })(document, 'script');
+      	</script>
 
 		<script src="/_js/other.js" type="text/javascript"></script>
 		

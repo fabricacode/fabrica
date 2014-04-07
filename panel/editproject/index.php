@@ -167,7 +167,7 @@ include("../../_php/login.php");
       			$title = mysql_real_escape_string($_POST['title']);
       			$subtitle = mysql_real_escape_string($_POST['subtitle']);
       			$link = mysql_real_escape_string($_POST['link']);
-      			$bodytext = mysql_real_escape_string($_POST['bodytext']);
+      			$bodytext = mysql_real_escape_string(nl2br($_POST['bodytext']));
       			$videocode = mysql_real_escape_string($_POST['videocode']);
       			$creditcount = mysql_real_escape_string($_POST['creditcount']);
       			$tags = trim(mysql_real_escape_string($_POST['tags']));

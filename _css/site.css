@@ -1347,6 +1347,7 @@ a#menuclose:hover {
 }
 
 .page #credits{
+	clear: both;
 	font-size: 0.7em;
 	width: 100%;
 	max-width: 500px;
@@ -1355,6 +1356,11 @@ a#menuclose:hover {
 
 .page #credits .credittitle{
 	text-decoration: underline;
+}
+
+.page .gallery{
+	clear: both;
+	margin-bottom: 10px;
 }
 
 .required {
@@ -1421,6 +1427,10 @@ span.redirect {
 	width: 190px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#socialbuttons a{
+	text-decoration: none;
 }
 
 #socialbuttons a:hover{

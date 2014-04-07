@@ -127,7 +127,7 @@ include("../_php/login.php");
 
           	<div class='studio'>
 				<p class='studiotitle'>
-					<a href="colors"><b>COLORS Magazine</b></a>
+					<a href="http://colorsmagazine.com/"><b>COLORS Magazine</b></a>
 				</p>
 				<p>
 					<b>Creative Director: Patrick Waterhouse</b>

@@ -160,7 +160,7 @@ include("_php/login.php");		// login or logout
 						<img src='_images/social_twitter.png' class='socialbutton' />
 					</a>
 					<a target='_new' href='http://www.vimeo.com/fabrica'>
-						<img src='_images/social_pinterest.png' class='socialbutton' />
+						<img src='_images/social_vimeo.png' class='socialbutton' />
 					</a>
 	            </div>
 	        </div>
@@ -177,4 +177,4 @@ include("_php/login.php");		// login or logout
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		
 	</body>
-</html>
+</html>tml>

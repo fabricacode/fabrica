@@ -47,8 +47,11 @@ include("../../_php/login.php");
 	    <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
 	    <!-- For Google+ bidirectional linking -->
 	    <link href='https://plus.google.com/103695675753742819996' rel='publisher'>
-		<script src="/_js/addproject.js" type="text/javascript"></script>
 	    <link href="/_css/site.css" media="screen" rel="stylesheet" type="text/css" />
+	    <link rel="stylesheet" type="text/css" href="/_css/imgareaselect-animated.css" />
+		<script src="/_js/other.js" type="text/javascript"></script>
+		<script src="/_js/addgallery.js" type="text/javascript"></script>
+		<script type="text/javascript" src="/_js/jquery.imgareaselect.pack.js"></script>
 	</head>
 	
 	<body class='black'>
@@ -68,7 +71,163 @@ include("../../_php/login.php");
 			<?php
 
 			function addImages($table, $entry_id, $gallery_id){
-				// TODO: dynamically add news images to the gallery
+				// dynamically add new image upload fields
+				echo "<form action='' method='post' enctype='multipart/form-data' name='galleryform'>";
+				echo "<input type='hidden' name='table' value='{$table}' />";
+				echo "<input type='hidden' name='entry_id' value='{$entry_id}' />";
+				echo "<input type='hidden' name='gallery_id' value='{$gallery_id}' />";
+				echo "<b>Images:</b><br/>";
+				echo "<div id='images'></div>";
+				echo "<input type='hidden' name='imagecount' id='imagecount' value='0'>";
+				echo "<a href='javascript:addImage();'>Add an image</a><br/><br/>";
+				echo "<input type='submit' value='Save'><br/><br/>";
+				echo "</form>";
+			}
+
+			function saveImages($table, $id, $gallery_id, $link){
+				// number of images that were uploaded
+				$imagecount = mysql_real_escape_string($_POST["imagecount"]);
+
+				// allowed extensions, types and size
+				$allowedExts = array("jpg", "jpeg", "gif", "png");
+				$allowedType = array("image/gif", "image/jpeg", "image/png", "image/pjpeg");
+				$allowedSize = 500000;
+
+				// print out form code with hidden inputs
+				echo "<form action='' method='post'>";
+				echo "<input type='hidden' name='table' value='{$table}' />";
+				echo "<input type='hidden' name='entry_id' value='{$id}' />";
+				echo "<input type='hidden' name='gallery_id' value='{$gallery_id}' />";
+				echo "<input type='hidden' name='link' value='{$link}' />";
+				echo "<input type='hidden' name='imagecount' value='{$imagecount}' />";
+
+				// for each image...
+				for($i=1; $i<=$imagecount; $i++){
+					// get extension, type and size
+					$ext = end(explode(".", $_FILES["image".$i]["name"]));
+					$type = $_FILES["image".$i]["type"];
+					$size = $_FILES["image".$i]["size"];
+
+					// check if extension, type and size are allowed
+					if(in_array($ext, $allowedExts) && in_array($type, $allowedType) && ($size < $allowedSize)){
+						// make sure there are no errors in the file
+						if($_FILES["image".$i]["error"] > 0){
+							echo "Return Code: " . $_FILES["image".$i]["error"] . "<br/>";
+						} else {
+							// move temp file to a real location in projects directory
+							if($table == "project"){
+								$dir = "projects/";
+							} else {
+								$dir = "news/";
+							}
+							$imagedest = "/_images/" . $dir . $link . "-" . $gallery_id . "-" . $i . "." . $ext;
+							$thumbdest = "/_images/" . $dir . "thumbs/" . $link . "-" . $gallery_id . "-" . $i . "." . $ext;
+							move_uploaded_file($_FILES["image".$i]["tmp_name"], "../.." . $imagedest);
+
+							// print out image to be selected and corresponding hidden inputs
+							echo "<img src='" . $imagedest . "' id='image{$i}'><br/><br/>";
+							echo "<input type='hidden' name='filename{$i}' value='{$imagedest}' />";
+							echo "<input type='hidden' name='thumbdest{$i}' value='{$thumbdest}' />";
+							echo "<input type='hidden' name='ext{$i}' value='{$ext}' />";
+							echo "<input type='hidden' name='image{$i}x1' value='' />";
+							echo "<input type='hidden' name='image{$i}y1' value='' />";
+							echo "<input type='hidden' name='image{$i}x2' value='' />";
+							echo "<input type='hidden' name='image{$i}y2' value='' />";
+							echo "<b>Caption:</b><br/>";
+							echo "<textarea name='caption{$i}' cols='38' rows='10'></textarea><br/><br/>";
+						}
+					} else if($size >= $allowedSize){
+						echo $_FILES["image".$i]["name"] . " is too large. Try again with a different version of the image under 500kb.<br/>";
+					} else if(!in_array($type, $allowedType)){
+						echo $_FILES["image".$i]["name"] . " is not recognized as a supported format. Try again with a different version of the image that is either a JPG, PNG, or GIF.<br/>";
+					}
+				}
+
+				// add save button and close form
+				echo "<input type='submit' name='submit' value='Save Thumbs' />";
+				echo "</form>";
+
+				// start javascript 
+				echo "<script type='text/javascript'>$(document).ready(function () {";
+
+				// for each image...
+				for($i=1; $i<=$imagecount; $i++){
+					// output the javascript to turn each image into a selection area
+					echo "$('#image{$i}').imgAreaSelect({
+							aspectRatio: '16:9',
+							handles: true,
+							onSelectEnd: function (img, selection) {
+					            $('input[name=\"image{$i}x1\"]').val(selection.x1);
+					            $('input[name=\"image{$i}y1\"]').val(selection.y1);
+					            $('input[name=\"image{$i}x2\"]').val(selection.x2);
+					            $('input[name=\"image{$i}y2\"]').val(selection.y2);            
+					        }
+						});";
+				}
+
+				// end javascript
+				echo "});</script>";
+			}
+
+			function saveThumbs(){
+				// grab general info for this gallery
+				$table = mysql_real_escape_string($_POST["table"]);
+				$id = mysql_real_escape_string($_POST["entry_id"]);
+				$gallery_id = mysql_real_escape_string($_POST["gallery_id"]);
+				$link = mysql_real_escape_string($_POST["link"]);
+				$imagecount = mysql_real_escape_string($_POST["imagecount"]);
+
+				// for each image...
+				for($i=1; $i<=$imagecount; $i++){
+					// grab filename and selection data
+					$filename = mysql_real_escape_string($_POST["filename".$i]);
+					$thumbdest = mysql_real_escape_string($_POST["thumbdest".$i]);
+					$ext = mysql_real_escape_string($_POST["ext".$i]);
+					$x1 = mysql_real_escape_string($_POST["image{$i}x1"]);
+					$y1 = mysql_real_escape_string($_POST["image{$i}y1"]);
+					$x2 = mysql_real_escape_string($_POST["image{$i}x2"]);
+					$y2 = mysql_real_escape_string($_POST["image{$i}y2"]);
+					$caption = mysql_real_escape_string($_POST["caption{$i}"]);
+
+					// load image and get dimensions
+					if($ext == "jpg" || $ext == "jpeg"){
+						$source_image = imagecreatefromjpeg("../.." . $filename);
+					} elseif($ext == "png"){
+						$source_image = imagecreatefrompng("../.." . $filename);
+					} elseif($ext == "gif"){
+						$source_image = imagecreatefromgif("../.." . $filename);
+					}
+					$width = $x2 - $x1;
+					$height = $y2 - $y1;
+
+					// copy image with specified coordinates
+					$desired_width = 500;	// width based on max page size of 1000px
+					$desired_height = 281;	// 16:9 ratio
+					$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
+					imagecopyresampled($virtual_image, $source_image, 0, 0, $x1, $y1, $desired_width, $desired_height, $width, $height);
+
+					// create the physical thumbnail image to its destination
+					if($ext == "jpg" || $ext == "jpeg"){
+						imagejpeg($virtual_image, "../.." . $thumbdest, 80);
+					} elseif($ext == "png"){
+						imagepng($virtual_image, "../.." . $thumbdest, 1);
+					} elseif($ext == "gif"){
+						imagegif($virtual_image, "../.." . $thumbdest);
+					}
+
+					// insert data into database
+					if($table == "project"){
+						mysql_query("INSERT INTO project_gallery_item (project_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$i}, '{$thumbdest}', '{$filename}', '{$caption}')");
+					} else if($table == "news"){
+						mysql_query("INSERT INTO news_gallery_item (news_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$i}, '{$thumbdest}', '{$filename}', '{$caption}')");
+					}
+				}
+
+				if($table == "project"){
+					echo "Your gallery was successfully added. You can see it <a href='/projects/{$link}'>here</a>.<br/>";
+				} else {
+					echo "Your gallery was successfully added. You can see it <a href='/news/{$link}'>here</a>.<br/>";
+				}
 			}
 
 			function removeImages($table, $entry_id, $gallery_id){
@@ -76,9 +235,48 @@ include("../../_php/login.php");
 				fetchGalleryItems($table, $entry_id, $gallery_id);
 			}
 
+			function deleteImages($table, $entry_id, $gallery_id){
+				// TODO: delete selected images from gallery
+				$link = mysql_real_escape_string($_POST["link"]);
+				$imagecount = mysql_real_escape_string($_POST["imagecount"]);
+				// for each image...
+				for($i=1; $i<=$imagecount; $i++){
+					// delete the items selected from database and delete image files from storage
+				}
+				// TODO: loop through remaining items, rename their files and renumber their item_ids
+			}
+
 			function editDescription($table, $entry_id, $gallery_id){
-				// TODO: text areas for editing description text
-				echo "<textarea name='caption{$index}' cols='37' rows='5'>{$item['caption']}</textarea><br/><br/>";
+				// text areas for editing description text
+				$result = mysql_query("SELECT * FROM {$table}_gallery WHERE {$table}_id=$entry_id AND id={$gallery_id}");
+				$gallery = mysql_fetch_assoc($result);
+				echo "<form action='index.php' method='post' enctype='multipart/form-data'>";
+				echo "<input type='hidden' name='entry_id' value='{$entry_id}'>";
+				echo "<input type='hidden' name='gallery_id' value='{$gallery_id}'>";
+				echo "<input type='hidden' name='table' value='{$table}'>";
+				echo "<input type='hidden' name='action' value='savedescription'>";
+				echo "<b>Title:</b><br/>";
+				echo "<input type='text' name='title' size='38' value='" . htmlentities($gallery['title'], ENT_QUOTES) . "'><br/><br/>";
+				echo "<b>Description:</b><br/>";
+				echo "<textarea name='description' cols='38' rows='5'>{$gallery['description']}</textarea><br/><br/>";
+				echo "<input type='submit' value='Save'>";
+				echo "</form>";
+			}
+
+			function saveDescription($table, $entry_id, $gallery_id){
+				// save edited title and description
+				$title = mysql_real_escape_string($_POST["title"]);
+				$description = mysql_real_escape_string($_POST["description"]);
+				mysql_query("UPDATE {$table}_gallery SET title='{$title}', description='{$description}' WHERE id='{$gallery_id}' AND {$table}_id='{$entry_id}'");
+				if($table == "project"){
+					$result = mysql_query("SELECT link FROM project WHERE id='{$entry_id}'");
+					$row = mysql_fetch_assoc($result);
+					echo "Description saved. See the gallery on it's <a href='/projects/{$row['link']}'>project page</a>.";
+				} else if($table == "news"){
+					$result = mysql_query("SELECT link FROM news WHERE id='{$entry_id}'");
+					$row = mysql_fetch_assoc($result);
+					echo "Description saved. See the gallery on it's <a href='/news/{$row['link']}'>news page</a>.";
+				}
 			}
 
 			function fetchAllGalleries($table){
@@ -118,8 +316,9 @@ include("../../_php/login.php");
 				echo "<input type='hidden' name='gallery_id' value='{$result['gallery_id']}'>";
 				echo "<input type='hidden' name='table' value='{$table}'>";
 				echo "<input type='hidden' name='action' value='deleteitems'>";
-				$index = 1;
+				$index = 0;
 				while($item = mysql_fetch_assoc($result)){
+					$index++;
 					if($index % 3 == 0){
 						echo "<div class='thirds' style='margin-right: 0px'>";
 					} else {
@@ -128,8 +327,8 @@ include("../../_php/login.php");
 					echo "<a href='{$item['image']}'><img src='{$item['thumb']}' class='projectthumb'></a>";
 					echo "<input type='checkbox' name='delete' value='{$item['item_id']}'>";
 					echo "</div>";
-					$index++;
 				}
+				echo "<input type='hidden' name='imagecount' value='{$index}'>";
 				echo "<div style='clear: both;'>";
 				echo "<input type='submit' value='Delete Selected Items' style='background-color:#aa0000'>";
 				echo "</form></div>";
@@ -148,7 +347,18 @@ include("../../_php/login.php");
 
 			
 			if(isset($_SESSION["loggedin"]) && $_SESSION["position"] == "admin"){
-				if(isset($_GET["action"])){
+				if(isset($_POST["action"])){
+					// STEP 5: inact the changes the user has specified.
+					$table = mysql_real_escape_string($_POST["table"]);
+					$entry_id = mysql_real_escape_string($_POST["entry_id"]);
+					$gallery_id = mysql_real_escape_string($_POST["gallery_id"]);
+
+					if($_POST["action"] == "savedescription"){
+						saveDescription($table, $entry_id, $gallery_id);
+					} else if($_POST["action"] == "deleteitems"){
+						deleteImages($table, $entry_id, $gallery_id);
+					}
+				} else if(isset($_GET["action"])){
 					// STEP 4: route to function user has selected
 					$table = mysql_real_escape_string($_GET["table"]);
 					$entry_id = mysql_real_escape_string($_GET["entry_id"]);
@@ -156,10 +366,10 @@ include("../../_php/login.php");
 
 					if($_GET["action"] == "editdescription"){
 						editDescription($table, $entry_id, $gallery_id);
-					} else if($_GET["action"] == "addimages"){
-						addImages($table, $entry_id, $gallery_id);
 					} else if($_GET["action"] == "removeimages"){
 						removeImages($table, $entry_id, $gallery_id);
+					} else if($_GET["action"] == "addimages"){
+						addImages($table, $entry_id, $gallery_id);
 					}
 				} else if(isset($_GET["gallery_id"])){
 					// STEP 3: present edit options for individual gallery
@@ -167,39 +377,25 @@ include("../../_php/login.php");
 					$entry_id = mysql_real_escape_string($_GET["entry_id"]);
 					$gallery_id = mysql_real_escape_string($_GET["gallery_id"]);
 
-					echo "<div class='thirds' style='text-align: center;'>";
-					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=editdescription'>Edit Description</a>";
+					echo "<div class='quarters' style='text-align: center;'>";
+					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=editdescription'><img src='/_images/edit_description.png' class='projectthumb'><br/><br/>Edit Description</a><br/><br/>";
 					echo "</div>";
-					echo "<div class='thirds' style='text-align: center;'>";
-					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=addimages'>Add Images</a>";
+					echo "<div class='quarters' style='text-align: center;'>";
+					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=addimages'><img src='/_images/add_image.png' class='projectthumb'><br/><br/>Add Images</a><br/><br/>";
 					echo "</div>";
-					echo "<div class='thirds' style='text-align: center; margin-right: 0px;'>";
-					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=removeimages'>Remove Images</a>";
+					echo "<div class='quarters' style='text-align: center; margin-right: 0px;'>";
+					echo "<a href='?table={$table}&entry_id={$entry_id}&gallery_id={$gallery_id}&action=removeimages'><img src='/_images/delete_images.png' class='projectthumb'><br/><br/>Remove Images</a><br/><br/>";
 					echo "</div>";
-
-					// echo "<form action='' method='post' enctype='multipart/form-data' name='galleryform'>";
-					// printGalleryDetails(mysql_real_escape_string($_GET["table"]), mysql_real_escape_string($_GET["entry_id"]), mysql_real_escape_string($_GET["gallery_id"]));
-					// fetchGalleryItems(mysql_real_escape_string($_GET["table"]), mysql_real_escape_string($_GET["entry_id"]), mysql_real_escape_string($_GET["gallery_id"]));
-					// TODO: add ability to add new images
-					// echo "<div style='clear: both; float: left;'><input type='submit' value='Save'></form></div>";
-					// echo "<div style='float: left; margin-left: 20px;'>";
-					// echo "<form action='' method='post' enctype='multipart/form-data'>";
-					// echo "<input type='hidden' name='project_id' value='{$_GET["entry_id"]}'>";
-					// echo "<input type='hidden' name='gallery_id' value='{$_GET["gallery_id"]}'>";
-					// echo "<input type='hidden' name='table' value='{$_GET["table"]}'>";
-					// echo "<input type='hidden' name='action' value='deletegallery'>";
-					// echo "<input type='submit' value='Delete Gallery' style='background-color:#aa0000'>";
-					// echo "</div>";
 				} else if(isset($_GET["table"])){
 					// STEP 2: list all gallery entries related to that table
 					fetchAllGalleries(mysql_real_escape_string($_GET["table"]));
 				} else {
 					// STEP 1: choose between project galleries or news galleries
-					echo "<div class='studioleft' style='text-align: center;'>";
-					echo "<a href='?table=project'>PROJECTS</a>";
+					echo "<div class='quarters' style='text-align: center;'>";
+					echo "<a href='?table=project'><img src='/_images/project_gallery.png' class='projectthumb'><br/><br/>Projects</a><br/><br/>";
 					echo "</div>";
-					echo "<div class='studioright' style='text-align: center;'>";
-					echo "<a href='?table=news'>NEWS</a>";
+					echo "<div class='quarters' style='text-align: center;'>";
+					echo "<a href='?table=news'><img src='/_images/news_gallery.png' class='projectthumb'><br/><br/>News</a><br/><br/>";
 					echo "</div>";
 				}
 			} else {
@@ -212,8 +408,6 @@ include("../../_php/login.php");
 			?>
 
 		</div>
-
-		<script src="/_js/other.js" type="text/javascript"></script>
 
 	</body>
 </html>

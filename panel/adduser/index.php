@@ -85,7 +85,7 @@ include("../../_php/login.php");
 						$startdate = mysql_real_escape_string($_POST["startdate"]);
 						$enddate = mysql_real_escape_string($_POST["enddate"]);
 						$result = mysql_query("INSERT INTO person (username, password, firstname, lastname, position, area_id, nationality, dob, startdate, enddate) VALUES ('{$username}', '{$password}', '{$firstname}', '{$lastname}', '{$position}', '{$area}', '{$nationality}', '{$dob}', '{$startdate}', '{$enddate}')");
-						echo "{$firstname} {$lastname} was added to the Fabrica web site. You can visit their <a href='/people/{$username}'>profile page here</a>."
+						echo "{$firstname} {$lastname} was added to the Fabrica web site. You can visit their <a href='/people/{$username}'>profile page here</a>.";
 					}
 				} else {
 					include("../../_html/adduser.html");
