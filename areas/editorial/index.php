@@ -60,7 +60,7 @@ include("../../_php/login.php");
 
 		<div class='page black'>
 			<h2 id='headline'>
-				<a href="#" class="areaname">editorial</a> is a studio researching social issues through books, documentaries, music and photography
+				<a href="#" class="areaname">editorial</a> is a studio researching social issues through books, documentaries, music and photography.
 			</h2>
 			<br/>
 
@@ -68,8 +68,12 @@ include("../../_php/login.php");
 
 			// get all projects from the editorial area
 			$index = 1;
+			$colcount = 1;
 			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = 'editorial' ORDER BY enddate DESC");
 			while($project = mysql_fetch_assoc($result)){
+				if($colcount == 1){
+					echo "<div class='row'>";
+				}
 				if($index % 3 == 0){
 					echo "<div class='thirds' style='margin-right: 0px'>";
 				} else {
@@ -92,7 +96,14 @@ include("../../_php/login.php");
 				}
 				echo "</span>";
 				echo "</div>";
+				if($colcount == 3){
+					echo "</div>";
+				}
 				$index++;
+				$colcount++;
+				if($colcount > 3){
+					$colcount = 1;
+				}
 			}
 
 			include("../../_php/footer.php");

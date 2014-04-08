@@ -140,7 +140,11 @@ include("../_php/login.php");
       		function listProjects($result){
       			// list all projects returned by the query
 				$index = 1;
+				$colcount = 1;
 				while($project = mysql_fetch_assoc($result)){
+					if($colcount == 1){
+						echo "<div class='row'>";
+					}
 					if($index % 3 == 0){
 						echo "<div class='thirds' style='margin-right: 0px'>";
 					} else {
@@ -163,7 +167,14 @@ include("../_php/login.php");
 					}
 					echo "</span>";
 					echo "</div>";
+					if($colcount == 3){
+						echo "</div>";
+					}
 					$index++;
+					$colcount++;
+					if($colcount > 3){
+						$colcount = 1;
+					}
 				}
       		}
 

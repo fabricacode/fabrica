@@ -1048,6 +1048,10 @@ a#menuclose:hover {
 	color: white;
 }
 
+.page .row {
+	clear: both;
+}
+
 .page .thirds {
 	font-family: "Circular", helvetica, arial, sans-serif;
 	font-weight: 400;

@@ -68,8 +68,12 @@ include("../../_php/login.php");
 
 			// get all projects from the design area
 			$index = 1;
+			$colcount = 1;
 			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = 'design' ORDER BY enddate DESC");
 			while($project = mysql_fetch_assoc($result)){
+				if($colcount == 1){
+					echo "<div class='row'>";
+				}
 				if($index % 3 == 0){
 					echo "<div class='thirds' style='margin-right: 0px'>";
 				} else {
@@ -92,7 +96,14 @@ include("../../_php/login.php");
 				}
 				echo "</span>";
 				echo "</div>";
+				if($colcount == 3){
+					echo "</div>";
+				}
 				$index++;
+				$colcount++;
+				if($colcount > 3){
+					$colcount = 1;
+				}
 			}
 
 			include("../../_php/footer.php");
