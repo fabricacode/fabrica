@@ -139,13 +139,12 @@ include("../_php/login.php");
 
       		function listProjects($result){
       			// list all projects returned by the query
-				$index = 1;
 				$colcount = 1;
 				while($project = mysql_fetch_assoc($result)){
 					if($colcount == 1){
 						echo "<div class='row'>";
 					}
-					if($index % 3 == 0){
+					if($colcount == 3){
 						echo "<div class='thirds' style='margin-right: 0px'>";
 					} else {
 						echo "<div class='thirds'>";
@@ -170,7 +169,6 @@ include("../_php/login.php");
 					if($colcount == 3){
 						echo "</div>";
 					}
-					$index++;
 					$colcount++;
 					if($colcount > 3){
 						$colcount = 1;
@@ -183,14 +181,14 @@ include("../_php/login.php");
       			if(isset($offset)){
       				$result = mysql_query("SELECT id,title,link,mainthumb FROM project ORDER BY enddate DESC LIMIT {$offset},24");
       			} else {
-      				$result = mysql_query("SELECT id,title,link,mainthumb FROM project ORDER BY enddate DESC LIMIT 24");
+      				$result = mysql_query("SELECT id,title,link,mainthumb FROM project ORDER BY enddate DESC");
       			}
       			listProjects($result);
       		}
 
       		function fetchAreaProjects($area){
       			// fetch only projects from the specified area
-      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '{$area}' ORDER BY enddate DESC LIMIT 24");
+      			$result = mysql_query("SELECT id,title,link,mainthumb FROM project WHERE area = '{$area}' ORDER BY enddate DESC");
       			listProjects($result);
       		}
 
@@ -201,7 +199,7 @@ include("../_php/login.php");
 
       		function fetchTaggedProjects($tag){
       			// TODO: grab project_id's from project_tags table based on tag value.
-      			$result = mysql_query("SELECT project.id,project.title,project.link,project.mainthumb FROM project INNER JOIN project_tags ON project.id = project_tags.project_id WHERE project_tags.tag = '{$tag}' ORDER BY enddate DESC LIMIT 24");
+      			$result = mysql_query("SELECT project.id,project.title,project.link,project.mainthumb FROM project INNER JOIN project_tags ON project.id = project_tags.project_id WHERE project_tags.tag = '{$tag}' ORDER BY enddate DESC");
       			listProjects($result);
       		}
 
