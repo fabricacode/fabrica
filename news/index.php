@@ -131,9 +131,12 @@ include("../_php/login.php");
 
       		function listNews($result){
       			// list all projects returned by the query
-				$index = 1;
+				$colcount = 1;
 				while($news = mysql_fetch_assoc($result)){
-					if($index % 3 == 0){
+					if($colcount == 1){
+						echo "<div class='row'>";
+					}
+					if($colcount == 3){
 						echo "<div class='thirds' style='margin-right: 0px'>";
 					} else {
 						echo "<div class='thirds'>";
@@ -156,7 +159,13 @@ include("../_php/login.php");
 					// }
 					echo "</span>";
 					echo "</div>";
-					$index++;
+					if($colcount == 3){
+						echo "</div>";
+					}
+					$colcount++;
+					if($colcount > 3){
+						$colcount = 1;
+					}
 				}
       		}
 
