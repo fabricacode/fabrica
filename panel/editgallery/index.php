@@ -76,6 +76,7 @@ include("../../_php/login.php");
 				echo "<input type='hidden' name='table' value='{$table}' />";
 				echo "<input type='hidden' name='entry_id' value='{$entry_id}' />";
 				echo "<input type='hidden' name='gallery_id' value='{$gallery_id}' />";
+				echo "<input type='hidden' name='action' value='saveimages' />";
 				echo "<b>Images:</b><br/>";
 				echo "<div id='images'></div>";
 				echo "<input type='hidden' name='imagecount' id='imagecount' value='0'>";
@@ -84,7 +85,16 @@ include("../../_php/login.php");
 				echo "</form>";
 			}
 
-			function saveImages($table, $id, $gallery_id, $link){
+			function saveImages($table, $id, $gallery_id){
+				// get link from table
+				$result = mysql_query("SELECT link FROM {$table} WHERE id='{$id}'");
+				$row = mysql_fetch_assoc($result);
+				$link = $row['link'];
+
+				// count existing images to get proper item_id offset
+				$result = mysql_query("SELECT item_id FROM {$table}_gallery_item WHERE gallery_id='{$gallery_id}'");
+				$count = mysql_num_rows($result);
+
 				// number of images that were uploaded
 				$imagecount = mysql_real_escape_string($_POST["imagecount"]);
 
@@ -99,6 +109,7 @@ include("../../_php/login.php");
 				echo "<input type='hidden' name='entry_id' value='{$id}' />";
 				echo "<input type='hidden' name='gallery_id' value='{$gallery_id}' />";
 				echo "<input type='hidden' name='link' value='{$link}' />";
+				echo "<input type='hidden' name='action' value='savethumbs' />";
 				echo "<input type='hidden' name='imagecount' value='{$imagecount}' />";
 
 				// for each image...
@@ -107,6 +118,9 @@ include("../../_php/login.php");
 					$ext = end(explode(".", $_FILES["image".$i]["name"]));
 					$type = $_FILES["image".$i]["type"];
 					$size = $_FILES["image".$i]["size"];
+
+					// establish item id
+					$item_id = $count + $i;
 
 					// check if extension, type and size are allowed
 					if(in_array($ext, $allowedExts) && in_array($type, $allowedType) && ($size < $allowedSize)){
@@ -120,8 +134,8 @@ include("../../_php/login.php");
 							} else {
 								$dir = "news/";
 							}
-							$imagedest = "/_images/" . $dir . $link . "-" . $gallery_id . "-" . $i . "." . $ext;
-							$thumbdest = "/_images/" . $dir . "thumbs/" . $link . "-" . $gallery_id . "-" . $i . "." . $ext;
+							$imagedest = "/_images/" . $dir . $link . "-" . $gallery_id . "-" . $item_id . "." . $ext;
+							$thumbdest = "/_images/" . $dir . "thumbs/" . $link . "-" . $gallery_id . "-" . $item_id . "." . $ext;
 							move_uploaded_file($_FILES["image".$i]["tmp_name"], "../.." . $imagedest);
 
 							// print out image to be selected and corresponding hidden inputs
@@ -177,6 +191,10 @@ include("../../_php/login.php");
 				$link = mysql_real_escape_string($_POST["link"]);
 				$imagecount = mysql_real_escape_string($_POST["imagecount"]);
 
+				// count existing images to get proper item_id offset
+				$result = mysql_query("SELECT item_id FROM {$table}_gallery_item WHERE gallery_id='{$gallery_id}'");
+				$count = mysql_num_rows($result);
+
 				// for each image...
 				for($i=1; $i<=$imagecount; $i++){
 					// grab filename and selection data
@@ -188,6 +206,9 @@ include("../../_php/login.php");
 					$x2 = mysql_real_escape_string($_POST["image{$i}x2"]);
 					$y2 = mysql_real_escape_string($_POST["image{$i}y2"]);
 					$caption = mysql_real_escape_string($_POST["caption{$i}"]);
+
+					// establish item id
+					$item_id = $count + $i;
 
 					// load image and get dimensions
 					if($ext == "jpg" || $ext == "jpeg"){
@@ -217,9 +238,9 @@ include("../../_php/login.php");
 
 					// insert data into database
 					if($table == "project"){
-						mysql_query("INSERT INTO project_gallery_item (project_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$i}, '{$thumbdest}', '{$filename}', '{$caption}')");
+						mysql_query("INSERT INTO project_gallery_item (project_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$item_id}, '{$thumbdest}', '{$filename}', '{$caption}')");
 					} else if($table == "news"){
-						mysql_query("INSERT INTO news_gallery_item (news_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$i}, '{$thumbdest}', '{$filename}', '{$caption}')");
+						mysql_query("INSERT INTO news_gallery_item (news_id, gallery_id, item_id, thumb, image, caption) VALUES ('{$id}', '{$gallery_id}', {$item_id}, '{$thumbdest}', '{$filename}', '{$caption}')");
 					}
 				}
 
@@ -357,6 +378,10 @@ include("../../_php/login.php");
 						saveDescription($table, $entry_id, $gallery_id);
 					} else if($_POST["action"] == "deleteitems"){
 						deleteImages($table, $entry_id, $gallery_id);
+					} else if($_POST["action"] == "saveimages"){
+						saveImages($table, $entry_id, $gallery_id);
+					} else if($_POST["action"] == "savethumbs"){
+						saveThumbs();
 					}
 				} else if(isset($_GET["action"])){
 					// STEP 4: route to function user has selected
