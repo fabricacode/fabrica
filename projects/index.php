@@ -227,7 +227,7 @@ include("../_php/login.php");
 				if(mysql_num_rows($creditsresults) > 0){
 					echo "<div id='credits'>";
 					while($credit = mysql_fetch_assoc($creditsresults)){
-						echo "<span class='credittitle'>" . $credit['title'] . ":</span> " . $credit['content'] . "<br/>";
+						echo "<span class='credittitle'>" . $credit['title'] . "</span>: " . $credit['content'] . "<br/>";
 					}
 					echo "</div>";
 				}
