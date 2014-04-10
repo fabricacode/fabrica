@@ -154,7 +154,7 @@ include("../_php/login.php");
 					echo "<span class='projecttitle'>" . $project['title'] . "</span>";
 					echo "</a>";
 					echo "<span class='projecttags'>";
-					$tagresults = mysql_query("SELECT tag FROM project_tags WHERE project_id = '" . $project['id'] . "'");
+					$tagresults = mysql_query("SELECT tag FROM project_tags WHERE project_id = '{$project['id']}' ORDER BY tag ASC");
 					$numtags = mysql_num_rows($tagresults);
 					$tagindex = 0;
 					while($tags = mysql_fetch_assoc($tagresults)){
