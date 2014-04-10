@@ -153,7 +153,8 @@ include("../../_php/login.php");
 				// for each image...
 				for($i=1; $i<=$imagecount; $i++){
 					// get extension, type and size
-					$ext = end(explode(".", $_FILES["image".$i]["name"]));
+					$exploded = explode(".", $_FILES["image".$i]["name"]);
+					$ext = end($exploded);
 					$type = $_FILES["image".$i]["type"];
 					$size = $_FILES["image".$i]["size"];
 
