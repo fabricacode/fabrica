@@ -67,24 +67,24 @@ include("_php/login.php");		// login or logout
 
       		<div class='studioleft'>
       			<div class="frontmenu">
-      				<a href="areas/campaign/">
-      					<img src="_images/socialcampaigns.jpg">
+      				<a href="/areas/campaign/">
+      					<img src="/_images/socialcampaigns.jpg">
           				<span class="frontmenutext">social campaigns</span>
           			</a>
           		</div>
       		</div>
       		<div class='studioright'>
       			<div class="frontmenu">
-      				<a href="areas/design/">
-      					<img src="_images/design.jpg">
+      				<a href="/areas/design/">
+      					<img src="/_images/design.jpg">
 		        		<span class="frontmenutext">design</span>
 		        	</a>
 		        </div>
 	        </div>
       		<div class='studioleft'>
       			<div class="frontmenu">
-      				<a href="areas/editorial/">
-      					<img src="_images/editorial.jpg">
+      				<a href="/areas/editorial/">
+      					<img src="/_images/editorial.jpg">
           				<span class="frontmenutext">editorial</span>
           			</a>
           		</div>
@@ -148,19 +148,28 @@ include("_php/login.php");		// login or logout
 		        </div>
 	        </div>
 
+	        <link href="/_css/lok.css?1389880772" media="screen" rel="stylesheet" type="text/css" />
+
+			<div id="lokfaketwitter">
+				<a href="http://www.loksabhaindia.org"  title="Ten young Indian photographers narrate their own country">
+					<div id="loksabhaicon"></div>
+					<div id="loksabha">#loksabha  Ten young Indian photographers narrate their own country</div>
+				</a>
+			</div>
+
 			<div id='lifestream'></div>
 			<br/>
 
 			<div style="float: left; width: 100%;">
 				<div id='socialbuttons'>
-					<a target='_new' href='https://www.facebook.com/pages/Fabrica/48283858451'>
-						<img src='_images/social_facebook.png' class='socialbutton' />
+					<a target='_new' href='https://www.facebook.com/fabricaresearchcentre'>
+						<img src='/_images/social_facebook.png' class='socialbutton' />
 					</a>
 					<a target='_new' href='https://twitter.com/fabrica'>
-						<img src='_images/social_twitter.png' class='socialbutton' />
+						<img src='/_images/social_twitter.png' class='socialbutton' />
 					</a>
 					<a target='_new' href='http://www.vimeo.com/fabrica'>
-						<img src='_images/social_vimeo.png' class='socialbutton' />
+						<img src='/_images/social_vimeo.png' class='socialbutton' />
 					</a>
 	            </div>
 	        </div>
@@ -177,4 +186,4 @@ include("_php/login.php");		// login or logout
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		
 	</body>
-</html>tml>
+</html>
