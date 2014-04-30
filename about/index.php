@@ -60,7 +60,7 @@ include("../_php/login.php");
 
 		<div class='page black'>
 			<h1 id='headline'>
-				We are based in Italy and work globally.
+				Fabrica is an educational institution, research workshop and studio. We are based in Italy and work globally.
 			</h1>
 			<br/>
 
@@ -68,7 +68,7 @@ include("../_php/login.php");
           		<div class='studioleft'>
           			<b>Our web site is in beta and under constant development. Check back soon for new content.</b><br/>
 		            <br/>
-		            Fabrica is a research workshop, new school and studio. It pursues research through making, producing groundbreaking projects in collaboration with the world’s best creative talents. Our desire is to positively impact upon social and cultural change. Fabrica pursues its own projects as well as working for others, from commercial clients to governments, NGOs and the cultural sector, developing tangible research, expertly communicated.<br/>
+		            We pursue research through making, producing groundbreaking projects in collaboration with the world’s best creative talents. Our desire is to positively impact upon social and cultural change. Fabrica pursues its own projects as well as working for others, from commercial clients to governments, NGOs and the cultural sector, developing tangible research, expertly communicated.<br/>
 		            <br/>
 		            Fabrica was created by Benetton in 1994, and projects have won Webbies, Academy Awards, Cannes Grand Prix, Art Directors Club and D&AD awards and more besides. If you are 25 or under, you can <a href="/apply">apply</a> for a scholarship to join our research community. If you are interested in collaborating, we'd be happy to talk.<br/>
 		            <br/>
@@ -97,7 +97,7 @@ include("../_php/login.php");
 
           	<div style="float: left; width: 100%;">
 				<div id='socialbuttons'>
-					<a target='_new' href='https://www.facebook.com/pages/Fabrica/48283858451'>
+					<a target='_new' href='https://www.facebook.com/fabricaresearchcentre'>
 						<img src='/_images/social_facebook.png' class='socialbutton' />
 					</a>
 					<a target='_new' href='https://twitter.com/fabrica'>
